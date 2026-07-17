@@ -1,0 +1,195 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d0e11"></stop>
+      <stop offset="0.42" stop-color="#12141a"></stop>
+      <stop offset="1" stop-color="#0d0f12"></stop>
+    </linearGradient>
+
+    
+    <radialGradient id="coreAura" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#b8e6ff" stop-opacity="0.55"></stop>
+      <stop offset="0.35" stop-color="#2e6bff" stop-opacity="0.18"></stop>
+      <stop offset="1" stop-color="#2e6bff" stop-opacity="0"></stop>
+    </radialGradient>
+
+    
+    <radialGradient id="goldDot" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f3e6c8" stop-opacity="1"></stop>
+      <stop offset="0.5" stop-color="#c8b07a" stop-opacity="0.7"></stop>
+      <stop offset="1" stop-color="#c8b07a" stop-opacity="0"></stop>
+    </radialGradient>
+
+    
+    <linearGradient id="stream" x1="120" y1="900" x2="1000" y2="945" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8b07a" stop-opacity="0.05"></stop>
+      <stop offset="0.55" stop-color="#c8b07a" stop-opacity="0.45"></stop>
+      <stop offset="1" stop-color="#f3e6c8" stop-opacity="0.95"></stop>
+    </linearGradient>
+    <linearGradient id="streamOut" x1="1020" y1="945" x2="1320" y2="945" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3e6c8" stop-opacity="0.9"></stop>
+      <stop offset="1" stop-color="#c8b07a" stop-opacity="0.12"></stop>
+    </linearGradient>
+
+    
+    <linearGradient id="dune" x1="0" y1="1180" x2="0" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b1f27" stop-opacity="0"></stop>
+      <stop offset="0.5" stop-color="#191c22" stop-opacity="0.85"></stop>
+      <stop offset="1" stop-color="#0c0d10"></stop>
+    </linearGradient>
+    <linearGradient id="duneSheen" x1="0" y1="1240" x2="1200" y2="1460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8b07a" stop-opacity="0.0"></stop>
+      <stop offset="0.5" stop-color="#c8b07a" stop-opacity="0.10"></stop>
+      <stop offset="1" stop-color="#b8e6ff" stop-opacity="0.04"></stop>
+    </linearGradient>
+
+    
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"></feGaussianBlur>
+    </filter>
+    <filter id="glowWide" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22"></feGaussianBlur>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"></feTurbulence>
+      <feColorMatrix type="saturate" values="0"></feColorMatrix>
+    </filter>
+  </defs>
+
+  
+  <rect width="1200" height="1500" fill="url(#bg)"></rect>
+
+  
+  <g stroke="#8b8f99" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 600 H1200"></path><path d="M0 760 H1200"></path><path d="M0 920 H1200"></path><path d="M0 1080 H1200"></path>
+    <path d="M300 400 V1180"></path><path d="M600 400 V1180"></path><path d="M900 400 V1180"></path>
+  </g>
+
+  
+  <g filter="url(#glowWide)" opacity="0.9">
+    <circle cx="1000" cy="945" r="180" fill="url(#coreAura)"></circle>
+    <ellipse cx="780" cy="945" rx="360" ry="120" fill="#c8b07a" fill-opacity="0.06"></ellipse>
+  </g>
+
+  
+  <g fill="none" stroke="url(#stream)" filter="url(#glowSoft)" opacity="0.7">
+    <path d="M150 560 C 470 520, 700 660, 1000 945" stroke-width="2.5"></path>
+    <path d="M150 790 C 480 770, 730 840, 1000 945" stroke-width="2.5"></path>
+    <path d="M170 1020 C 510 1045, 745 1010, 1000 945" stroke-width="2.5"></path>
+    <path d="M210 1250 C 540 1300, 770 1120, 1000 945" stroke-width="2.5"></path>
+  </g>
+
+  
+  <g fill="none" stroke="url(#stream)">
+    <path d="M150 560 C 470 520, 700 660, 1000 945" stroke-width="1.4"></path>
+    <path d="M150 790 C 480 770, 730 840, 1000 945" stroke-width="1.4"></path>
+    <path d="M170 1020 C 510 1045, 745 1010, 1000 945" stroke-width="1.4"></path>
+    <path d="M210 1250 C 540 1300, 770 1120, 1000 945" stroke-width="1.4"></path>
+  </g>
+
+  
+  <g fill="none" stroke="#c8b07a" stroke-opacity="0.16" stroke-width="0.8">
+    <path d="M180 640 C 460 640, 720 760, 1000 945"></path>
+    <path d="M180 870 C 500 880, 740 900, 1000 945"></path>
+    <path d="M200 1110 C 520 1140, 760 1020, 1000 945"></path>
+    <path d="M260 1340 C 560 1360, 800 1130, 1000 945"></path>
+    <path d="M150 700 C 480 700, 720 820, 1000 945"></path>
+    <path d="M190 960 C 520 980, 760 960, 1000 945"></path>
+  </g>
+
+  
+  <g fill="url(#goldDot)">
+    <circle cx="360" cy="612" r="9"></circle><circle cx="520" cy="640" r="5"></circle><circle cx="690" cy="700" r="7"></circle>
+    <circle cx="300" cy="800" r="6"></circle><circle cx="470" cy="812" r="9"></circle><circle cx="660" cy="852" r="5"></circle>
+    <circle cx="330" cy="1018" r="7"></circle><circle cx="500" cy="1030" r="5"></circle><circle cx="720" cy="980" r="6"></circle>
+    <circle cx="420" cy="1235" r="6"></circle><circle cx="600" cy="1175" r="8"></circle><circle cx="800" cy="1030" r="5"></circle>
+    <circle cx="560" cy="700" r="4"></circle><circle cx="620" cy="900" r="4"></circle><circle cx="560" cy="1090" r="4"></circle>
+    <circle cx="850" cy="900" r="5"></circle><circle cx="880" cy="970" r="4"></circle>
+  </g>
+  
+  <g fill="#f3e6c8">
+    <circle cx="486" cy="892" r="4"></circle><circle cx="492" cy="1078" r="4"></circle><circle cx="396" cy="636" r="3"></circle>
+    <circle cx="754" cy="820" r="3"></circle><circle cx="808" cy="816" r="3"></circle>
+  </g>
+
+  
+  <g fill="#c8b07a" fill-opacity="0.7">
+    <circle cx="330" cy="650" r="1.6"></circle><circle cx="352" cy="664" r="1.4"></circle><circle cx="378" cy="656" r="1.8"></circle>
+    <circle cx="404" cy="672" r="1.4"></circle><circle cx="430" cy="666" r="1.6"></circle><circle cx="456" cy="684" r="1.4"></circle>
+    <circle cx="540" cy="900" r="1.6"></circle><circle cx="566" cy="912" r="1.4"></circle><circle cx="592" cy="906" r="1.8"></circle>
+    <circle cx="618" cy="922" r="1.4"></circle><circle cx="644" cy="916" r="1.6"></circle><circle cx="670" cy="934" r="1.4"></circle>
+    <circle cx="500" cy="1000" r="1.6"></circle><circle cx="526" cy="1012" r="1.4"></circle><circle cx="552" cy="1006" r="1.6"></circle>
+    <circle cx="578" cy="1022" r="1.4"></circle><circle cx="604" cy="1016" r="1.6"></circle><circle cx="700" cy="960" r="1.4"></circle>
+  </g>
+
+  
+  <g fill="none" stroke="url(#streamOut)" stroke-width="1.4">
+    <path d="M1000 945 C 1070 945, 1110 945, 1150 945"></path>
+    <path d="M1020 935 C 1080 880, 1110 800, 1140 728"></path>
+    <path d="M1020 958 C 1080 1015, 1110 1100, 1138 1178"></path>
+  </g>
+
+  
+  <g>
+    <circle cx="1000" cy="945" r="14" fill="url(#goldDot)" filter="url(#glowSoft)"></circle>
+    <rect x="966" y="911" width="68" height="68" rx="3" fill="none" stroke="#f5f3ef" stroke-opacity="0.92" stroke-width="2"></rect>
+    
+    <g stroke="#f5f3ef" stroke-opacity="0.9" stroke-width="1.4">
+      <path d="M1000 905 V985"></path><path d="M960 945 H1040"></path>
+    </g>
+    <circle cx="1000" cy="945" r="6" fill="#ffffff"></circle>
+    <circle cx="1000" cy="945" r="13" fill="none" stroke="#b8e6ff" stroke-opacity="0.5" stroke-width="1"></circle>
+  </g>
+
+  
+  <g>
+    <circle cx="1150" cy="945" r="22" fill="url(#goldDot)" filter="url(#glowSoft)"></circle>
+    <circle cx="1150" cy="945" r="7" fill="#f3e6c8"></circle>
+    <circle cx="1150" cy="945" r="16" fill="none" stroke="#c8b07a" stroke-opacity="0.5" stroke-width="1"></circle>
+  </g>
+
+  
+  <g>
+    <path d="M0 1500 L0 1340 C 240 1270, 430 1380, 650 1330 C 900 1272, 1020 1360, 1200 1300 L1200 1500 Z" fill="url(#dune)"></path>
+    <path d="M0 1500 L0 1430 C 280 1380, 470 1460, 720 1410 C 960 1362, 1060 1440, 1200 1402 L1200 1500 Z" fill="#0c0d10" fill-opacity="0.9"></path>
+    <path d="M0 1340 C 240 1270, 430 1380, 650 1330 C 900 1272, 1020 1360, 1200 1300" fill="none" stroke="#c8c7c0" stroke-opacity="0.10" stroke-width="1.2"></path>
+    <path d="M0 1410 C 280 1360, 470 1448, 720 1396 C 960 1346, 1060 1428, 1200 1388" fill="none" stroke="#c8c7c0" stroke-opacity="0.08" stroke-width="1"></path>
+    <rect x="0" y="1240" width="1200" height="260" fill="url(#duneSheen)"></rect>
+  </g>
+
+  
+  <g stroke="#c8b07a" stroke-opacity="0.35" stroke-width="1">
+    <path d="M120 1500 V1330"></path><path d="M210 1500 V1380"></path><path d="M300 1500 V1300"></path>
+    <path d="M430 1500 V1360"></path><path d="M520 1500 V1290"></path><path d="M640 1500 V1340"></path>
+    <path d="M760 1500 V1280"></path><path d="M880 1500 V1330"></path><path d="M980 1500 V1290"></path>
+    <path d="M1080 1500 V1340"></path><path d="M1150 1500 V1300"></path>
+  </g>
+  <g fill="#f3e6c8" fill-opacity="0.8">
+    <circle cx="300" cy="1300" r="2"></circle><circle cx="520" cy="1290" r="2.2"></circle><circle cx="760" cy="1280" r="2.4"></circle>
+    <circle cx="980" cy="1290" r="2"></circle><circle cx="1150" cy="1300" r="2"></circle><circle cx="640" cy="1340" r="1.8"></circle>
+  </g>
+  
+  <g fill="#c8b07a" fill-opacity="0.6">
+    <circle cx="160" cy="1380" r="1.4"></circle><circle cx="240" cy="1420" r="1.2"></circle><circle cx="360" cy="1390" r="1.6"></circle>
+    <circle cx="450" cy="1430" r="1.2"></circle><circle cx="560" cy="1395" r="1.4"></circle><circle cx="680" cy="1435" r="1.2"></circle>
+    <circle cx="800" cy="1400" r="1.6"></circle><circle cx="900" cy="1438" r="1.2"></circle><circle cx="1020" cy="1402" r="1.4"></circle>
+    <circle cx="1120" cy="1440" r="1.2"></circle><circle cx="500" cy="1460" r="1.2"></circle><circle cx="720" cy="1465" r="1.4"></circle>
+  </g>
+
+  
+  <g font-family="Inter, &#39;Helvetica Neue&#39;, sans-serif" font-size="26" font-weight="500" letter-spacing="2" fill="#f5f3ef">
+    <text x="40" y="528">TREND SIGNAL</text>
+    <text x="40" y="800">MARKET INTELLIGENCE</text>
+    <text x="40" y="1030">BRAND ANALYTICS</text>
+    <text x="40" y="1260">TEXTILE MATERIALS</text>
+  </g>
+  <g font-family="Inter, &#39;Helvetica Neue&#39;, sans-serif" font-size="26" font-weight="500" letter-spacing="2" fill="#f5f3ef" text-anchor="end">
+    <text x="1180" y="708">AI INSIGHT</text>
+    <text x="1180" y="1198">DECISION</text>
+    <text x="1180" y="1230">OUTPUT</text>
+  </g>
+
+  
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.04"></rect>
+</svg>

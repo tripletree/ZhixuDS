@@ -1,0 +1,27 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="c-bg" x1="0" y1="0" x2="800" y2="600"><stop offset="0" stop-color="#13171f"></stop><stop offset="1" stop-color="#0a0c10"></stop></linearGradient>
+    <filter id="c-grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#c-bg)"></rect>
+  
+  <rect x="120" y="120" width="380" height="400" rx="10" fill="#181d27" transform="rotate(-5 310 320)"></rect>
+  <rect x="150" y="160" width="320" height="40" rx="4" fill="#eceae1" fill-opacity="0.18" transform="rotate(-5 310 320)"></rect>
+  <rect x="150" y="220" width="200" height="14" rx="3" fill="#8b8f99" fill-opacity="0.4" transform="rotate(-5 310 320)"></rect>
+  
+  <g transform="translate(430 250) rotate(8)">
+    <rect x="0" y="0" width="70" height="120" rx="6" fill="#9a4250" opacity="0.85"></rect>
+    <rect x="22" y="-14" width="70" height="120" rx="6" fill="#c9ad7c" opacity="0.9" transform="rotate(6)"></rect>
+    <rect x="46" y="-26" width="70" height="120" rx="6" fill="#57b8d4" opacity="0.8" transform="rotate(12)"></rect>
+    <rect x="70" y="-36" width="70" height="120" rx="6" fill="#eceae1" opacity="0.85" transform="rotate(18)"></rect>
+    <rect x="94" y="-44" width="70" height="120" rx="6" fill="#565b66" opacity="0.85" transform="rotate(24)"></rect>
+  </g>
+  
+  <g transform="translate(180 380)">
+    <rect x="0" y="0" width="80" height="80" rx="6" fill="#c9ad7c" fill-opacity="0.35"></rect>
+    <rect x="96" y="0" width="80" height="80" rx="6" fill="#57b8d4" fill-opacity="0.28"></rect>
+    <rect x="48" y="92" width="80" height="80" rx="6" fill="#eceae1" fill-opacity="0.2"></rect>
+  </g>
+  <rect width="800" height="600" filter="url(#c-grain)" opacity="0.06"></rect>
+  <text x="40" y="572" font-family="Inter, sans-serif" font-size="13" letter-spacing="2" fill="#c8c7c0" opacity="0.45">占位 · SWATCH &amp; PROPOSAL</text>
+</svg>

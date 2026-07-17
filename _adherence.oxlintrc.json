@@ -1,0 +1,211 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "ui_kits/landing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Cormorant Garamond|Inter|Noto Sans SC))/i]",
+        "message": "Font not provided by the design system. Available: Cormorant Garamond, Inter, Noto Sans SC."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BrandMark'] > JSXAttribute > JSXIdentifier[name!=/^(?:size|key|ref|className|style|children)$/]",
+        "message": "<BrandMark> doesn't accept that prop. Declared props: size."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|icon|children|style|onClick|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, icon, children, style, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost|nav)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost' | 'nav'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|strokeWidth|style|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, size, strokeWidth, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Reveal'] > JSXAttribute > JSXIdentifier[name!=/^(?:y|x|delay|duration|children|style|key|ref|className|style|children)$/]",
+        "message": "<Reveal> doesn't accept that prop. Declared props: y, x, delay, duration, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|title|copy|align|key|ref|className|style|children)$/]",
+        "message": "<SectionHeading> doesn't accept that prop. Declared props: eyebrow, title, copy, align."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:center|left)$/]",
+        "message": "<SectionHeading> align must be one of 'center' | 'left'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "BrandMark": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "Reveal": {
+        "replaces": []
+      },
+      "SectionHeading": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-bright",
+      "--border-hairline",
+      "--border-panel",
+      "--color-azure",
+      "--color-azure-bright",
+      "--color-azure-deep",
+      "--color-bone",
+      "--color-bone-dim",
+      "--color-bone-soft",
+      "--color-champagne",
+      "--color-ink-700",
+      "--color-ink-750",
+      "--color-ink-800",
+      "--color-ink-850",
+      "--color-ink-900",
+      "--color-ink-950",
+      "--color-mist",
+      "--color-mist-dark",
+      "--color-rouge",
+      "--cta-glow",
+      "--cta-hover",
+      "--ease-calm",
+      "--eyebrow-size",
+      "--eyebrow-tracking",
+      "--font-display",
+      "--font-sans",
+      "--font-zh",
+      "--hero-base",
+      "--radius-card",
+      "--radius-feature",
+      "--radius-panel",
+      "--radius-pill",
+      "--shadow-card-light",
+      "--surface-card",
+      "--surface-page",
+      "--surface-raised",
+      "--text-body",
+      "--text-caption",
+      "--text-dim",
+      "--text-faint",
+      "--text-h2",
+      "--text-h3",
+      "--text-hero",
+      "--text-lead",
+      "--text-micro",
+      "--text-soft",
+      "--text-strong",
+      "--text-title"
+    ],
+    "tokenKinds": {
+      "--color-ink-950": "color",
+      "--color-ink-900": "color",
+      "--color-ink-850": "color",
+      "--color-ink-800": "color",
+      "--color-ink-750": "color",
+      "--color-ink-700": "color",
+      "--color-bone": "color",
+      "--color-bone-soft": "color",
+      "--color-bone-dim": "color",
+      "--color-mist": "color",
+      "--color-mist-dark": "color",
+      "--color-azure": "color",
+      "--color-azure-bright": "color",
+      "--color-azure-deep": "color",
+      "--color-champagne": "color",
+      "--color-rouge": "color",
+      "--surface-page": "color",
+      "--surface-raised": "color",
+      "--surface-card": "color",
+      "--text-strong": "font",
+      "--text-body": "font",
+      "--text-soft": "font",
+      "--text-dim": "font",
+      "--text-faint": "font",
+      "--border-hairline": "color",
+      "--border-panel": "color",
+      "--accent": "color",
+      "--accent-bright": "color",
+      "--hero-base": "color",
+      "--cta-hover": "color",
+      "--cta-glow": "color",
+      "--font-sans": "font",
+      "--font-display": "font",
+      "--font-zh": "font",
+      "--text-hero": "font",
+      "--text-h2": "font",
+      "--text-h3": "font",
+      "--text-title": "font",
+      "--text-lead": "font",
+      "--text-caption": "font",
+      "--text-micro": "font",
+      "--eyebrow-size": "spacing",
+      "--eyebrow-tracking": "font",
+      "--ease-calm": "other",
+      "--radius-card": "radius",
+      "--radius-feature": "radius",
+      "--radius-panel": "radius",
+      "--radius-pill": "radius",
+      "--shadow-card-light": "shadow"
+    },
+    "fontFamilies": [
+      "Cormorant Garamond",
+      "Inter",
+      "Noto Sans SC"
+    ]
+  }
+}

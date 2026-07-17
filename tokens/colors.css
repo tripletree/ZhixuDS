@@ -1,0 +1,65 @@
+/* 知序 FabricMind — color tokens. Dark is the default theme; add .theme-light (or html.light) to invert. */
+:root{
+  /* Base 01 · 曜石黑 obsidian ink */
+  --color-ink-950:#07080a;
+  --color-ink-900:#0a0c10;
+  --color-ink-850:#0e1117;
+  --color-ink-800:#13171f;
+  --color-ink-750:#181d27;
+  --color-ink-700:#1f2531;
+  /* Base 02 · 冷米白 cool bone */
+  --color-bone:#eceae1;
+  --color-bone-soft:#c8c7c0;
+  --color-bone-dim:#9a9a95;
+  /* Base 03 · 金属雾灰 metallic mist */
+  --color-mist:#8b8f99;
+  --color-mist-dark:#565b66;
+  /* Accent 01 · 电光青蓝 electric azure */
+  --color-azure:#57b8d4;
+  --color-azure-bright:#6fd0ec;
+  --color-azure-deep:#2c7e98;
+  /* Accent 02 · 香槟金 / 胭脂红 (sparingly) */
+  --color-champagne:#c9ad7c;
+  --color-rouge:#9a4250;
+  /* Semantic aliases */
+  --surface-page:var(--color-ink-950);
+  --surface-raised:var(--color-ink-850);
+  --surface-card:var(--color-ink-800);
+  --text-strong:#ffffff;
+  --text-body:var(--color-bone);
+  --text-soft:var(--color-bone-soft);
+  --text-dim:var(--color-bone-dim);
+  --text-faint:var(--color-mist);
+  --border-hairline:rgba(236,234,225,0.08);
+  --border-panel:rgba(255,255,255,0.14);
+  --accent:var(--color-azure);
+  --accent-bright:var(--color-azure-bright);
+  /* Hero navy field (r g b triplet for alpha composition) */
+  --hero-base:7 13 25; /* @kind color */
+  /* Primary CTA pill: hover surface + glow */
+  --cta-hover:#ffffff;
+  --cta-glow:rgba(236,234,225,0.4);
+}
+html.light,.theme-light{
+  --color-ink-950:#ffffff;
+  --color-ink-900:#f7f7f8;
+  --color-ink-850:#f0f0f2;
+  --color-ink-800:#e8e9ec;
+  --color-ink-750:#dfe1e5;
+  --color-ink-700:#d2d5da;
+  --color-bone:#14171c;
+  --color-bone-soft:#3c424d;
+  --color-bone-dim:#5d6470;
+  --color-mist:#6f7480;
+  --color-mist-dark:#a3a9b4;
+  --color-azure:#2c7e98;
+  --color-azure-bright:#2795b5;
+  --color-azure-deep:#57b8d4;
+  --color-champagne:#a5854e;
+  --text-strong:#14171c;
+  --border-hairline:rgba(0,0,0,0.06);
+  --border-panel:rgba(0,0,0,0.06);
+  --hero-base:255 255 255; /* @kind color */
+  --cta-hover:#272d38;
+  --cta-glow:rgba(20,23,28,0.3);
+}

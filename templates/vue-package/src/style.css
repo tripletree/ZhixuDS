@@ -1,0 +1,311 @@
+@import 'tailwindcss';
+
+/* `light:` utility variant, active when the light theme class is on <html> */
+@custom-variant light (&:where(html.light, html.light *));
+
+/* ------------------------------------------------------------------ */
+/*  知序 FabricMind — Design tokens                                    */
+/*  高级时尚 (Fashion) + 智能科技 (Intelligence)                        */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Base 01 · 曜石黑 / 墨黑 (obsidian ink) */
+  --color-ink-950: #07080a;
+  --color-ink-900: #0a0c10;
+  --color-ink-850: #0e1117;
+  --color-ink-800: #13171f;
+  --color-ink-750: #181d27;
+  --color-ink-700: #1f2531;
+
+  /* Base 02 · 冷白 / 米白偏冷 (cool bone) */
+  --color-bone: #eceae1;
+  --color-bone-soft: #c8c7c0;
+  --color-bone-dim: #9a9a95;
+
+  /* Base 03 · 雾灰 / 金属灰 (metallic mist) */
+  --color-mist: #8b8f99;
+  --color-mist-dark: #565b66;
+
+  /* Accent 01 · 电光蓝 / 冷青蓝 (electric azure) */
+  --color-azure: #57b8d4;
+  --color-azure-bright: #6fd0ec;
+  --color-azure-deep: #2c7e98;
+
+  /* Accent 02 · 香槟金 / 胭脂红 (champagne / rouge — sparingly) */
+  --color-champagne: #c9ad7c;
+  --color-rouge: #9a4250;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-zh: 'Noto Sans SC', 'Inter', ui-sans-serif, sans-serif;
+
+  /* Motion easing */
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Light theme — toggled via `light` class on <html>                  */
+/*  Semantic tokens invert: ink-* become light surfaces, bone becomes  */
+/*  dark text, so token-based utilities flip automatically.            */
+/* ------------------------------------------------------------------ */
+html.light {
+  /* Base 01 · ink → white / neutral light surfaces */
+  --color-ink-950: #ffffff;
+  --color-ink-900: #f7f7f8;
+  --color-ink-850: #f0f0f2;
+  --color-ink-800: #e8e9ec;
+  --color-ink-750: #dfe1e5;
+  --color-ink-700: #d2d5da;
+
+  /* Base 02 · bone → dark ink text */
+  --color-bone: #14171c;
+  --color-bone-soft: #3c424d;
+  --color-bone-dim: #5d6470;
+
+  /* Base 03 · mist stays neutral, slightly darkened for contrast */
+  --color-mist: #6f7480;
+  --color-mist-dark: #a3a9b4;
+
+  /* Accent 01 · azure deepened so it reads on white */
+  --color-azure: #2c7e98;
+  --color-azure-bright: #2795b5;
+  --color-azure-deep: #57b8d4;
+
+  /* Accent 02 · champagne darkened toward bronze */
+  --color-champagne: #a5854e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :root {
+    /* Solid navy field shared by the hero + framework blend (r g b) */
+    --hero-base: 7 13 25;
+    /* Primary CTA pill: hover surface + glow */
+    --cta-hover: #ffffff;
+    --cta-glow: rgba(236, 234, 225, 0.4);
+  }
+
+  html.light {
+    --hero-base: 255 255 255;
+    --cta-hover: #272d38;
+    --cta-glow: rgba(20, 23, 28, 0.3);
+  }
+
+  body {
+    margin: 0;
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(46, 107, 255, 0.18), transparent 24%),
+      linear-gradient(180deg, #0d0e11 0%, #12141a 42%, #0d0f12 100%);
+  }
+
+  html.light body {
+    background: #ffffff;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-azure) 35%, transparent);
+    color: var(--color-bone);
+  }
+
+  /* Thin, calm scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink-700);
+    border-radius: 999px;
+    border: 3px solid var(--color-ink-950);
+  }
+
+  /* Cross-fade colors while the theme toggles (class added by useTheme) */
+  html.theme-anim,
+  html.theme-anim *,
+  html.theme-anim *::before,
+  html.theme-anim *::after {
+    transition:
+      background-color 0.4s var(--ease-calm),
+      background 0.4s var(--ease-calm),
+      color 0.4s var(--ease-calm),
+      border-color 0.4s var(--ease-calm),
+      box-shadow 0.4s var(--ease-calm) !important;
+  }
+}
+
+@layer utilities {
+  /* Fine technical grid / coordinate overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(139, 143, 153, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 143, 153, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(139, 143, 153, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 143, 153, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  html.light .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(60, 66, 77, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.06) 1px, transparent 1px);
+  }
+
+  html.light .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgba(60, 66, 77, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.05) 1px, transparent 1px);
+  }
+
+  /* Low-contrast film grain / noise */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* Frosted / fog glass panel */
+  .glass {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(236, 234, 225, 0.08);
+  }
+
+  /* Light theme: pale frosted glass — heavy blur, hairline edge, diffuse
+     shadow (matches the ChatGPT.com dropdown look) */
+  html.light .glass {
+    background: rgba(246, 246, 247, 0.72);
+    backdrop-filter: blur(28px) saturate(1.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 24px 60px -24px rgba(0, 0, 0, 0.16),
+      0 4px 14px -8px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.)
+     The diagonal sheen lives in the background stack (not an overlay pseudo-element)
+     so text always paints crisply on top. */
+  .panel {
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+      rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  /* Light theme: near-white cards with a hairline border and diffuse shadow */
+  html.light .panel {
+    background: linear-gradient(180deg, #ffffff, #fbfbfc);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.16);
+  }
+
+  /* Blue radial glow in the top-right corner — matches .feature-card::after */
+  .glow-blue {
+    position: relative;
+    overflow: hidden;
+  }
+  .glow-blue::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -60px;
+    top: -60px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.16), transparent 68%);
+    pointer-events: none;
+  }
+
+  html.light .glow-blue::after {
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 68%);
+  }
+
+  /* Smaller glow for compact cards */
+  .glow-blue-sm::after {
+    width: 130px;
+    height: 130px;
+    right: -40px;
+    top: -40px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Text color overrides */
+  .text-bone {
+    color: #ffffff;
+  }
+  .text-bone-dim {
+    color: #eceae1;
+  }
+  html.light .text-bone {
+    color: #14171c;
+  }
+  html.light .text-bone-dim {
+    color: #454b56;
+  }
+
+  /* Reduced-motion shimmer guard handled per-component */
+  @keyframes shimmer-sweep {
+    0% {
+      transform: translateY(-120%);
+    }
+    100% {
+      transform: translateY(220%);
+    }
+  }
+  .animate-shimmer {
+    animation: shimmer-sweep 3.4s var(--ease-calm) infinite;
+  }
+
+  @keyframes caret-blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+  .animate-caret {
+    animation: caret-blink 1.1s steps(1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-shimmer,
+    .animate-caret {
+      animation: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

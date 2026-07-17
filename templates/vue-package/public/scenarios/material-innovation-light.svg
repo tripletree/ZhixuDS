@@ -1,0 +1,24 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="m-bg" x1="0" y1="0" x2="800" y2="600"><stop offset="0" stop-color="#fbfaf7"></stop><stop offset="0.5" stop-color="#f2f4f8"></stop><stop offset="1" stop-color="#e9ecf2"></stop></linearGradient>
+    <linearGradient id="m-fold" x1="0" y1="0" x2="800" y2="600"><stop offset="0" stop-color="#c9ad7c" stop-opacity="0.28"></stop><stop offset="0.5" stop-color="#8b8f99" stop-opacity="0.12"></stop><stop offset="1" stop-color="#d7dce4" stop-opacity="0.4"></stop></linearGradient>
+    <filter id="m-soft"><feGaussianBlur stdDeviation="6"></feGaussianBlur></filter>
+    <filter id="m-grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#m-bg)"></rect>
+  <rect width="800" height="600" fill="url(#m-fold)"></rect>
+  
+  <g filter="url(#m-soft)" stroke="#3c424d" stroke-opacity="0.14" stroke-width="2" fill="none">
+    <path d="M-40 120 C 200 200, 240 320, 480 360 C 640 388, 720 480, 860 520"></path>
+    <path d="M-40 200 C 220 280, 260 400, 500 440 C 660 468, 740 540, 860 600"></path>
+    <path d="M-40 40 C 180 120, 220 240, 460 280 C 620 308, 700 400, 860 440"></path>
+    <path d="M-40 300 C 240 360, 300 460, 520 520"></path>
+  </g>
+  <g filter="url(#m-soft)" stroke="#a5854e" stroke-opacity="0.3" stroke-width="3" fill="none">
+    <path d="M-40 160 C 210 240, 250 360, 490 400 C 650 428, 730 510, 860 560"></path>
+  </g>
+  
+  <ellipse cx="280" cy="220" rx="260" ry="160" fill="#ffffff" fill-opacity="0.55" filter="url(#m-soft)"></ellipse>
+  <rect width="800" height="600" filter="url(#m-grain)" opacity="0.05"></rect>
+  <text x="40" y="572" font-family="Inter, sans-serif" font-size="13" letter-spacing="2" fill="#5d6470" opacity="0.55">占位 · FABRIC TEXTURE</text>
+</svg>

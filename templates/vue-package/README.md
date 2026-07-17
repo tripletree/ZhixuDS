@@ -1,0 +1,66 @@
+# 知序 FabricMind — Vue 3 Package
+
+Production-grade Vue implementation of the design system — the canonical source stack, vendored from https://github.com/tripletree/Zhixu plus extracted UI primitives.
+
+## Stack
+
+- **Vue 3.5** + **TypeScript 5.8** (`vue-tsc` for type-checking: `npm run typecheck`)
+- **Vite 6** + `@vitejs/plugin-vue`
+- **Tailwind CSS 4** (`@tailwindcss/vite`, CSS-first tokens in `src/style.css` `@theme`)
+- **motion-v** (Motion for Vue) — scroll reveals, layered fades, idle drift
+- **lucide-vue-next** — linear icons
+
+```bash
+npm install
+npm run dev        # dev server
+npm run build      # vue-tsc type-check + production build
+```
+
+## Layout
+
+- `src/style.css` — all design tokens (`@theme`): ink/bone/mist/azure/champagne/rouge, fonts, `--ease-calm`; light theme via `html.light`; `.glass` / `.panel` / `.bg-grid` / `.glow-blue` utilities.
+- `src/components/ui/` — primitives: `BrandMark`, `Button` + `IconButton` (extracted from repeated inline pill markup — additions to the source), `SectionHeading`, `Reveal`, `CountUp`.
+- `src/components/` — landing sections: `SiteNav`, `HeroSection`, `SystemFramework`, `FeatureMatrix`, `BusinessScenarios`, `CtaFooter`, `ContactDialog`.
+- `src/components/visuals/` — product mocks: `DashboardMock`, `ChatMock`, `ReportMock`, `TryOnMock`.
+- `src/composables/` — `useTheme` (dark/light, localStorage `fm-theme`, cross-fade), `useContactDialog`.
+- `public/` — hero visuals, scenario illustrations (dark + `-light`), favicon/brand mark, WeChat QR.
+
+Usage:
+
+```vue
+<script setup lang="ts">
+import { ArrowRight } from 'lucide-vue-next'
+import Button from './components/ui/Button.vue'
+</script>
+<template>
+  <Button size="md">
+    预约演示
+    <template #icon><ArrowRight class="size-4 transition-transform group-hover:translate-x-1" /></template>
+  </Button>
+</template>
+```
+
+Note: the interactive Design System tab in this workspace renders the React mirror (`components/`, `ui_kits/` at the project root); this folder is the Vue source of truth for production work. Keep the two in sync when tokens change (root `tokens/*.css` ↔ `src/style.css`).
+
+## Install as a component library
+
+The package is npm-ready but remains private until a registry and publishing policy are selected.
+
+```bash
+npm install @zhixu/fabricmind-ui vue motion-v
+```
+
+Import components and the shared design-system styles:
+
+```vue
+<script setup lang="ts">
+import { Button } from '@zhixu/fabricmind-ui'
+import '@zhixu/fabricmind-ui/style.css'
+</script>
+
+<template>
+  <Button>预约演示</Button>
+</template>
+```
+
+Run `npm run build:lib` to create the publishable output in `dist-lib/`, and run `npm run verify:package` before publishing or sharing a tarball.

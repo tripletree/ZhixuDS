@@ -1,0 +1,42 @@
+/* 知序 FabricMind — surfaces, grids, glass, glow, motion */
+:root{
+  --ease-calm:cubic-bezier(0.22,1,0.36,1); /* @kind other */
+  --radius-card:1rem;         /* rounded-2xl pipeline/scenario cards */
+  --radius-feature:1.5rem;    /* rounded-3xl feature cards */
+  --radius-panel:0.75rem;     /* rounded-xl inner panels */
+  --radius-pill:999px;
+  --shadow-card-light:0 18px 44px -26px rgba(0,0,0,0.16);
+}
+body{margin:0;color:var(--color-bone);font-family:var(--font-sans);font-weight:400;background:radial-gradient(circle at 80% 20%,rgba(46,107,255,0.18),transparent 24%),linear-gradient(180deg,#0d0e11 0%,#12141a 42%,#0d0f12 100%)}
+html.light body{background:#ffffff}
+::selection{background:color-mix(in srgb,var(--color-azure) 35%,transparent);color:var(--color-bone)}
+a{color:var(--color-azure)}a:hover{color:var(--color-azure-bright)}
+/* Fine technical grid overlays */
+.bg-grid{background-image:linear-gradient(to right,rgba(139,143,153,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(139,143,153,0.06) 1px,transparent 1px);background-size:64px 64px}
+.bg-grid-fine{background-image:linear-gradient(to right,rgba(139,143,153,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(139,143,153,0.05) 1px,transparent 1px);background-size:28px 28px}
+html.light .bg-grid,.theme-light .bg-grid{background-image:linear-gradient(to right,rgba(60,66,77,0.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(60,66,77,0.06) 1px,transparent 1px)}
+html.light .bg-grid-fine,.theme-light .bg-grid-fine{background-image:linear-gradient(to right,rgba(60,66,77,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(60,66,77,0.05) 1px,transparent 1px)}
+/* Low-contrast film grain */
+.bg-noise{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+/* Frosted fog-glass panel */
+.glass{background:linear-gradient(160deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));backdrop-filter:blur(12px);border:1px solid rgba(236,234,225,0.08)}
+html.light .glass,.theme-light .glass{background:rgba(246,246,247,0.72);backdrop-filter:blur(28px) saturate(1.8);border:1px solid rgba(0,0,0,0.05);box-shadow:0 24px 60px -24px rgba(0,0,0,0.16),0 4px 14px -8px rgba(0,0,0,0.06)}
+/* Light-highlight content panel (no backdrop-filter) */
+.panel{position:relative;background:linear-gradient(135deg,rgba(255,255,255,0.06),transparent 45%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03)),rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.14)}
+html.light .panel,.theme-light .panel{background:linear-gradient(180deg,#ffffff,#fbfbfc);border:1px solid rgba(0,0,0,0.06);box-shadow:0 18px 44px -26px rgba(0,0,0,0.16)}
+/* Blue radial corner glow */
+.glow-blue{position:relative;overflow:hidden}
+.glow-blue::after{content:'';position:absolute;width:220px;height:220px;right:-60px;top:-60px;border-radius:999px;background:radial-gradient(circle,rgba(56,189,248,0.16),transparent 68%);pointer-events:none}
+html.light .glow-blue::after,.theme-light .glow-blue::after{background:radial-gradient(circle,rgba(56,189,248,0.12),transparent 68%)}
+.glow-blue-sm::after{width:130px;height:130px;right:-40px;top:-40px}
+/* Eyebrow label */
+.eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:500}
+.text-balance{text-wrap:balance}
+/* Animations */
+@keyframes shimmer-sweep{0%{transform:translateY(-120%)}100%{transform:translateY(220%)}}
+.animate-shimmer{animation:shimmer-sweep 3.4s var(--ease-calm) infinite}
+@keyframes caret-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.animate-caret{animation:caret-blink 1.1s steps(1) infinite}
+@keyframes ping{75%,100%{transform:scale(2);opacity:0}}
+.animate-ping{animation:ping 1s cubic-bezier(0,0,0.2,1) infinite}
+@media (prefers-reduced-motion:reduce){.animate-shimmer,.animate-caret,.animate-ping{animation:none}}
