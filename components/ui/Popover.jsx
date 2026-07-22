@@ -7,7 +7,7 @@ const PLACE = {
   'top-start': { bottom: 'calc(100% + 8px)', left: 0 },
   'top-end': { bottom: 'calc(100% + 8px)', right: 0 },
 };
-export function Popover({ anchor, open, onOpenChange, placement = 'bottom-start', width = 320, children, style }) {
+export function Popover({ anchor, open, onOpenChange, placement = 'bottom-start', width = 320, padding = 16, children, style }) {
   const [innerOpen, setInnerOpen] = React.useState(false);
   const controlled = open !== undefined;
   const isOpen = controlled ? open : innerOpen;
@@ -26,7 +26,7 @@ export function Popover({ anchor, open, onOpenChange, placement = 'bottom-start'
       <span onClick={() => setOpen(!isOpen)} style={{ display: 'inline-block' }}>{anchor}</span>
       {isOpen ? (
         <div className="fm-pop-in" role="dialog" style={{
-          position: 'absolute', zIndex: 60, width, padding: 16,
+          position: 'absolute', zIndex: 60, width, padding,
           borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
           background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)', backdropFilter: 'blur(12px)',
           boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)', ...PLACE[placement] || PLACE['bottom-start'],

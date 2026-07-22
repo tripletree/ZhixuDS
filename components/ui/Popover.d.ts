@@ -13,6 +13,8 @@ export interface PopoverProps {
   placement?: 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end';
   /** Panel width in px @default 320 */
   width?: number;
+  /** Panel padding in px (menus use 6) @default 16 */
+  padding?: number;
   /** Panel content */
   children?: React.ReactNode;
   style?: React.CSSProperties;
