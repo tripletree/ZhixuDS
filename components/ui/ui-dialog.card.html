@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="700x420" name="Dialog · Dark" subtitle="Dialog — ink/80 blurred overlay · glass card · fm-dialog-in" -->
+<!-- @dsCard group="Components" viewport="700x420" name="Dialog · Dark" subtitle="Dialog — blurred overlay · glass card · footer actions" -->
 <!doctype html>
 <html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
@@ -14,7 +14,11 @@ function Demo(){
   return (
     <div className="bg-grid" style={{minHeight:420,display:'flex',alignItems:'center',justifyContent:'center'}}>
       <Button icon="arrow-right" onClick={()=>setOpen(true)}>预约演示</Button>
-      <Dialog open={open} onClose={()=>setOpen(false)} align="left" width={420} title="预约演示" subtitle="留下联系方式，知序顾问将在 1 个工作日内与你联系">
+      <Dialog open={open} onClose={()=>setOpen(false)} align="left" width={420} title="预约演示" subtitle="留下联系方式，知序顾问将在 1 个工作日内与你联系"
+        footer={<>
+          <Button variant="ghost" size="sm" onClick={()=>setOpen(false)}>取消</Button>
+          <Button size="sm" onClick={()=>setOpen(false)}>提交预约</Button>
+        </>}>
         <div style={{marginTop:20,display:'flex',flexDirection:'column',gap:14}}>
           <Field label="企业名称" required><Input placeholder="请输入企业名称" /></Field>
           <Field label="需求场景">
@@ -24,7 +28,6 @@ function Demo(){
               <option value="proposal">客户提案</option>
             </Select>
           </Field>
-          <Button style={{justifyContent:'center',marginTop:4,width:'100%'}}>提交预约</Button>
         </div>
       </Dialog>
     </div>

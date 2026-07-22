@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"daed8a751029","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/Listbox.jsx":"910aee125bee","components/ui/Panel.jsx":"a5e835154358","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/Checkbox.jsx":"fbf0670b1543","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"4017dea86c68","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/FilterChips.jsx":"32a6fccb8771","components/ui/Listbox.jsx":"910aee125bee","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"123a1e0562fe","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"52d513c97b7b","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1250,6 +1250,451 @@ function Listbox({
 Object.assign(__ds_scope, { Listbox });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Listbox.jsx", error: String((e && e.message) || e) }); }
 
+// components/ui/Checkbox.jsx
+try { (() => {
+/* Checkable filter control — 16px box, azure fill when checked; the check strokes in ink-950,
+   which inverts to white in the light theme so contrast holds on both grounds. */
+function Checkbox({
+  checked,
+  indeterminate = false,
+  onChange,
+  disabled = false,
+  children,
+  style
+}) {
+  const [focus, setFocus] = React.useState(false);
+  const on = checked || indeterminate;
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      opacity: disabled ? 0.45 : 1,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: !!checked,
+    disabled: disabled,
+    onChange: e => onChange && onChange(e.target.checked),
+    onFocus: () => setFocus(true),
+    onBlur: () => setFocus(false),
+    style: {
+      position: 'absolute',
+      width: 1,
+      height: 1,
+      opacity: 0,
+      margin: 0,
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 16,
+      height: 16,
+      flex: 'none',
+      borderRadius: 4,
+      transition: 'all 0.2s var(--ease-calm)',
+      border: `1px solid ${on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
+      background: on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none',
+      color: 'var(--color-ink-950)'
+    }
+  }, indeterminate ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 2,
+      borderRadius: 1,
+      background: 'currentColor'
+    }
+  }) : checked ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "check",
+    size: 11,
+    strokeWidth: 3.5
+  }) : null), children != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: 'var(--color-bone-soft)'
+    }
+  }, children) : null);
+}
+function CheckboxGroup({
+  options = [],
+  value = [],
+  onChange,
+  columns,
+  gap = 10,
+  style
+}) {
+  const toggle = (v, on) => {
+    if (!onChange) return;
+    onChange(on ? [...value, v] : value.filter(x => x !== v));
+  };
+  const layout = columns ? {
+    display: 'grid',
+    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+    gap
+  } : {
+    display: 'flex',
+    flexDirection: 'column',
+    gap
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    role: "group",
+    style: {
+      ...layout,
+      ...style
+    }
+  }, options.map(o => /*#__PURE__*/React.createElement(Checkbox, {
+    key: o.value,
+    checked: value.includes(o.value),
+    disabled: o.disabled,
+    onChange: on => toggle(o.value, on)
+  }, o.label)));
+}
+Object.assign(__ds_scope, { Checkbox, CheckboxGroup });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Checkbox.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Radio.jsx
+try { (() => {
+/* Radio — 16px circle, azure ring + 8px azure dot when selected */
+function Radio({
+  checked,
+  onChange,
+  name,
+  disabled = false,
+  children,
+  style
+}) {
+  const [focus, setFocus] = React.useState(false);
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      opacity: disabled ? 0.45 : 1,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "radio",
+    name: name,
+    checked: !!checked,
+    disabled: disabled,
+    onChange: e => {
+      if (e.target.checked && onChange) onChange();
+    },
+    onFocus: () => setFocus(true),
+    onBlur: () => setFocus(false),
+    style: {
+      position: 'absolute',
+      width: 1,
+      height: 1,
+      opacity: 0,
+      margin: 0,
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 16,
+      height: 16,
+      flex: 'none',
+      borderRadius: 999,
+      transition: 'all 0.2s var(--ease-calm)',
+      border: `1px solid ${checked ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
+      background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none'
+    }
+  }, checked ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 999,
+      background: 'var(--color-azure)'
+    }
+  }) : null), children != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: 'var(--color-bone-soft)'
+    }
+  }, children) : null);
+}
+function RadioGroup({
+  options = [],
+  value,
+  onChange,
+  direction = 'column',
+  gap = 10,
+  name,
+  style
+}) {
+  const autoName = React.useId();
+  return /*#__PURE__*/React.createElement("div", {
+    role: "radiogroup",
+    style: {
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: 'wrap',
+      gap,
+      ...style
+    }
+  }, options.map(o => /*#__PURE__*/React.createElement(Radio, {
+    key: o.value,
+    name: name || autoName,
+    checked: o.value === value,
+    disabled: o.disabled,
+    onChange: () => onChange && onChange(o.value)
+  }, o.label)));
+}
+Object.assign(__ds_scope, { Radio, RadioGroup });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Radio.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/FilterChips.jsx
+try { (() => {
+/* Selectable chip group — pills only per readme; selected chips tint azure like the nav hover */
+function FilterChips({
+  options = [],
+  value,
+  onChange,
+  multiple = false,
+  title,
+  size = 'md',
+  style
+}) {
+  const [hovered, setHovered] = React.useState(null);
+  const sz = size === 'sm' ? {
+    padding: '4px 12px',
+    fontSize: 12
+  } : {
+    padding: '6px 14px',
+    fontSize: 13
+  };
+  const isOn = v => multiple ? Array.isArray(value) && value.includes(v) : v === value;
+  const pick = v => {
+    if (!onChange) return;
+    if (multiple) {
+      const cur = Array.isArray(value) ? value : [];
+      onChange(cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v]);
+    } else onChange(v);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: style
+  }, title ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 8,
+      fontSize: 12,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-dim)'
+    }
+  }, title) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, options.map(o => {
+    const on = isOn(o.value);
+    const hover = hovered === o.value;
+    return /*#__PURE__*/React.createElement("button", {
+      key: o.value,
+      type: "button",
+      "aria-pressed": on,
+      onClick: () => pick(o.value),
+      onMouseEnter: () => setHovered(o.value),
+      onMouseLeave: () => setHovered(null),
+      style: {
+        borderRadius: 999,
+        cursor: 'pointer',
+        fontFamily: 'var(--font-sans)',
+        fontWeight: 500,
+        letterSpacing: '0.02em',
+        whiteSpace: 'nowrap',
+        transition: 'all 0.3s var(--ease-calm)',
+        border: `1px solid ${on ? 'color-mix(in srgb, var(--color-azure) 40%, transparent)' : hover ? 'color-mix(in srgb, var(--color-azure) 30%, transparent)' : 'color-mix(in srgb, var(--color-bone) 12%, transparent)'}`,
+        background: on ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+        color: on ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
+        ...sz
+      }
+    }, o.label);
+  })));
+}
+Object.assign(__ds_scope, { FilterChips });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/FilterChips.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Collapse.jsx
+try { (() => {
+/* Collapsible filter group — bone title row, rotating chevron, calm grid-rows height animation */
+function Collapse({
+  title,
+  count,
+  defaultOpen = true,
+  open,
+  onToggle,
+  children,
+  style
+}) {
+  const [inner, setInner] = React.useState(defaultOpen);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : inner;
+  const toggle = () => {
+    if (!controlled) setInner(!isOpen);
+    if (onToggle) onToggle(!isOpen);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: style
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-expanded": isOpen,
+    onClick: toggle,
+    style: {
+      display: 'flex',
+      width: '100%',
+      alignItems: 'center',
+      gap: 8,
+      padding: '10px 0',
+      border: 'none',
+      background: 'transparent',
+      cursor: 'pointer',
+      textAlign: 'left',
+      fontFamily: 'var(--font-sans)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      fontSize: 14,
+      fontWeight: 500,
+      color: 'var(--color-bone)'
+    }
+  }, title), count != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      color: 'var(--color-mist)'
+    }
+  }, count) : null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      transform: isOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-down",
+    size: 14
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateRows: isOpen ? '1fr' : '0fr',
+      transition: 'grid-template-rows 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      paddingBottom: 12
+    }
+  }, children))));
+}
+Object.assign(__ds_scope, { Collapse });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Collapse.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Popover.jsx
+try { (() => {
+/* Floating panel — frosted ink surface (same recipe as the Listbox panel), fm-pop-in entrance,
+   outside-click + Escape close. Base layer for menus, filter panels, date editors. */
+const PLACE = {
+  'bottom-start': {
+    top: 'calc(100% + 8px)',
+    left: 0
+  },
+  'bottom-end': {
+    top: 'calc(100% + 8px)',
+    right: 0
+  },
+  'top-start': {
+    bottom: 'calc(100% + 8px)',
+    left: 0
+  },
+  'top-end': {
+    bottom: 'calc(100% + 8px)',
+    right: 0
+  }
+};
+function Popover({
+  anchor,
+  open,
+  onOpenChange,
+  placement = 'bottom-start',
+  width = 320,
+  children,
+  style
+}) {
+  const [innerOpen, setInnerOpen] = React.useState(false);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : innerOpen;
+  const rootRef = React.useRef(null);
+  const setOpen = v => {
+    if (!controlled) setInnerOpen(v);
+    if (onOpenChange) onOpenChange(v);
+  };
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const onDown = e => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [isOpen]);
+  return /*#__PURE__*/React.createElement("span", {
+    ref: rootRef,
+    style: {
+      position: 'relative',
+      display: 'inline-block',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    onClick: () => setOpen(!isOpen),
+    style: {
+      display: 'inline-block'
+    }
+  }, anchor), isOpen ? /*#__PURE__*/React.createElement("div", {
+    className: "fm-pop-in",
+    role: "dialog",
+    style: {
+      position: 'absolute',
+      zIndex: 60,
+      width,
+      padding: 16,
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)',
+      ...(PLACE[placement] || PLACE['bottom-start'])
+    }
+  }, children) : null);
+}
+Object.assign(__ds_scope, { Popover });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Popover.jsx", error: String((e && e.message) || e) }); }
+
 // components/ui/DataTable.jsx
 try { (() => {
 /* Hairline BI table — eyebrow-tracked header, hairline row rules, numerals emphasised via column strong flag */
@@ -1308,13 +1753,20 @@ Object.assign(__ds_scope, { DataTable });
 // components/ui/Dialog.jsx
 try { (() => {
 /* Modal — blurred ink overlay + frosted glass card, extracted from ContactDialog */
+const SIZES = {
+  sm: 384,
+  md: 480,
+  lg: 720
+};
 function Dialog({
   open,
   onClose,
   title,
   subtitle,
-  width = 384,
+  size = 'sm',
+  width,
   align = 'center',
+  footer,
   children
 }) {
   React.useEffect(() => {
@@ -1355,7 +1807,10 @@ function Dialog({
       position: 'relative',
       zIndex: 10,
       width: '100%',
-      maxWidth: width,
+      maxWidth: width ?? SIZES[size] ?? SIZES.sm,
+      maxHeight: '85vh',
+      display: 'flex',
+      flexDirection: 'column',
       borderRadius: '1rem',
       border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
       padding: 32,
@@ -1394,7 +1849,22 @@ function Dialog({
       lineHeight: 1.625,
       color: 'var(--color-bone-dim)'
     }
-  }, subtitle) : null, children));
+  }, subtitle) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: '1 1 auto',
+      overflowY: 'auto',
+      margin: '0 -8px',
+      padding: '0 8px'
+    }
+  }, children), footer ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      gap: 10,
+      flex: 'none'
+    }
+  }, footer) : null));
 }
 Object.assign(__ds_scope, { Dialog });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Dialog.jsx", error: String((e && e.message) || e) }); }
@@ -3493,6 +3963,12 @@ __ds_ns.Reveal = __ds_scope.Reveal;
 
 __ds_ns.SectionHeading = __ds_scope.SectionHeading;
 
+__ds_ns.Checkbox = __ds_scope.Checkbox;
+
+__ds_ns.CheckboxGroup = __ds_scope.CheckboxGroup;
+
+__ds_ns.Collapse = __ds_scope.Collapse;
+
 __ds_ns.DataTable = __ds_scope.DataTable;
 
 __ds_ns.Dialog = __ds_scope.Dialog;
@@ -3505,11 +3981,19 @@ __ds_ns.TextArea = __ds_scope.TextArea;
 
 __ds_ns.Select = __ds_scope.Select;
 
+__ds_ns.FilterChips = __ds_scope.FilterChips;
+
 __ds_ns.Listbox = __ds_scope.Listbox;
 
 __ds_ns.Panel = __ds_scope.Panel;
 
+__ds_ns.Popover = __ds_scope.Popover;
+
 __ds_ns.Progress = __ds_scope.Progress;
+
+__ds_ns.Radio = __ds_scope.Radio;
+
+__ds_ns.RadioGroup = __ds_scope.RadioGroup;
 
 __ds_ns.Sparkline = __ds_scope.Sparkline;
 
