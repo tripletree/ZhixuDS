@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"77a04901ff97","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"daed8a751029","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/Panel.jsx":"a5e835154358","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -188,6 +188,19 @@ const PATHS = {
     d: "M18 6 6 18"
   }), /*#__PURE__*/React.createElement("path", {
     d: "m6 6 12 12"
+  })),
+  'chevron-down': /*#__PURE__*/React.createElement("path", {
+    d: "m6 9 6 6 6-6"
+  }),
+  'check': /*#__PURE__*/React.createElement("path", {
+    d: "M20 6 9 17l-5-5"
+  }),
+  'search': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.3-4.3"
   }))
 };
 function Icon({
@@ -500,6 +513,711 @@ function SectionHeading({
 }
 Object.assign(__ds_scope, { SectionHeading });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/SectionHeading.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Panel.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Surface cards — .panel sheen / .glass frost from effects.css; radii 1rem card, 1.5rem feature */
+function Panel({
+  variant = 'panel',
+  glow = false,
+  padding = 24,
+  radius,
+  className = '',
+  style,
+  children,
+  ...rest
+}) {
+  const surface = variant === 'glass' ? 'glass' : 'panel';
+  const glowCls = glow === 'sm' ? 'glow-blue glow-blue-sm' : glow ? 'glow-blue' : '';
+  return /*#__PURE__*/React.createElement("div", _extends({
+    className: [surface, glowCls, className].filter(Boolean).join(' '),
+    style: {
+      borderRadius: radius ?? (variant === 'feature' ? 'var(--radius-feature)' : 'var(--radius-card)'),
+      padding,
+      ...style
+    }
+  }, rest), children);
+}
+Object.assign(__ds_scope, { Panel });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Panel.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Tag.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Pill chips — from the AI-chat suggestion chips; tone tints follow the data-series palette */
+const TONES = {
+  neutral: {
+    border: 'color-mix(in srgb, var(--color-bone) 10%, transparent)',
+    background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+    color: 'var(--color-bone-dim)'
+  },
+  azure: {
+    border: 'color-mix(in srgb, var(--color-azure) 30%, transparent)',
+    background: 'color-mix(in srgb, var(--color-azure) 10%, transparent)',
+    color: 'var(--color-azure-bright)'
+  },
+  champagne: {
+    border: 'color-mix(in srgb, var(--color-champagne) 30%, transparent)',
+    background: 'color-mix(in srgb, var(--color-champagne) 10%, transparent)',
+    color: 'var(--color-champagne)'
+  },
+  rouge: {
+    border: 'color-mix(in srgb, var(--color-rouge) 35%, transparent)',
+    background: 'color-mix(in srgb, var(--color-rouge) 12%, transparent)',
+    color: 'color-mix(in srgb, var(--color-rouge) 55%, var(--color-bone))'
+  }
+};
+function Tag({
+  tone = 'neutral',
+  size = 'md',
+  icon,
+  children,
+  style,
+  ...rest
+}) {
+  const t = TONES[tone] || TONES.neutral;
+  const sz = size === 'sm' ? {
+    padding: '4px 10px',
+    fontSize: 10
+  } : {
+    padding: '5px 12px',
+    fontSize: 12
+  };
+  return /*#__PURE__*/React.createElement("span", _extends({
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      borderRadius: 999,
+      border: `1px solid ${t.border}`,
+      background: t.background,
+      color: t.color,
+      fontWeight: 500,
+      letterSpacing: '0.02em',
+      whiteSpace: 'nowrap',
+      ...sz,
+      ...style
+    }
+  }, rest), icon ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: icon,
+    size: size === 'sm' ? 10 : 12,
+    strokeWidth: 1.75
+  }) : null, children);
+}
+/* Live status dot with ping halo — from the hero's floating annotations */
+function StatusDot({
+  tone = 'azure',
+  label,
+  style
+}) {
+  const c = tone === 'champagne' ? 'var(--color-champagne)' : tone === 'rouge' ? 'var(--color-rouge)' : 'var(--color-azure)';
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'relative',
+      display: 'inline-flex',
+      width: 6,
+      height: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "animate-ping",
+    style: {
+      position: 'absolute',
+      inset: 0,
+      borderRadius: 999,
+      background: `color-mix(in srgb, ${c} 60%, transparent)`
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'relative',
+      display: 'inline-flex',
+      width: 6,
+      height: 6,
+      borderRadius: 999,
+      background: c
+    }
+  })), label ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-soft)'
+    }
+  }, label) : null);
+}
+Object.assign(__ds_scope, { Tag, StatusDot });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Tag.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Stat.jsx
+try { (() => {
+/* Metric block — numeral treatment from the dashboard's 机会指数 tile; ↑/↓ delta arrows are unicode per readme */
+function Stat({
+  label,
+  value,
+  suffix,
+  delta,
+  trend = 'up',
+  size = 'md',
+  animate = true,
+  style
+}) {
+  const num = {
+    sm: 28,
+    md: 36,
+    lg: 48
+  }[size] || 36;
+  const deltaColor = trend === 'down' ? 'color-mix(in srgb, var(--color-rouge) 70%, var(--color-bone))' : 'var(--color-azure-bright)';
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 6,
+      ...style
+    }
+  }, label ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10,
+      letterSpacing: '0.22em',
+      textTransform: 'uppercase',
+      fontWeight: 500,
+      color: 'var(--color-bone-dim)'
+    }
+  }, label) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: num,
+      fontWeight: 600,
+      letterSpacing: '-0.025em',
+      lineHeight: 1.1,
+      color: 'var(--color-bone)'
+    }
+  }, animate && typeof value === 'number' ? /*#__PURE__*/React.createElement(__ds_scope.CountUp, {
+    to: value
+  }) : value), suffix ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      color: 'var(--color-bone-dim)'
+    }
+  }, suffix) : null, delta ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      fontWeight: 500,
+      letterSpacing: '0.02em',
+      color: deltaColor
+    }
+  }, trend === 'down' ? '↓' : '↑', " ", delta) : null));
+}
+Object.assign(__ds_scope, { Stat });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Stat.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Progress.jsx
+try { (() => {
+/* Gradient meter row — the dashboard's 材料机会 TOP 5 bars (6px pill track, azure-deep→azure fill) */
+const FILL = {
+  azure: 'linear-gradient(to right, var(--color-azure-deep), var(--color-azure))',
+  champagne: 'linear-gradient(to right, color-mix(in srgb, var(--color-champagne) 65%, var(--color-ink-700)), var(--color-champagne))',
+  rouge: 'linear-gradient(to right, color-mix(in srgb, var(--color-rouge) 65%, var(--color-ink-700)), var(--color-rouge))',
+  bone: 'color-mix(in srgb, var(--color-bone) 45%, transparent)'
+};
+function Progress({
+  label,
+  value,
+  max = 100,
+  tone = 'azure',
+  showValue = true,
+  labelWidth = 96,
+  style
+}) {
+  const pct = Math.max(0, Math.min(100, value / max * 100));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      ...style
+    }
+  }, label != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: labelWidth,
+      flex: 'none',
+      fontSize: 11,
+      color: 'var(--color-bone-soft)'
+    }
+  }, label) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 6,
+      flex: 1,
+      overflow: 'hidden',
+      borderRadius: 999,
+      background: 'color-mix(in srgb, var(--color-bone) 6%, transparent)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: '100%',
+      borderRadius: 999,
+      width: `${pct}%`,
+      background: FILL[tone] || FILL.azure,
+      transition: 'width 0.9s var(--ease-calm)'
+    }
+  })), showValue ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 28,
+      flex: 'none',
+      textAlign: 'right',
+      fontSize: 11,
+      fontWeight: 500,
+      color: 'var(--color-bone)'
+    }
+  }, value) : null);
+}
+Object.assign(__ds_scope, { Progress });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Progress.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Sparkline.jsx
+try { (() => {
+/* Thin-stroke micro charts — 1.6px trend lines and azure bars from the dashboard/chat mocks */
+const STROKES = {
+  azure: 'var(--color-azure)',
+  champagne: 'var(--color-champagne)',
+  mist: 'var(--color-mist)',
+  rouge: 'var(--color-rouge)'
+};
+function Sparkline({
+  data = [],
+  width = 140,
+  height = 44,
+  tone = 'azure',
+  fill = false,
+  dot = false,
+  strokeWidth = 1.6,
+  style
+}) {
+  if (data.length < 2) return null;
+  const min = Math.min(...data),
+    maxV = Math.max(...data),
+    span = maxV - min || 1;
+  const pad = 3;
+  const pts = data.map((v, i) => [pad + i / (data.length - 1) * (width - pad * 2), pad + (1 - (v - min) / span) * (height - pad * 2)]);
+  const line = pts.map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+  const c = STROKES[tone] || STROKES.azure;
+  const last = pts[pts.length - 1];
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${width} ${height}`,
+    style: {
+      width,
+      height,
+      display: 'block',
+      ...style
+    },
+    "aria-hidden": "true"
+  }, fill ? /*#__PURE__*/React.createElement("polygon", {
+    points: `${pad},${height - pad} ${line} ${(width - pad).toFixed(1)},${height - pad}`,
+    fill: c,
+    fillOpacity: "0.18",
+    stroke: "none"
+  }) : null, /*#__PURE__*/React.createElement("polyline", {
+    points: line,
+    fill: "none",
+    stroke: c,
+    strokeWidth: strokeWidth,
+    strokeLinecap: "round"
+  }), dot ? /*#__PURE__*/React.createElement("circle", {
+    cx: last[0].toFixed(1),
+    cy: last[1].toFixed(1),
+    r: "2.2",
+    fill: tone === 'azure' ? 'var(--color-azure-bright)' : c
+  }) : null);
+}
+/* Mini bar chart — rounded 2px bars, opacity scales with value (from the AI-chat answer chart) */
+function SparkBars({
+  data = [],
+  width = 140,
+  height = 44,
+  tone = 'azure',
+  gap = 8,
+  radius = 2,
+  style
+}) {
+  if (!data.length) return null;
+  const maxV = Math.max(...data) || 1;
+  const bw = (width - gap * (data.length - 1)) / data.length;
+  const c = STROKES[tone] || STROKES.azure;
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${width} ${height}`,
+    style: {
+      width,
+      height,
+      display: 'block',
+      ...style
+    },
+    "aria-hidden": "true"
+  }, data.map((v, i) => {
+    const h = v / maxV * (height - 4);
+    return /*#__PURE__*/React.createElement("rect", {
+      key: i,
+      x: (i * (bw + gap)).toFixed(1),
+      y: (height - h).toFixed(1),
+      width: bw.toFixed(1),
+      height: h.toFixed(1),
+      rx: radius,
+      fill: c,
+      fillOpacity: 0.35 + v / maxV * 0.5
+    });
+  }));
+}
+Object.assign(__ds_scope, { Sparkline, SparkBars });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Sparkline.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Tabs.jsx
+try { (() => {
+/* Pill segmented control — pills only per readme; active pill lifts to bone 8%, idle tabs dim like nav links */
+function Tabs({
+  items = [],
+  value,
+  onChange,
+  size = 'md',
+  style
+}) {
+  const [hovered, setHovered] = React.useState(null);
+  const sz = size === 'sm' ? {
+    padding: '5px 12px',
+    fontSize: 12
+  } : {
+    padding: '7px 16px',
+    fontSize: 13
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    role: "tablist",
+    style: {
+      display: 'inline-flex',
+      gap: 4,
+      padding: 4,
+      borderRadius: 999,
+      border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+      background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      ...style
+    }
+  }, items.map(item => {
+    const active = item.key === value;
+    const hover = hovered === item.key;
+    return /*#__PURE__*/React.createElement("button", {
+      key: item.key,
+      type: "button",
+      role: "tab",
+      "aria-selected": active,
+      onClick: () => onChange && onChange(item.key),
+      onMouseEnter: () => setHovered(item.key),
+      onMouseLeave: () => setHovered(null),
+      style: {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
+        borderRadius: 999,
+        cursor: 'pointer',
+        fontFamily: 'var(--font-sans)',
+        fontWeight: 500,
+        letterSpacing: '0.02em',
+        whiteSpace: 'nowrap',
+        border: `1px solid ${active ? 'color-mix(in srgb, var(--color-bone) 15%, transparent)' : 'transparent'}`,
+        background: active ? 'color-mix(in srgb, var(--color-bone) 8%, transparent)' : 'transparent',
+        color: active ? 'var(--color-bone)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
+        transition: 'all 0.3s var(--ease-calm)',
+        ...sz
+      }
+    }, item.icon ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      name: item.icon,
+      size: size === 'sm' ? 12 : 14
+    }) : null, item.label);
+  }));
+}
+Object.assign(__ds_scope, { Tabs });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Tabs.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Field.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Form controls — chat-input surface (rounded 0.75rem, hairline bone/10, ink-850/80); azure focus ring via .fm-control */
+function Field({
+  label,
+  hint,
+  required,
+  children,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8,
+      ...style
+    }
+  }, label ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 6,
+      fontSize: 12,
+      fontWeight: 500,
+      letterSpacing: '0.05em',
+      color: 'var(--color-bone-soft)'
+    }
+  }, label, required ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--color-azure)'
+    }
+  }, "*") : null) : null, children, hint ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      letterSpacing: '0.02em',
+      color: 'var(--color-mist)'
+    }
+  }, hint) : null);
+}
+function Input({
+  icon,
+  style,
+  ...rest
+}) {
+  if (!icon) return /*#__PURE__*/React.createElement("input", _extends({
+    className: "fm-control",
+    style: style
+  }, rest));
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'relative',
+      display: 'block'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      left: 14,
+      top: '50%',
+      transform: 'translateY(-50%)',
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      pointerEvents: 'none'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: icon,
+    size: 14
+  })), /*#__PURE__*/React.createElement("input", _extends({
+    className: "fm-control",
+    style: {
+      paddingLeft: 38,
+      ...style
+    }
+  }, rest)));
+}
+function TextArea({
+  rows = 4,
+  style,
+  ...rest
+}) {
+  return /*#__PURE__*/React.createElement("textarea", _extends({
+    className: "fm-control",
+    rows: rows,
+    style: {
+      resize: 'vertical',
+      ...style
+    }
+  }, rest));
+}
+function Select({
+  children,
+  style,
+  ...rest
+}) {
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'relative',
+      display: 'block'
+    }
+  }, /*#__PURE__*/React.createElement("select", _extends({
+    className: "fm-control",
+    style: {
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      paddingRight: 38,
+      cursor: 'pointer',
+      ...style
+    }
+  }, rest), children), /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      right: 14,
+      top: '50%',
+      transform: 'translateY(-50%)',
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      pointerEvents: 'none'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-down",
+    size: 14
+  })));
+}
+Object.assign(__ds_scope, { Field, Input, TextArea, Select });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Field.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/DataTable.jsx
+try { (() => {
+/* Hairline BI table — eyebrow-tracked header, hairline row rules, numerals emphasised via column strong flag */
+function DataTable({
+  columns = [],
+  rows = [],
+  dense = false,
+  style
+}) {
+  const [hovered, setHovered] = React.useState(null);
+  const pad = dense ? '8px 12px' : '11px 14px';
+  return /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      fontFamily: 'var(--font-sans)',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, columns.map(col => /*#__PURE__*/React.createElement("th", {
+    key: col.key,
+    style: {
+      padding: pad,
+      textAlign: col.align || 'left',
+      fontSize: 10,
+      fontWeight: 500,
+      letterSpacing: '0.22em',
+      textTransform: 'uppercase',
+      color: 'var(--color-bone-dim)',
+      borderBottom: '1px solid var(--border-panel)',
+      whiteSpace: 'nowrap'
+    }
+  }, col.label)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((row, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i,
+    onMouseEnter: () => setHovered(i),
+    onMouseLeave: () => setHovered(null),
+    style: {
+      background: hovered === i ? 'color-mix(in srgb, var(--color-bone) 3%, transparent)' : 'transparent',
+      transition: 'background 0.3s var(--ease-calm)'
+    }
+  }, columns.map(col => /*#__PURE__*/React.createElement("td", {
+    key: col.key,
+    style: {
+      padding: pad,
+      textAlign: col.align || 'left',
+      fontSize: 12,
+      lineHeight: 1.5,
+      color: col.strong ? 'var(--color-bone)' : 'var(--color-bone-soft)',
+      fontWeight: col.strong ? 500 : 400,
+      borderBottom: '1px solid var(--border-hairline)'
+    }
+  }, col.render ? col.render(row[col.key], row, i) : row[col.key]))))));
+}
+Object.assign(__ds_scope, { DataTable });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/DataTable.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Dialog.jsx
+try { (() => {
+/* Modal — blurred ink overlay + frosted glass card, extracted from ContactDialog */
+function Dialog({
+  open,
+  onClose,
+  title,
+  subtitle,
+  width = 384,
+  align = 'center',
+  children
+}) {
+  React.useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    const onKey = e => {
+      if (e.key === 'Escape' && onClose) onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [open, onClose]);
+  if (!open) return null;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 100,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '0 24px'
+    },
+    role: "dialog",
+    "aria-modal": "true"
+  }, /*#__PURE__*/React.createElement("div", {
+    onClick: onClose,
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: 'color-mix(in srgb, var(--color-ink-950) 80%, transparent)',
+      backdropFilter: 'blur(4px)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "glass fm-dialog-in",
+    style: {
+      position: 'relative',
+      zIndex: 10,
+      width: '100%',
+      maxWidth: width,
+      borderRadius: '1rem',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+      padding: 32,
+      textAlign: align
+    }
+  }, onClose ? /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-label": "\u5173\u95ED",
+    onClick: onClose,
+    style: {
+      position: 'absolute',
+      right: 16,
+      top: 16,
+      borderRadius: 999,
+      border: 'none',
+      background: 'transparent',
+      padding: 6,
+      color: 'var(--color-bone-dim)',
+      cursor: 'pointer'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "x",
+    size: 16
+  })) : null, title ? /*#__PURE__*/React.createElement("h2", {
+    style: {
+      margin: 0,
+      fontSize: 20,
+      fontWeight: 600,
+      letterSpacing: '-0.02em',
+      color: 'var(--color-bone)'
+    }
+  }, title) : null, subtitle ? /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: '8px 0 0',
+      fontSize: 13,
+      lineHeight: 1.625,
+      color: 'var(--color-bone-dim)'
+    }
+  }, subtitle) : null, children));
+}
+Object.assign(__ds_scope, { Dialog });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Dialog.jsx", error: String((e && e.message) || e) }); }
 
 // ui_kits/landing/mocks.jsx
 try { (() => {
@@ -2594,5 +3312,33 @@ __ds_ns.CountUp = __ds_scope.CountUp;
 __ds_ns.Reveal = __ds_scope.Reveal;
 
 __ds_ns.SectionHeading = __ds_scope.SectionHeading;
+
+__ds_ns.DataTable = __ds_scope.DataTable;
+
+__ds_ns.Dialog = __ds_scope.Dialog;
+
+__ds_ns.Field = __ds_scope.Field;
+
+__ds_ns.Input = __ds_scope.Input;
+
+__ds_ns.TextArea = __ds_scope.TextArea;
+
+__ds_ns.Select = __ds_scope.Select;
+
+__ds_ns.Panel = __ds_scope.Panel;
+
+__ds_ns.Progress = __ds_scope.Progress;
+
+__ds_ns.Sparkline = __ds_scope.Sparkline;
+
+__ds_ns.SparkBars = __ds_scope.SparkBars;
+
+__ds_ns.Stat = __ds_scope.Stat;
+
+__ds_ns.Tabs = __ds_scope.Tabs;
+
+__ds_ns.Tag = __ds_scope.Tag;
+
+__ds_ns.StatusDot = __ds_scope.StatusDot;
 
 })();

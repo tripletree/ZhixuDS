@@ -1,0 +1,48 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Data · Light" subtitle="Stat · Tag · StatusDot · Progress · Sparkline · SparkBars" -->
+<!doctype html>
+<html class="light"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<style>body{padding:20px 24px;background:#ffffff}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Stat, Tag, StatusDot, Progress, Sparkline, SparkBars } = window.FabricMindDesignSystem_4edb8c;
+const microLabel = {fontSize:10,letterSpacing:'0.22em',textTransform:'uppercase',fontWeight:500,color:'var(--color-bone-dim)'};
+function Demo(){
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:24}}>
+      <div style={{display:'flex',gap:32,alignItems:'flex-start',flexWrap:'wrap'}}>
+        <Stat label="机会指数 · 综合" value={78} suffix="/100" />
+        <Stat label="针织上新 · 环比" value={18} suffix="%" delta="+18%" />
+        <Stat label="开发周期 · 同比" value={12} suffix="天" delta="-9%" trend="down" />
+        <span style={{flex:1}}></span>
+        <div style={{display:'flex',flexDirection:'column',gap:10,alignItems:'flex-end'}}>
+          <StatusDot label="AI 正在分析" />
+          <div style={{display:'flex',gap:6,flexWrap:'wrap',justifyContent:'flex-end'}}>
+            <Tag>趋势预警</Tag>
+            <Tag tone="azure" icon="sparkles">AI 洞察</Tag>
+            <Tag tone="champagne" size="sm">TOP 5</Tag>
+            <Tag tone="rouge" size="sm">高风险</Tag>
+          </div>
+        </div>
+      </div>
+      <div style={{display:'flex',gap:32,alignItems:'flex-start',flexWrap:'wrap'}}>
+        <div style={{flex:'1 1 240px',display:'flex',flexDirection:'column',gap:8}}>
+          {[['Lyocell',86],['Recycled Nylon',82],['Linen Blend',78]].map(([n,v])=><Progress key={n} label={n} value={v} />)}
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:6}}>
+          <span style={microLabel}>趋势热度</span>
+          <Sparkline data={[42,48,44,58,54,66,78]} width={170} height={48} fill dot />
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:6}}>
+          <span style={microLabel}>上新分布</span>
+          <SparkBars data={[38,52,44,66,58,78,70]} width={150} height={48} />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>

@@ -14,6 +14,9 @@ const PATHS = {
   'arrow-up': <><path d="m5 12 7-7 7 7" /><path d="M12 19V5" /></>,
   'download': <><path d="M12 15V3" /><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /></>,
   'x': <><path d="M18 6 6 18" /><path d="m6 6 12 12" /></>,
+  'chevron-down': <path d="m6 9 6 6 6-6" />,
+  'check': <path d="M20 6 9 17l-5-5" />,
+  'search': <><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></>,
 };
 export function Icon({ name, size = 16, strokeWidth = 1.75, style, ...rest }) {
   const glyph = PATHS[name];
