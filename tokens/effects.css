@@ -46,4 +46,6 @@ html.light .glow-blue::after,.theme-light .glow-blue::after{background:radial-gr
 .animate-ping{animation:ping 1s cubic-bezier(0,0,0.2,1) infinite}
 @keyframes fm-dialog-in{from{opacity:0;transform:scale(0.95) translateY(16px)}to{opacity:1;transform:none}}
 .fm-dialog-in{animation:fm-dialog-in 0.3s var(--ease-calm)}
-@media (prefers-reduced-motion:reduce){.animate-shimmer,.animate-caret,.animate-ping,.fm-dialog-in{animation:none}}
+@keyframes fm-pop-in{from{opacity:0;transform:scale(0.98) translateY(-4px)}to{opacity:1;transform:none}}
+.fm-pop-in{animation:fm-pop-in 0.18s var(--ease-calm)}
+@media (prefers-reduced-motion:reduce){.animate-shimmer,.animate-caret,.animate-ping,.fm-dialog-in,.fm-pop-in{animation:none}}

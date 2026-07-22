@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"daed8a751029","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/Panel.jsx":"a5e835154358","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"daed8a751029","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/Listbox.jsx":"910aee125bee","components/ui/Panel.jsx":"a5e835154358","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1069,6 +1069,186 @@ function Select({
 }
 Object.assign(__ds_scope, { Field, Input, TextArea, Select });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Field.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Listbox.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Custom dropdown — .fm-control trigger + fully branded panel (native <select> popups can't be themed).
+   Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump. */
+function Listbox({
+  options = [],
+  value,
+  onChange,
+  placeholder = '请选择',
+  size,
+  style,
+  ...rest
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [active, setActive] = React.useState(-1);
+  const rootRef = React.useRef(null);
+  const listRef = React.useRef(null);
+  const id = React.useId();
+  const selectedIndex = options.findIndex(o => o.value === value);
+  const selected = options[selectedIndex];
+  React.useEffect(() => {
+    if (!open) return;
+    const onDown = e => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    return () => document.removeEventListener('mousedown', onDown);
+  }, [open]);
+  React.useEffect(() => {
+    if (open && active >= 0 && listRef.current) {
+      const el = listRef.current.children[active];
+      if (el) el.scrollIntoView({
+        block: 'nearest'
+      });
+    }
+  }, [open, active]);
+  const openList = () => {
+    setOpen(true);
+    setActive(selectedIndex >= 0 ? selectedIndex : 0);
+  };
+  const commit = i => {
+    const opt = options[i];
+    if (!opt) return;
+    if (onChange) onChange(opt.value);
+    setOpen(false);
+  };
+  const onKeyDown = e => {
+    if (!open) {
+      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) {
+        e.preventDefault();
+        openList();
+      }
+      return;
+    }
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setOpen(false);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActive(i => Math.min(options.length - 1, i + 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActive(i => Math.max(0, i - 1));
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      setActive(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      setActive(options.length - 1);
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      commit(active);
+    } else if (e.key === 'Tab') setOpen(false);
+  };
+  return /*#__PURE__*/React.createElement("span", {
+    ref: rootRef,
+    style: {
+      position: 'relative',
+      display: 'block',
+      ...style
+    },
+    onKeyDown: onKeyDown
+  }, /*#__PURE__*/React.createElement("button", _extends({
+    type: "button",
+    className: "fm-control",
+    "aria-haspopup": "listbox",
+    "aria-expanded": open,
+    "aria-activedescendant": open && active >= 0 ? `${id}-opt-${active}` : undefined,
+    onClick: () => open ? setOpen(false) : openList(),
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      textAlign: 'left',
+      cursor: 'pointer'
+    }
+  }, rest), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      color: selected ? 'var(--color-bone)' : 'var(--color-mist)'
+    }
+  }, selected ? selected.label : placeholder), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      transform: open ? 'rotate(180deg)' : 'none',
+      transition: 'transform 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-down",
+    size: 14
+  }))), open ? /*#__PURE__*/React.createElement("ul", {
+    ref: listRef,
+    role: "listbox",
+    className: "fm-pop-in",
+    "aria-labelledby": rest['aria-labelledby'],
+    style: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 'calc(100% + 6px)',
+      zIndex: 50,
+      margin: 0,
+      padding: 6,
+      listStyle: 'none',
+      maxHeight: 240,
+      overflowY: 'auto',
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)'
+    }
+  }, options.map((opt, i) => {
+    const isSelected = opt.value === value;
+    const isActive = i === active;
+    return /*#__PURE__*/React.createElement("li", {
+      key: opt.value,
+      id: `${id}-opt-${i}`,
+      role: "option",
+      "aria-selected": isSelected,
+      onMouseEnter: () => setActive(i),
+      onMouseDown: e => e.preventDefault(),
+      onClick: () => commit(i),
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        padding: '8px 10px',
+        borderRadius: 8,
+        fontSize: 13,
+        lineHeight: 1.5,
+        cursor: 'pointer',
+        background: isActive ? 'color-mix(in srgb, var(--color-azure) 10%, transparent)' : 'transparent',
+        color: isActive || isSelected ? 'var(--color-bone)' : 'var(--color-bone-soft)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1
+      }
+    }, opt.label), opt.hint ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 11,
+        color: 'var(--color-mist)'
+      }
+    }, opt.hint) : null, isSelected ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: 'inline-flex',
+        color: 'var(--color-azure-bright)'
+      }
+    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      name: "check",
+      size: 14
+    })) : null);
+  })) : null);
+}
+Object.assign(__ds_scope, { Listbox });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Listbox.jsx", error: String((e && e.message) || e) }); }
 
 // components/ui/DataTable.jsx
 try { (() => {
@@ -3324,6 +3504,8 @@ __ds_ns.Input = __ds_scope.Input;
 __ds_ns.TextArea = __ds_scope.TextArea;
 
 __ds_ns.Select = __ds_scope.Select;
+
+__ds_ns.Listbox = __ds_scope.Listbox;
 
 __ds_ns.Panel = __ds_scope.Panel;
 
