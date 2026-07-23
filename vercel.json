@@ -1,6 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm install --prefix templates/vue-package",
-  "buildCommand": "npm run build --prefix templates/vue-package",
-  "outputDirectory": "templates/vue-package/dist"
-}
