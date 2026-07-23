@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"d7cbed132b2f","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/Dialog.jsx":"daed8a751029","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/Panel.jsx":"a5e835154358","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"AlphabetIndex","sourcePath":"components/ui/AlphabetIndex.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"DateRangeEditor","sourcePath":"components/ui/DateRangeEditor.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"DropdownMenu","sourcePath":"components/ui/DropdownMenu.jsx"},{"name":"EmptyState","sourcePath":"components/ui/EmptyState.jsx"},{"name":"Fab","sourcePath":"components/ui/Fab.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Pagination","sourcePath":"components/ui/Pagination.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"ProductCard","sourcePath":"components/ui/ProductCard.jsx"},{"name":"ThumbnailStrip","sourcePath":"components/ui/ProductCard.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"686935625549","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/AlphabetIndex.jsx":"1f7f317ab324","components/ui/Checkbox.jsx":"391985ef4ce7","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/DateRangeEditor.jsx":"3efa315256d1","components/ui/Dialog.jsx":"6d10839c3b85","components/ui/DropdownMenu.jsx":"4a0641143078","components/ui/EmptyState.jsx":"70313c4817c8","components/ui/Fab.jsx":"f0eb033c5362","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/FilterChips.jsx":"32a6fccb8771","components/ui/Listbox.jsx":"bd140fc8058a","components/ui/Pagination.jsx":"34d16d9fc29c","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"505dc169e598","components/ui/ProductCard.jsx":"b0b8cf71bc3b","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"697de7b43a96","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -192,6 +192,48 @@ const PATHS = {
   'chevron-down': /*#__PURE__*/React.createElement("path", {
     d: "m6 9 6 6 6-6"
   }),
+  'chevron-left': /*#__PURE__*/React.createElement("path", {
+    d: "m15 18-6-6 6-6"
+  }),
+  'chevron-right': /*#__PURE__*/React.createElement("path", {
+    d: "m9 18 6-6-6-6"
+  }),
+  'chevrons-left': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+    d: "m11 17-5-5 5-5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m18 17-5-5 5-5"
+  })),
+  'chevrons-right': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+    d: "m6 17 5-5-5-5"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m13 17 5-5-5-5"
+  })),
+  'ellipsis-vertical': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "1"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "5",
+    r: "1"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "19",
+    r: "1"
+  })),
+  'calendar': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+    d: "M8 2v4"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M16 2v4"
+  }), /*#__PURE__*/React.createElement("rect", {
+    width: "18",
+    height: "18",
+    x: "3",
+    y: "4",
+    rx: "2"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M3 10h18"
+  })),
   'check': /*#__PURE__*/React.createElement("path", {
     d: "M20 6 9 17l-5-5"
   }),
@@ -1070,6 +1112,1268 @@ function Select({
 Object.assign(__ds_scope, { Field, Input, TextArea, Select });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Field.jsx", error: String((e && e.message) || e) }); }
 
+// components/ui/Listbox.jsx
+try { (() => {
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Custom dropdown — .fm-control trigger + fully branded panel (native <select> popups can't be themed).
+   Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump. */
+function Listbox({
+  options = [],
+  value,
+  onChange,
+  placeholder = '请选择',
+  size,
+  style,
+  ...rest
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [active, setActive] = React.useState(-1);
+  const rootRef = React.useRef(null);
+  const listRef = React.useRef(null);
+  const id = React.useId();
+  const selectedIndex = options.findIndex(o => o.value === value);
+  const selected = options[selectedIndex];
+  React.useEffect(() => {
+    if (!open) return;
+    const onDown = e => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    return () => document.removeEventListener('mousedown', onDown);
+  }, [open]);
+  React.useEffect(() => {
+    if (open && active >= 0 && listRef.current) {
+      const el = listRef.current.children[active];
+      if (el) el.scrollIntoView({
+        block: 'nearest'
+      });
+    }
+  }, [open, active]);
+  const openList = () => {
+    setOpen(true);
+    setActive(selectedIndex >= 0 ? selectedIndex : 0);
+  };
+  const commit = i => {
+    const opt = options[i];
+    if (!opt) return;
+    if (onChange) onChange(opt.value);
+    setOpen(false);
+  };
+  const onKeyDown = e => {
+    if (!open) {
+      if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) {
+        e.preventDefault();
+        openList();
+      }
+      return;
+    }
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      setOpen(false);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActive(i => Math.min(options.length - 1, i + 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActive(i => Math.max(0, i - 1));
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      setActive(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      setActive(options.length - 1);
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      commit(active);
+    } else if (e.key === 'Tab') setOpen(false);
+  };
+  return /*#__PURE__*/React.createElement("span", {
+    ref: rootRef,
+    style: {
+      position: 'relative',
+      display: 'block',
+      ...style
+    },
+    onKeyDown: onKeyDown
+  }, /*#__PURE__*/React.createElement("button", _extends({
+    type: "button",
+    className: "fm-control",
+    "aria-haspopup": "listbox",
+    "aria-expanded": open,
+    "aria-activedescendant": open && active >= 0 ? `${id}-opt-${active}` : undefined,
+    onClick: () => open ? setOpen(false) : openList(),
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      textAlign: 'left',
+      cursor: 'pointer',
+      /* surface inlined too — native button chrome (black square border) must never leak through */
+      appearance: 'none',
+      WebkitAppearance: 'none',
+      width: '100%',
+      boxSizing: 'border-box',
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+      background: 'var(--surface-control)',
+      padding: '10px 14px',
+      fontFamily: 'var(--font-sans)',
+      fontSize: 13,
+      lineHeight: 1.5
+    }
+  }, rest), /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      color: selected ? 'var(--color-bone)' : 'var(--color-mist)'
+    }
+  }, selected ? selected.label : placeholder), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      transform: open ? 'rotate(180deg)' : 'none',
+      transition: 'transform 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-down",
+    size: 14
+  }))), open ? /*#__PURE__*/React.createElement("ul", {
+    ref: listRef,
+    role: "listbox",
+    className: "fm-pop-in",
+    "aria-labelledby": rest['aria-labelledby'],
+    style: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 'calc(100% + 6px)',
+      zIndex: 50,
+      margin: 0,
+      padding: 6,
+      listStyle: 'none',
+      maxHeight: 240,
+      overflowY: 'auto',
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'var(--surface-float)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: 'var(--shadow-float)'
+    }
+  }, options.map((opt, i) => {
+    const isSelected = opt.value === value;
+    const isActive = i === active;
+    return /*#__PURE__*/React.createElement("li", {
+      key: opt.value,
+      id: `${id}-opt-${i}`,
+      role: "option",
+      "aria-selected": isSelected,
+      onMouseEnter: () => setActive(i),
+      onMouseDown: e => e.preventDefault(),
+      onClick: () => commit(i),
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        padding: '8px 10px',
+        borderRadius: 8,
+        fontSize: 13,
+        lineHeight: 1.5,
+        cursor: 'pointer',
+        background: isActive ? 'color-mix(in srgb, var(--color-azure) 10%, transparent)' : 'transparent',
+        color: isActive || isSelected ? 'var(--color-bone)' : 'var(--color-bone-soft)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1
+      }
+    }, opt.label), opt.hint ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 11,
+        color: 'var(--color-mist)'
+      }
+    }, opt.hint) : null, isSelected ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: 'inline-flex',
+        color: 'var(--color-azure-bright)'
+      }
+    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      name: "check",
+      size: 14
+    })) : null);
+  })) : null);
+}
+Object.assign(__ds_scope, { Listbox });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Listbox.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Checkbox.jsx
+try { (() => {
+/* Checkable filter control — 16px box, azure fill when checked; the check strokes in ink-950,
+   which inverts to white in the light theme so contrast holds on both grounds. */
+function Checkbox({
+  checked,
+  indeterminate = false,
+  onChange,
+  disabled = false,
+  children,
+  style
+}) {
+  const [focus, setFocus] = React.useState(false);
+  const on = checked || indeterminate;
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      opacity: disabled ? 0.45 : 1,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: !!checked,
+    disabled: disabled,
+    onChange: e => onChange && onChange(e.target.checked),
+    onFocus: () => setFocus(true),
+    onBlur: () => setFocus(false),
+    style: {
+      position: 'absolute',
+      width: 1,
+      height: 1,
+      opacity: 0,
+      margin: 0,
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 16,
+      height: 16,
+      flex: 'none',
+      borderRadius: 4,
+      transition: 'all 0.2s var(--ease-calm)',
+      border: `1px solid ${on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
+      background: on ? 'var(--color-azure)' : 'var(--surface-control)',
+      boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none',
+      color: 'var(--color-ink-950)'
+    }
+  }, indeterminate ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 2,
+      borderRadius: 1,
+      background: 'currentColor'
+    }
+  }) : checked ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "check",
+    size: 11,
+    strokeWidth: 3.5
+  }) : null), children != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: 'var(--color-bone-soft)'
+    }
+  }, children) : null);
+}
+function CheckboxGroup({
+  options = [],
+  value = [],
+  onChange,
+  columns,
+  gap = 10,
+  style
+}) {
+  const toggle = (v, on) => {
+    if (!onChange) return;
+    onChange(on ? [...value, v] : value.filter(x => x !== v));
+  };
+  const layout = columns ? {
+    display: 'grid',
+    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+    gap
+  } : {
+    display: 'flex',
+    flexDirection: 'column',
+    gap
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    role: "group",
+    style: {
+      ...layout,
+      ...style
+    }
+  }, options.map(o => /*#__PURE__*/React.createElement(Checkbox, {
+    key: o.value,
+    checked: value.includes(o.value),
+    disabled: o.disabled,
+    onChange: on => toggle(o.value, on)
+  }, o.label)));
+}
+Object.assign(__ds_scope, { Checkbox, CheckboxGroup });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Checkbox.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Radio.jsx
+try { (() => {
+/* Radio — 16px circle, azure ring + 8px azure dot when selected */
+function Radio({
+  checked,
+  onChange,
+  name,
+  disabled = false,
+  children,
+  style
+}) {
+  const [focus, setFocus] = React.useState(false);
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      opacity: disabled ? 0.45 : 1,
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "radio",
+    name: name,
+    checked: !!checked,
+    disabled: disabled,
+    onChange: e => {
+      if (e.target.checked && onChange) onChange();
+    },
+    onFocus: () => setFocus(true),
+    onBlur: () => setFocus(false),
+    style: {
+      position: 'absolute',
+      width: 1,
+      height: 1,
+      opacity: 0,
+      margin: 0,
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 16,
+      height: 16,
+      flex: 'none',
+      borderRadius: 999,
+      transition: 'all 0.2s var(--ease-calm)',
+      border: `1px solid ${checked ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
+      background: 'var(--surface-control)',
+      boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none'
+    }
+  }, checked ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 999,
+      background: 'var(--color-azure)'
+    }
+  }) : null), children != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: 'var(--color-bone-soft)'
+    }
+  }, children) : null);
+}
+function RadioGroup({
+  options = [],
+  value,
+  onChange,
+  direction = 'column',
+  gap = 10,
+  name,
+  style
+}) {
+  const autoName = React.useId();
+  return /*#__PURE__*/React.createElement("div", {
+    role: "radiogroup",
+    style: {
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: 'wrap',
+      gap,
+      ...style
+    }
+  }, options.map(o => /*#__PURE__*/React.createElement(Radio, {
+    key: o.value,
+    name: name || autoName,
+    checked: o.value === value,
+    disabled: o.disabled,
+    onChange: () => onChange && onChange(o.value)
+  }, o.label)));
+}
+Object.assign(__ds_scope, { Radio, RadioGroup });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Radio.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/FilterChips.jsx
+try { (() => {
+/* Selectable chip group — pills only per readme; selected chips tint azure like the nav hover */
+function FilterChips({
+  options = [],
+  value,
+  onChange,
+  multiple = false,
+  title,
+  size = 'md',
+  style
+}) {
+  const [hovered, setHovered] = React.useState(null);
+  const sz = size === 'sm' ? {
+    padding: '4px 12px',
+    fontSize: 12
+  } : {
+    padding: '6px 14px',
+    fontSize: 13
+  };
+  const isOn = v => multiple ? Array.isArray(value) && value.includes(v) : v === value;
+  const pick = v => {
+    if (!onChange) return;
+    if (multiple) {
+      const cur = Array.isArray(value) ? value : [];
+      onChange(cur.includes(v) ? cur.filter(x => x !== v) : [...cur, v]);
+    } else onChange(v);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: style
+  }, title ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 8,
+      fontSize: 12,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-dim)'
+    }
+  }, title) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, options.map(o => {
+    const on = isOn(o.value);
+    const hover = hovered === o.value;
+    return /*#__PURE__*/React.createElement("button", {
+      key: o.value,
+      type: "button",
+      "aria-pressed": on,
+      onClick: () => pick(o.value),
+      onMouseEnter: () => setHovered(o.value),
+      onMouseLeave: () => setHovered(null),
+      style: {
+        borderRadius: 999,
+        cursor: 'pointer',
+        fontFamily: 'var(--font-sans)',
+        fontWeight: 500,
+        letterSpacing: '0.02em',
+        whiteSpace: 'nowrap',
+        transition: 'all 0.3s var(--ease-calm)',
+        border: `1px solid ${on ? 'color-mix(in srgb, var(--color-azure) 40%, transparent)' : hover ? 'color-mix(in srgb, var(--color-azure) 30%, transparent)' : 'color-mix(in srgb, var(--color-bone) 12%, transparent)'}`,
+        background: on ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+        color: on ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
+        ...sz
+      }
+    }, o.label);
+  })));
+}
+Object.assign(__ds_scope, { FilterChips });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/FilterChips.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Collapse.jsx
+try { (() => {
+/* Collapsible filter group — bone title row, rotating chevron, calm grid-rows height animation */
+function Collapse({
+  title,
+  count,
+  defaultOpen = true,
+  open,
+  onToggle,
+  children,
+  style
+}) {
+  const [inner, setInner] = React.useState(defaultOpen);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : inner;
+  const toggle = () => {
+    if (!controlled) setInner(!isOpen);
+    if (onToggle) onToggle(!isOpen);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: style
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-expanded": isOpen,
+    onClick: toggle,
+    style: {
+      display: 'flex',
+      width: '100%',
+      alignItems: 'center',
+      gap: 8,
+      padding: '10px 0',
+      border: 'none',
+      background: 'transparent',
+      cursor: 'pointer',
+      textAlign: 'left',
+      fontFamily: 'var(--font-sans)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      fontSize: 14,
+      fontWeight: 500,
+      color: 'var(--color-bone)'
+    }
+  }, title), count != null ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      color: 'var(--color-mist)'
+    }
+  }, count) : null, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      color: 'var(--color-mist)',
+      transform: isOpen ? 'rotate(180deg)' : 'none',
+      transition: 'transform 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-down",
+    size: 14
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateRows: isOpen ? '1fr' : '0fr',
+      transition: 'grid-template-rows 0.3s var(--ease-calm)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      paddingBottom: 12
+    }
+  }, children))));
+}
+Object.assign(__ds_scope, { Collapse });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Collapse.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Popover.jsx
+try { (() => {
+/* Floating panel — frosted ink surface (same recipe as the Listbox panel), fm-pop-in entrance,
+   outside-click + Escape close. Base layer for menus, filter panels, date editors. */
+const PLACE = {
+  'bottom-start': {
+    top: 'calc(100% + 8px)',
+    left: 0
+  },
+  'bottom-end': {
+    top: 'calc(100% + 8px)',
+    right: 0
+  },
+  'top-start': {
+    bottom: 'calc(100% + 8px)',
+    left: 0
+  },
+  'top-end': {
+    bottom: 'calc(100% + 8px)',
+    right: 0
+  }
+};
+function Popover({
+  anchor,
+  open,
+  onOpenChange,
+  placement = 'bottom-start',
+  width = 320,
+  padding = 16,
+  children,
+  style
+}) {
+  const [innerOpen, setInnerOpen] = React.useState(false);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : innerOpen;
+  const rootRef = React.useRef(null);
+  const setOpen = v => {
+    if (!controlled) setInnerOpen(v);
+    if (onOpenChange) onOpenChange(v);
+  };
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const onDown = e => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = e => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [isOpen]);
+  return /*#__PURE__*/React.createElement("span", {
+    ref: rootRef,
+    style: {
+      position: 'relative',
+      display: 'inline-block',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    onClick: () => setOpen(!isOpen),
+    style: {
+      display: 'inline-block'
+    }
+  }, anchor), isOpen ? /*#__PURE__*/React.createElement("div", {
+    className: "fm-pop-in",
+    role: "dialog",
+    style: {
+      position: 'absolute',
+      zIndex: 60,
+      width,
+      padding,
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'var(--surface-float)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: 'var(--shadow-float)',
+      ...(PLACE[placement] || PLACE['bottom-start'])
+    }
+  }, children) : null);
+}
+Object.assign(__ds_scope, { Popover });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Popover.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/DropdownMenu.jsx
+try { (() => {
+/* Action menu on the Popover panel — for row/card actions (导出/收藏/删除) */
+function DropdownMenu({
+  items = [],
+  onSelect,
+  anchor,
+  placement = 'bottom-end',
+  width = 180,
+  style
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [active, setActive] = React.useState(null);
+  return /*#__PURE__*/React.createElement(__ds_scope.Popover, {
+    open: open,
+    onOpenChange: setOpen,
+    anchor: anchor,
+    placement: placement,
+    width: width,
+    padding: 6,
+    style: style
+  }, /*#__PURE__*/React.createElement("div", {
+    role: "menu",
+    style: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, items.map((item, i) => {
+    if (item.type === 'divider') {
+      return /*#__PURE__*/React.createElement("div", {
+        key: `d${i}`,
+        style: {
+          margin: '6px 4px',
+          borderTop: '1px solid var(--border-hairline)'
+        }
+      });
+    }
+    const danger = item.danger;
+    const hover = active === item.key;
+    return /*#__PURE__*/React.createElement("button", {
+      key: item.key,
+      type: "button",
+      role: "menuitem",
+      disabled: item.disabled,
+      onMouseEnter: () => setActive(item.key),
+      onMouseLeave: () => setActive(null),
+      onClick: () => {
+        setOpen(false);
+        if (onSelect) onSelect(item.key);
+      },
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        width: '100%',
+        padding: '8px 10px',
+        border: 'none',
+        borderRadius: 8,
+        cursor: item.disabled ? 'not-allowed' : 'pointer',
+        textAlign: 'left',
+        fontFamily: 'var(--font-sans)',
+        fontSize: 13,
+        lineHeight: 1.5,
+        letterSpacing: '0.02em',
+        opacity: item.disabled ? 0.45 : 1,
+        transition: 'all 0.2s var(--ease-calm)',
+        background: hover && !item.disabled ? danger ? 'color-mix(in srgb, var(--color-rouge) 14%, transparent)' : 'color-mix(in srgb, var(--color-azure) 10%, transparent)' : 'transparent',
+        color: danger ? 'color-mix(in srgb, var(--color-rouge) 60%, var(--color-bone))' : hover ? 'var(--color-bone)' : 'var(--color-bone-soft)'
+      }
+    }, item.icon ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      name: item.icon,
+      size: 14,
+      strokeWidth: 1.75
+    }) : null, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1
+      }
+    }, item.label), item.hint ? /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 11,
+        color: 'var(--color-mist)'
+      }
+    }, item.hint) : null);
+  })));
+}
+Object.assign(__ds_scope, { DropdownMenu });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/DropdownMenu.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/DateRangeEditor.jsx
+try { (() => {
+/* Relative time-range editor — .fm-control trigger with calendar glyph opening a preset
+   panel (前一周/前一月/前一年 …) with a computed-range readout and 取消/应用 actions. */
+function DateRangeEditor({
+  presets = [],
+  value,
+  onChange,
+  rangeText,
+  title = '编辑时间范围',
+  width = 300,
+  placeholder = '选择时间范围',
+  style
+}) {
+  const [open, setOpen] = React.useState(false);
+  const [draft, setDraft] = React.useState(value);
+  React.useEffect(() => {
+    if (open) setDraft(value);
+  }, [open]);
+  const current = presets.find(p => p.value === value);
+  const readout = typeof rangeText === 'function' ? rangeText(draft) : rangeText;
+  return /*#__PURE__*/React.createElement(__ds_scope.Popover, {
+    open: open,
+    onOpenChange: setOpen,
+    width: width,
+    style: style,
+    anchor: /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      className: "fm-control",
+      "aria-haspopup": "dialog",
+      "aria-expanded": open,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        textAlign: 'left',
+        cursor: 'pointer',
+        appearance: 'none',
+        WebkitAppearance: 'none',
+        width: '100%',
+        boxSizing: 'border-box',
+        borderRadius: 'var(--radius-panel)',
+        border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+        background: 'var(--surface-control)',
+        padding: '10px 14px',
+        fontFamily: 'var(--font-sans)',
+        fontSize: 13,
+        lineHeight: 1.5
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        color: current ? 'var(--color-bone)' : 'var(--color-mist)'
+      }
+    }, current ? current.label : placeholder), /*#__PURE__*/React.createElement("span", {
+      style: {
+        display: 'inline-flex',
+        color: 'var(--color-mist)'
+      }
+    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      name: "calendar",
+      size: 14
+    })))
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+      textAlign: 'left'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 500,
+      color: 'var(--color-bone)'
+    }
+  }, title), /*#__PURE__*/React.createElement(__ds_scope.RadioGroup, {
+    value: draft,
+    onChange: setDraft,
+    options: presets
+  }), readout ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      letterSpacing: '0.02em',
+      color: 'var(--color-mist)'
+    }
+  }, readout) : null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    variant: "ghost",
+    size: "sm",
+    onClick: () => setOpen(false)
+  }, "\u53D6\u6D88"), /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    size: "sm",
+    onClick: () => {
+      if (onChange) onChange(draft);
+      setOpen(false);
+    }
+  }, "\u5E94\u7528"))));
+}
+Object.assign(__ds_scope, { DateRangeEditor });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/DateRangeEditor.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/EmptyState.jsx
+try { (() => {
+/* No-data placeholder — mist glyph in a hairline circle, quiet copy, optional action */
+function EmptyState({
+  icon = 'database',
+  title,
+  description,
+  action,
+  compact = false,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 10,
+      padding: compact ? '20px 16px' : '40px 24px',
+      textAlign: 'center',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: compact ? 44 : 56,
+      height: compact ? 44 : 56,
+      borderRadius: 999,
+      border: '1px solid var(--border-hairline)',
+      background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      color: 'var(--color-mist)'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: icon,
+    size: compact ? 18 : 22,
+    strokeWidth: 1.5
+  })), title ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      fontWeight: 500,
+      color: 'var(--color-bone-soft)'
+    }
+  }, title) : null, description ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      maxWidth: 320,
+      fontSize: 12,
+      lineHeight: 1.6,
+      letterSpacing: '0.02em',
+      color: 'var(--color-mist)'
+    }
+  }, description) : null, action ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 6
+    }
+  }, action) : null);
+}
+Object.assign(__ds_scope, { EmptyState });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/EmptyState.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/ProductCard.jsx
+try { (() => {
+/* Product media card — image, two-line clamped title, brand + date meta row.
+   Cards lift and tint azure on hover per the brand hover language. */
+function ProductCard({
+  src,
+  alt = '',
+  aspectRatio = '3/4',
+  title,
+  brand,
+  date,
+  tags,
+  onClick,
+  style
+}) {
+  const [hover, setHover] = React.useState(false);
+  return /*#__PURE__*/React.createElement("div", {
+    onClick: onClick,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10,
+      borderRadius: 12,
+      overflow: 'hidden',
+      border: `1px solid ${hover ? 'color-mix(in srgb, var(--color-azure) 25%, transparent)' : 'var(--border-hairline)'}`,
+      background: 'var(--surface-control)',
+      transform: hover ? 'translateY(-4px)' : 'none',
+      transition: 'all 0.3s var(--ease-calm)',
+      cursor: onClick ? 'pointer' : 'default',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      aspectRatio,
+      width: '100%',
+      overflow: 'hidden',
+      background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--color-bone) 8%, transparent), var(--color-ink-700))'
+    }
+  }, src ? /*#__PURE__*/React.createElement("img", {
+    src: src,
+    alt: alt,
+    style: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      display: 'block'
+    }
+  }) : null), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 6,
+      padding: '0 12px 12px'
+    }
+  }, title ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      lineHeight: 1.5,
+      color: 'var(--color-bone)',
+      display: '-webkit-box',
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden'
+    }
+  }, title) : null, tags ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 4
+    }
+  }, tags) : null, brand || date ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 8
+    }
+  }, brand ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1,
+      fontSize: 12,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-dim)',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
+    }
+  }, brand) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      flex: 1
+    }
+  }), date ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      letterSpacing: '0.02em',
+      color: 'var(--color-mist)',
+      whiteSpace: 'nowrap'
+    }
+  }, date) : null) : null));
+}
+/* Thumbnail selector row — 32px squares, selected frame tints azure */
+function ThumbnailStrip({
+  items = [],
+  value = 0,
+  onChange,
+  size = 32,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      ...style
+    }
+  }, items.map((item, i) => {
+    const on = i === value;
+    return /*#__PURE__*/React.createElement("button", {
+      key: i,
+      type: "button",
+      "aria-pressed": on,
+      onClick: () => onChange && onChange(i),
+      style: {
+        width: size,
+        height: size,
+        padding: 0,
+        borderRadius: 6,
+        overflow: 'hidden',
+        cursor: 'pointer',
+        border: `2px solid ${on ? 'var(--color-azure)' : 'transparent'}`,
+        outline: on ? 'none' : '1px solid var(--border-hairline)',
+        outlineOffset: -1,
+        background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--color-bone) 8%, transparent), var(--color-ink-700))',
+        transition: 'border-color 0.2s var(--ease-calm)'
+      }
+    }, item && item.src ? /*#__PURE__*/React.createElement("img", {
+      src: item.src,
+      alt: item.alt || '',
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        display: 'block'
+      }
+    }) : null);
+  }));
+}
+Object.assign(__ds_scope, { ProductCard, ThumbnailStrip });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/ProductCard.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Pagination.jsx
+try { (() => {
+/* Pill pagination — 28px circles, current page lifts to bone 8% like the active tab */
+function PageButton({
+  children,
+  active = false,
+  disabled = false,
+  onClick,
+  label
+}) {
+  const [hover, setHover] = React.useState(false);
+  return /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-label": label,
+    "aria-current": active ? 'page' : undefined,
+    disabled: disabled,
+    onClick: onClick,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minWidth: 28,
+      height: 28,
+      padding: '0 6px',
+      borderRadius: 999,
+      cursor: disabled ? 'not-allowed' : 'pointer',
+      fontFamily: 'var(--font-sans)',
+      fontSize: 12,
+      fontWeight: 500,
+      fontVariantNumeric: 'tabular-nums',
+      border: `1px solid ${active ? 'color-mix(in srgb, var(--color-bone) 15%, transparent)' : hover && !disabled ? 'color-mix(in srgb, var(--color-azure) 30%, transparent)' : 'transparent'}`,
+      background: active ? 'color-mix(in srgb, var(--color-bone) 8%, transparent)' : 'transparent',
+      color: active ? 'var(--color-bone)' : hover && !disabled ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
+      opacity: disabled ? 0.4 : 1,
+      transition: 'all 0.2s var(--ease-calm)'
+    }
+  }, children);
+}
+function Pagination({
+  page = 1,
+  pageCount = 1,
+  onChange,
+  siblings = 1,
+  showEnds = true,
+  style
+}) {
+  const go = p => {
+    if (onChange && p >= 1 && p <= pageCount && p !== page) onChange(p);
+  };
+  const pages = [];
+  const lo = Math.max(2, page - siblings),
+    hi = Math.min(pageCount - 1, page + siblings);
+  pages.push(1);
+  if (lo > 2) pages.push('…l');
+  for (let p = lo; p <= hi; p++) pages.push(p);
+  if (hi < pageCount - 1) pages.push('…r');
+  if (pageCount > 1) pages.push(pageCount);
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "\u5206\u9875",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 4,
+      ...style
+    }
+  }, showEnds ? /*#__PURE__*/React.createElement(PageButton, {
+    label: "\u7B2C\u4E00\u9875",
+    disabled: page <= 1,
+    onClick: () => go(1)
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevrons-left",
+    size: 13
+  })) : null, /*#__PURE__*/React.createElement(PageButton, {
+    label: "\u4E0A\u4E00\u9875",
+    disabled: page <= 1,
+    onClick: () => go(page - 1)
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-left",
+    size: 13
+  })), pages.map(p => typeof p === 'string' ? /*#__PURE__*/React.createElement("span", {
+    key: p,
+    style: {
+      minWidth: 20,
+      textAlign: 'center',
+      fontSize: 12,
+      color: 'var(--color-mist)'
+    }
+  }, "\u2026") : /*#__PURE__*/React.createElement(PageButton, {
+    key: p,
+    active: p === page,
+    label: `第 ${p} 页`,
+    onClick: () => go(p)
+  }, p)), /*#__PURE__*/React.createElement(PageButton, {
+    label: "\u4E0B\u4E00\u9875",
+    disabled: page >= pageCount,
+    onClick: () => go(page + 1)
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevron-right",
+    size: 13
+  })), showEnds ? /*#__PURE__*/React.createElement(PageButton, {
+    label: "\u6700\u540E\u4E00\u9875",
+    disabled: page >= pageCount,
+    onClick: () => go(pageCount)
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "chevrons-right",
+    size: 13
+  })) : null);
+}
+Object.assign(__ds_scope, { Pagination });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Pagination.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/AlphabetIndex.jsx
+try { (() => {
+/* A–Z index rail for large pickers — active letter tints azure, unavailable letters dim out */
+const DEFAULT_LETTERS = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+function AlphabetIndex({
+  letters = DEFAULT_LETTERS,
+  value,
+  onChange,
+  available,
+  style
+}) {
+  const [hovered, setHovered] = React.useState(null);
+  return /*#__PURE__*/React.createElement("div", {
+    role: "navigation",
+    "aria-label": "\u5B57\u6BCD\u7D22\u5F15",
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: 2,
+      ...style
+    }
+  }, letters.map(l => {
+    const enabled = !available || available.includes(l);
+    const on = l === value;
+    const hover = hovered === l;
+    return /*#__PURE__*/React.createElement("button", {
+      key: l,
+      type: "button",
+      disabled: !enabled,
+      "aria-pressed": on,
+      onClick: () => onChange && onChange(l),
+      onMouseEnter: () => setHovered(l),
+      onMouseLeave: () => setHovered(null),
+      style: {
+        minWidth: 22,
+        height: 22,
+        padding: '0 4px',
+        borderRadius: 999,
+        border: 'none',
+        cursor: enabled ? 'pointer' : 'default',
+        fontFamily: 'var(--font-sans)',
+        fontSize: 11,
+        fontWeight: 500,
+        letterSpacing: '0.06em',
+        background: on ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'transparent',
+        color: !enabled ? 'color-mix(in srgb, var(--color-mist) 45%, transparent)' : on ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone)' : 'var(--color-bone-dim)',
+        transition: 'all 0.2s var(--ease-calm)'
+      }
+    }, l);
+  }));
+}
+Object.assign(__ds_scope, { AlphabetIndex });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/AlphabetIndex.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Fab.jsx
+try { (() => {
+/* Floating action button — the azure glow treatment from 生成上身效果, as a 48px circle.
+   Default AI entry: sparkles glyph. */
+function Fab({
+  icon = 'sparkles',
+  label,
+  onClick,
+  fixed = false,
+  offset = 24,
+  style
+}) {
+  const [hover, setHover] = React.useState(false);
+  return /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-label": label,
+    onClick: onClick,
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 48,
+      height: 48,
+      borderRadius: 999,
+      cursor: 'pointer',
+      border: `1px solid color-mix(in srgb, var(--color-azure) ${hover ? 55 : 40}%, transparent)`,
+      background: `color-mix(in srgb, var(--color-azure) ${hover ? 24 : 15}%, transparent)`,
+      color: 'var(--color-azure-bright)',
+      backdropFilter: 'blur(8px)',
+      boxShadow: hover ? '0 0 34px -4px rgba(87,184,212,0.7)' : '0 0 24px -6px rgba(87,184,212,0.6)',
+      transform: hover ? 'translateY(-2px)' : 'none',
+      transition: 'all 0.3s var(--ease-calm)',
+      ...(fixed ? {
+        position: 'fixed',
+        right: offset,
+        bottom: offset,
+        zIndex: 90
+      } : {}),
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: icon,
+    size: 20,
+    strokeWidth: 1.5
+  }));
+}
+Object.assign(__ds_scope, { Fab });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Fab.jsx", error: String((e && e.message) || e) }); }
+
 // components/ui/DataTable.jsx
 try { (() => {
 /* Hairline BI table — eyebrow-tracked header, hairline row rules, numerals emphasised via column strong flag */
@@ -1128,13 +2432,21 @@ Object.assign(__ds_scope, { DataTable });
 // components/ui/Dialog.jsx
 try { (() => {
 /* Modal — blurred ink overlay + frosted glass card, extracted from ContactDialog */
+const SIZES = {
+  sm: 384,
+  md: 480,
+  lg: 720
+};
 function Dialog({
   open,
   onClose,
   title,
   subtitle,
-  width = 384,
+  size = 'sm',
+  width,
   align = 'center',
+  footer,
+  scrollBody = false,
   children
 }) {
   React.useEffect(() => {
@@ -1175,7 +2487,10 @@ function Dialog({
       position: 'relative',
       zIndex: 10,
       width: '100%',
-      maxWidth: width,
+      maxWidth: width ?? SIZES[size] ?? SIZES.sm,
+      maxHeight: '85vh',
+      display: 'flex',
+      flexDirection: 'column',
       borderRadius: '1rem',
       border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
       padding: 32,
@@ -1214,7 +2529,24 @@ function Dialog({
       lineHeight: 1.625,
       color: 'var(--color-bone-dim)'
     }
-  }, subtitle) : null, children));
+  }, subtitle) : null, /*#__PURE__*/React.createElement("div", {
+    style: scrollBody ? {
+      flex: '1 1 auto',
+      overflowY: 'auto',
+      margin: '0 -8px',
+      padding: '0 8px'
+    } : {
+      flex: '1 1 auto'
+    }
+  }, children), footer ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      gap: 10,
+      flex: 'none'
+    }
+  }, footer) : null));
 }
 Object.assign(__ds_scope, { Dialog });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Dialog.jsx", error: String((e && e.message) || e) }); }
@@ -3313,9 +4645,25 @@ __ds_ns.Reveal = __ds_scope.Reveal;
 
 __ds_ns.SectionHeading = __ds_scope.SectionHeading;
 
+__ds_ns.AlphabetIndex = __ds_scope.AlphabetIndex;
+
+__ds_ns.Checkbox = __ds_scope.Checkbox;
+
+__ds_ns.CheckboxGroup = __ds_scope.CheckboxGroup;
+
+__ds_ns.Collapse = __ds_scope.Collapse;
+
 __ds_ns.DataTable = __ds_scope.DataTable;
 
+__ds_ns.DateRangeEditor = __ds_scope.DateRangeEditor;
+
 __ds_ns.Dialog = __ds_scope.Dialog;
+
+__ds_ns.DropdownMenu = __ds_scope.DropdownMenu;
+
+__ds_ns.EmptyState = __ds_scope.EmptyState;
+
+__ds_ns.Fab = __ds_scope.Fab;
 
 __ds_ns.Field = __ds_scope.Field;
 
@@ -3325,9 +4673,25 @@ __ds_ns.TextArea = __ds_scope.TextArea;
 
 __ds_ns.Select = __ds_scope.Select;
 
+__ds_ns.FilterChips = __ds_scope.FilterChips;
+
+__ds_ns.Listbox = __ds_scope.Listbox;
+
+__ds_ns.Pagination = __ds_scope.Pagination;
+
 __ds_ns.Panel = __ds_scope.Panel;
 
+__ds_ns.Popover = __ds_scope.Popover;
+
+__ds_ns.ProductCard = __ds_scope.ProductCard;
+
+__ds_ns.ThumbnailStrip = __ds_scope.ThumbnailStrip;
+
 __ds_ns.Progress = __ds_scope.Progress;
+
+__ds_ns.Radio = __ds_scope.Radio;
+
+__ds_ns.RadioGroup = __ds_scope.RadioGroup;
 
 __ds_ns.Sparkline = __ds_scope.Sparkline;
 

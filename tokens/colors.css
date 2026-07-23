@@ -25,6 +25,10 @@
   --surface-page:var(--color-ink-950);
   --surface-raised:var(--color-ink-850);
   --surface-card:var(--color-ink-800);
+  /* Control/floating surfaces (ui additions): translucent ink on dark, pure white on light */
+  --surface-control:color-mix(in srgb,var(--color-ink-850) 80%,transparent);
+  --surface-float:color-mix(in srgb,var(--color-ink-750) 97%,transparent);
+  --shadow-float:0 20px 44px -22px rgba(0,0,0,0.45);
   --text-strong:#ffffff;
   --text-body:var(--color-bone);
   --text-soft:var(--color-bone-soft);
@@ -57,6 +61,9 @@ html.light,.theme-light{
   --color-azure-deep:#57b8d4;
   --color-champagne:#a5854e;
   --text-strong:#14171c;
+  --surface-control:#ffffff;
+  --surface-float:#ffffff;
+  --shadow-float:0 18px 44px -26px rgba(0,0,0,0.18),0 4px 14px -8px rgba(0,0,0,0.08);
   --border-hairline:rgba(0,0,0,0.06);
   --border-panel:rgba(0,0,0,0.06);
   --hero-base:255 255 255; /* @kind color */

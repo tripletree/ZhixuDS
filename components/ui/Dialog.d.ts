@@ -9,10 +9,17 @@ export interface DialogProps {
   title?: string;
   /** Dim body line under the title */
   subtitle?: string;
-  /** Max width in px @default 384 */
+  /** Max width preset: sm 384 · md 480 · lg 720 (wide pickers) @default 'sm' */
+  size?: 'sm' | 'md' | 'lg';
+  /** Explicit max width in px; overrides size */
   width?: number;
   /** @default 'center' */
   align?: 'center' | 'left';
+  /** Right-aligned action row (e.g. ghost 取消 + primary 确定) */
+  footer?: React.ReactNode;
+  /** Make the body a scroll area for long content (picker grids). Clips floating
+   * panels like Listbox — leave off for forms. @default false */
+  scrollBody?: boolean;
   children?: React.ReactNode;
 }
 export declare function Dialog(props: DialogProps): JSX.Element | null;
