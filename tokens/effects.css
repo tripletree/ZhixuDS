@@ -33,10 +33,10 @@ html.light .glow-blue::after,.theme-light .glow-blue::after{background:radial-gr
 .eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:500}
 .text-balance{text-wrap:balance}
 /* Form controls (ui addition — surface borrowed from the AI-chat input bar) */
-.fm-control{appearance:none;-webkit-appearance:none;width:100%;box-sizing:border-box;border-radius:var(--radius-panel);border:1px solid color-mix(in srgb,var(--color-bone) 10%,transparent);background:color-mix(in srgb,var(--color-ink-850) 80%,transparent);padding:10px 14px;font-family:var(--font-sans);font-size:13px;line-height:1.5;color:var(--color-bone);outline:none;transition:border-color 0.3s var(--ease-calm),box-shadow 0.3s var(--ease-calm)}
+.fm-control{appearance:none;-webkit-appearance:none;width:100%;box-sizing:border-box;border-radius:var(--radius-panel);border:1px solid color-mix(in srgb,var(--color-bone) 10%,transparent);background:var(--surface-control);padding:10px 14px;font-family:var(--font-sans);font-size:13px;line-height:1.5;color:var(--color-bone);outline:none;transition:border-color 0.3s var(--ease-calm),box-shadow 0.3s var(--ease-calm)}
 .fm-control::placeholder{color:var(--color-mist)}
 .fm-control:focus{border-color:color-mix(in srgb,var(--color-azure) 40%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-azure) 12%,transparent)}
-.fm-control option{background:var(--color-ink-850);color:var(--color-bone)}
+.fm-control option{background:var(--surface-float);color:var(--color-bone)}
 /* Animations */
 @keyframes shimmer-sweep{0%{transform:translateY(-120%)}100%{transform:translateY(220%)}}
 .animate-shimmer{animation:shimmer-sweep 3.4s var(--ease-calm) infinite}

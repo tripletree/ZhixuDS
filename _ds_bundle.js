@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"AlphabetIndex","sourcePath":"components/ui/AlphabetIndex.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"DateRangeEditor","sourcePath":"components/ui/DateRangeEditor.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"DropdownMenu","sourcePath":"components/ui/DropdownMenu.jsx"},{"name":"EmptyState","sourcePath":"components/ui/EmptyState.jsx"},{"name":"Fab","sourcePath":"components/ui/Fab.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Pagination","sourcePath":"components/ui/Pagination.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"ProductCard","sourcePath":"components/ui/ProductCard.jsx"},{"name":"ThumbnailStrip","sourcePath":"components/ui/ProductCard.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"686935625549","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/AlphabetIndex.jsx":"1f7f317ab324","components/ui/Checkbox.jsx":"fbf0670b1543","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/DateRangeEditor.jsx":"fb7de18a2f6b","components/ui/Dialog.jsx":"6d10839c3b85","components/ui/DropdownMenu.jsx":"4a0641143078","components/ui/EmptyState.jsx":"70313c4817c8","components/ui/Fab.jsx":"f0eb033c5362","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/FilterChips.jsx":"32a6fccb8771","components/ui/Listbox.jsx":"edcd85dc7230","components/ui/Pagination.jsx":"34d16d9fc29c","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"9e6219d9cebc","components/ui/ProductCard.jsx":"8fdcdeb3046f","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"52d513c97b7b","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"AlphabetIndex","sourcePath":"components/ui/AlphabetIndex.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"DateRangeEditor","sourcePath":"components/ui/DateRangeEditor.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"DropdownMenu","sourcePath":"components/ui/DropdownMenu.jsx"},{"name":"EmptyState","sourcePath":"components/ui/EmptyState.jsx"},{"name":"Fab","sourcePath":"components/ui/Fab.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Pagination","sourcePath":"components/ui/Pagination.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"ProductCard","sourcePath":"components/ui/ProductCard.jsx"},{"name":"ThumbnailStrip","sourcePath":"components/ui/ProductCard.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"686935625549","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/AlphabetIndex.jsx":"1f7f317ab324","components/ui/Checkbox.jsx":"391985ef4ce7","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/DateRangeEditor.jsx":"3efa315256d1","components/ui/Dialog.jsx":"6d10839c3b85","components/ui/DropdownMenu.jsx":"4a0641143078","components/ui/EmptyState.jsx":"70313c4817c8","components/ui/Fab.jsx":"f0eb033c5362","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/FilterChips.jsx":"32a6fccb8771","components/ui/Listbox.jsx":"bd140fc8058a","components/ui/Pagination.jsx":"34d16d9fc29c","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"505dc169e598","components/ui/ProductCard.jsx":"b0b8cf71bc3b","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"697de7b43a96","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1215,7 +1215,7 @@ function Listbox({
       boxSizing: 'border-box',
       borderRadius: 'var(--radius-panel)',
       border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
-      background: 'color-mix(in srgb, var(--color-ink-850) 80%, transparent)',
+      background: 'var(--surface-control)',
       padding: '10px 14px',
       fontFamily: 'var(--font-sans)',
       fontSize: 13,
@@ -1254,9 +1254,9 @@ function Listbox({
       overflowY: 'auto',
       borderRadius: 'var(--radius-panel)',
       border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-      background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)',
+      background: 'var(--surface-float)',
       backdropFilter: 'blur(12px)',
-      boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)'
+      boxShadow: 'var(--shadow-float)'
     }
   }, options.map((opt, i) => {
     const isSelected = opt.value === value;
@@ -1354,7 +1354,7 @@ function Checkbox({
       borderRadius: 4,
       transition: 'all 0.2s var(--ease-calm)',
       border: `1px solid ${on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
-      background: on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      background: on ? 'var(--color-azure)' : 'var(--surface-control)',
       boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none',
       color: 'var(--color-ink-950)'
     }
@@ -1465,7 +1465,7 @@ function Radio({
       borderRadius: 999,
       transition: 'all 0.2s var(--ease-calm)',
       border: `1px solid ${checked ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
-      background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+      background: 'var(--surface-control)',
       boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none'
     }
   }, checked ? /*#__PURE__*/React.createElement("span", {
@@ -1740,9 +1740,9 @@ function Popover({
       padding,
       borderRadius: 'var(--radius-panel)',
       border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-      background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)',
+      background: 'var(--surface-float)',
       backdropFilter: 'blur(12px)',
-      boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)',
+      boxShadow: 'var(--shadow-float)',
       ...(PLACE[placement] || PLACE['bottom-start'])
     }
   }, children) : null);
@@ -1881,7 +1881,7 @@ function DateRangeEditor({
         boxSizing: 'border-box',
         borderRadius: 'var(--radius-panel)',
         border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
-        background: 'color-mix(in srgb, var(--color-ink-850) 80%, transparent)',
+        background: 'var(--surface-control)',
         padding: '10px 14px',
         fontFamily: 'var(--font-sans)',
         fontSize: 13,
@@ -2033,7 +2033,7 @@ function ProductCard({
       borderRadius: 12,
       overflow: 'hidden',
       border: `1px solid ${hover ? 'color-mix(in srgb, var(--color-azure) 25%, transparent)' : 'var(--border-hairline)'}`,
-      background: 'color-mix(in srgb, var(--color-ink-850) 70%, transparent)',
+      background: 'var(--surface-control)',
       transform: hover ? 'translateY(-4px)' : 'none',
       transition: 'all 0.3s var(--ease-calm)',
       cursor: onClick ? 'pointer' : 'default',

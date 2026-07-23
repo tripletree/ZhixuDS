@@ -15,7 +15,7 @@ export function Checkbox({ checked, indeterminate = false, onChange, disabled = 
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 16, height: 16, flex: 'none',
         borderRadius: 4, transition: 'all 0.2s var(--ease-calm)',
         border: `1px solid ${on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
-        background: on ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+        background: on ? 'var(--color-azure)' : 'var(--surface-control)',
         boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none',
         color: 'var(--color-ink-950)',
       }}>

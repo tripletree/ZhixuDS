@@ -12,7 +12,7 @@ export function Radio({ checked, onChange, name, disabled = false, children, sty
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 16, height: 16, flex: 'none',
         borderRadius: 999, transition: 'all 0.2s var(--ease-calm)',
         border: `1px solid ${checked ? 'var(--color-azure)' : 'color-mix(in srgb, var(--color-bone) 25%, transparent)'}`,
-        background: 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
+        background: 'var(--surface-control)',
         boxShadow: focus ? '0 0 0 3px color-mix(in srgb, var(--color-azure) 15%, transparent)' : 'none',
       }}>
         {checked ? <span style={{ width: 8, height: 8, borderRadius: 999, background: 'var(--color-azure)' }}></span> : null}

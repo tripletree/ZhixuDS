@@ -28,8 +28,8 @@ export function Popover({ anchor, open, onOpenChange, placement = 'bottom-start'
         <div className="fm-pop-in" role="dialog" style={{
           position: 'absolute', zIndex: 60, width, padding,
           borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-          background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)', backdropFilter: 'blur(12px)',
-          boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)', ...PLACE[placement] || PLACE['bottom-start'],
+          background: 'var(--surface-float)', backdropFilter: 'blur(12px)',
+          boxShadow: 'var(--shadow-float)', ...PLACE[placement] || PLACE['bottom-start'],
         }}>
           {children}
         </div>

@@ -57,7 +57,7 @@ export function Listbox({ options = [], value, onChange, placeholder = '请选�
           /* surface inlined too — native button chrome (black square border) must never leak through */
           appearance: 'none', WebkitAppearance: 'none', width: '100%', boxSizing: 'border-box',
           borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
-          background: 'color-mix(in srgb, var(--color-ink-850) 80%, transparent)', padding: '10px 14px',
+          background: 'var(--surface-control)', padding: '10px 14px',
           fontFamily: 'var(--font-sans)', fontSize: 13, lineHeight: 1.5,
         }} {...rest}>
         <span style={{ flex: 1, color: selected ? 'var(--color-bone)' : 'var(--color-mist)' }}>
@@ -73,8 +73,8 @@ export function Listbox({ options = [], value, onChange, placeholder = '请选�
             position: 'absolute', left: 0, right: 0, top: 'calc(100% + 6px)', zIndex: 50,
             margin: 0, padding: 6, listStyle: 'none', maxHeight: 240, overflowY: 'auto',
             borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-            background: 'color-mix(in srgb, var(--color-ink-850) 96%, transparent)', backdropFilter: 'blur(12px)',
-            boxShadow: '0 20px 44px -22px rgba(0,0,0,0.35)',
+            background: 'var(--surface-float)', backdropFilter: 'blur(12px)',
+            boxShadow: 'var(--shadow-float)',
           }}>
           {options.map((opt, i) => {
             const isSelected = opt.value === value;

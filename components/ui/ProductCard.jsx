@@ -8,7 +8,7 @@ export function ProductCard({ src, alt = '', aspectRatio = '3/4', title, brand, 
       style={{
         display: 'flex', flexDirection: 'column', gap: 10, borderRadius: 12, overflow: 'hidden',
         border: `1px solid ${hover ? 'color-mix(in srgb, var(--color-azure) 25%, transparent)' : 'var(--border-hairline)'}`,
-        background: 'color-mix(in srgb, var(--color-ink-850) 70%, transparent)',
+        background: 'var(--surface-control)',
         transform: hover ? 'translateY(-4px)' : 'none', transition: 'all 0.3s var(--ease-calm)',
         cursor: onClick ? 'pointer' : 'default', ...style,
       }}>
