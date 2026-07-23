@@ -36,8 +36,12 @@ import {
   Tag,
   TextArea,
   ThumbnailStrip,
+  Toast,
+  ToastHost,
+  Tooltip,
   useContactDialog,
   useTheme,
+  useToast,
   type CheckOption,
   type ChipOption,
   type DataColumn,
@@ -48,6 +52,7 @@ import {
   type TabItem,
   type Theme,
   type ThumbItem,
+  type ToastItem,
 } from '@zhixu/fabricmind-ui'
 
 const components: Component[] = [
@@ -87,11 +92,16 @@ const components: Component[] = [
   Tag,
   TextArea,
   ThumbnailStrip,
+  Toast,
+  ToastHost,
+  Tooltip,
 ]
 
 const theme: Theme = 'dark'
 const themeApi = useTheme()
 const contactDialogApi = useContactDialog()
+const toastApi = useToast()
+const toastItems: ToastItem[] = [{ id: 1, tone: 'success', title: '已导出 PPT 提案' }]
 
 const listboxOptions: ListboxOption[] = [{ value: 'trend', label: '趋势研究', hint: 'Trend' }]
 const chips: ChipOption[] = [{ value: 'tshirt', label: 'T恤' }]
@@ -107,6 +117,8 @@ void components
 void theme
 void themeApi
 void contactDialogApi
+void toastApi
+void toastItems
 void listboxOptions
 void chips
 void checks

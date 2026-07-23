@@ -1,7 +1,24 @@
 {
   "name": "@zhixu/fabricmind-ui",
-  "private": true,
   "version": "0.1.0",
+  "description": "知序 FabricMind design system — Vue 3 component library (dark/light themes, Tailwind CSS 4 tokens)",
+  "keywords": [
+    "vue",
+    "components",
+    "design-system",
+    "fabricmind",
+    "zhixu"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tripletree/ZhixuDS.git",
+    "directory": "templates/vue-package"
+  },
+  "homepage": "https://github.com/tripletree/ZhixuDS/tree/main/templates/vue-package#readme",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +26,8 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc -b",
     "build:lib": "vite build --config vite.lib.config.ts && vue-tsc -p tsconfig.lib.json",
-    "verify:package": "npm run build:lib && node scripts/verify-package.mjs && vue-tsc -p tests/tsconfig.consumer.json && npm pack --dry-run"
+    "verify:package": "npm run build:lib && node scripts/verify-package.mjs && vue-tsc -p tests/tsconfig.consumer.json && npm pack --dry-run",
+    "prepublishOnly": "npm run verify:package"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",

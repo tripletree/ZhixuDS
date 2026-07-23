@@ -46,6 +46,12 @@ export { default as Tag } from './components/ui/Tag.vue'
 export { default as TextArea } from './components/ui/TextArea.vue'
 export { default as ThumbnailStrip } from './components/ui/ThumbnailStrip.vue'
 export type { ThumbItem } from './components/ui/ThumbnailStrip.vue'
+export { default as Toast } from './components/ui/Toast.vue'
+export { default as ToastHost } from './components/ui/ToastHost.vue'
+export { default as Tooltip } from './components/ui/Tooltip.vue'
+
+export { useToast } from './composables/useToast'
+export type { ToastItem } from './composables/useToast'
 
 export { useContactDialog } from './composables/useContactDialog'
 export { useTheme } from './composables/useTheme'

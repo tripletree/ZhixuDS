@@ -1,0 +1,48 @@
+name: Publish @zhixu/fabricmind-ui
+
+# Publishes templates/vue-package to npm when a ui-v* tag is pushed
+# (e.g. `git tag ui-v0.1.0 && git push origin ui-v0.1.0`).
+# Requires the NPM_TOKEN repository secret (an npm automation token with
+# publish rights on the @zhixu scope). The tag version must match
+# templates/vue-package/package.json.
+
+on:
+  push:
+    tags:
+      - 'ui-v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: templates/vue-package
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Check tag matches package version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#ui-v}"
+          PKG_VERSION="$(node -p "require('./package.json').version")"
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "Tag ui-v$TAG_VERSION does not match package.json version $PKG_VERSION" >&2
+            exit 1
+          fi
+
+      - run: npm ci
+
+      - name: Verify package contract
+        run: npm run verify:package
+
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

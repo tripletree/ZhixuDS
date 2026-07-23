@@ -31,6 +31,9 @@ import Fab from './components/ui/Fab.vue'
 import DataTable from './components/ui/DataTable.vue'
 import Dialog from './components/ui/Dialog.vue'
 import Button from './components/ui/Button.vue'
+import Tooltip from './components/ui/Tooltip.vue'
+import ToastHost from './components/ui/ToastHost.vue'
+import { useToast } from './composables/useToast'
 
 const tab = ref('trend')
 const scene = ref('trend')
@@ -46,6 +49,11 @@ const thumb = ref(0)
 const page = ref(3)
 const letter = ref('A')
 const dialogOpen = ref(true)
+const { push } = useToast()
+function demoToast() {
+  push({ tone: 'success', title: '已导出 PPT 提案', description: '文件已保存到项目空间' })
+  push({ tone: 'error', title: '生成失败', description: '上游数据暂不可用，请稍后重试', duration: 0 })
+}
 </script>
 
 <template>
@@ -56,6 +64,10 @@ const dialogOpen = ref(true)
       <Tag tone="champagne">TOP 5</Tag>
       <Tag tone="rouge">下架</Tag>
       <StatusDot label="实时同步中" />
+      <Tooltip content="机会指数 = 趋势热度 × 供应链可行性" placement="bottom">
+        <Tag tone="neutral">指标说明</Tag>
+      </Tooltip>
+      <Button variant="ghost" size="sm" @click="demoToast">触发通知</Button>
       <Fab label="AI 助手" />
     </div>
 
@@ -140,5 +152,6 @@ const dialogOpen = ref(true)
         <Button size="sm">提交</Button>
       </template>
     </Dialog>
+    <ToastHost />
   </div>
 </template>

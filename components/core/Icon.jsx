@@ -23,6 +23,9 @@ const PATHS = {
   'calendar': <><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></>,
   'check': <path d="M20 6 9 17l-5-5" />,
   'search': <><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></>,
+  'info': <><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></>,
+  'circle-check': <><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></>,
+  'circle-alert': <><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></>,
 };
 export function Icon({ name, size = 16, strokeWidth = 1.75, style, ...rest }) {
   const glyph = PATHS[name];

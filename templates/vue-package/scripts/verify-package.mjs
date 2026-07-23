@@ -58,8 +58,12 @@ const expectedExports = [
   'Tag',
   'TextArea',
   'ThumbnailStrip',
+  'Toast',
+  'ToastHost',
+  'Tooltip',
   'useContactDialog',
   'useTheme',
+  'useToast',
 ]
 
 assert.deepEqual(Object.keys(library).sort(), expectedExports.sort())

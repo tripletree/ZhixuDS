@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Feedback · Dark" subtitle="Toast · ToastStack · Tooltip — azure/champagne/rouge 提示" -->
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:20px 24px;background:#0a0c10}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Toast, Tooltip, IconButton } = window.FabricMindDesignSystem_4edb8c;
+function Demo(){
+  return (
+    <div style={{display:'flex',gap:24,alignItems:'flex-start'}}>
+      <div style={{display:'flex',flexDirection:'column',gap:10}}>
+        <Toast tone="success" title="已导出 PPT 提案" description="文件已保存到项目空间" onClose={()=>{}} />
+        <Toast tone="warning" title="数据部分缺失" description="2026-06 的部分品牌数据尚未同步" />
+        <Toast tone="error" title="生成失败" description="上游数据暂不可用，请稍后重试" onClose={()=>{}} />
+      </div>
+      <div style={{display:'flex',flexDirection:'column',gap:40,paddingTop:8}}>
+        <Toast tone="info" title="报告生成中" description="预计还需 30 秒" />
+        <div style={{display:'flex',gap:48,justifyContent:'center',paddingTop:24}}>
+          <Tooltip open content="机会指数 = 趋势热度 × 供应链可行性" placement="bottom">
+            <IconButton name="info" label="指标说明" />
+          </Tooltip>
+          <Tooltip open content="导出 PPT 提案" placement="bottom">
+            <IconButton name="download" label="导出" />
+          </Tooltip>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>
