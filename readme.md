@@ -11,7 +11,7 @@ Supports **dark (default) and light themes** — toggled by adding class `light`
 
 ## Products represented
 
-1. **Marketing landing page** (the source repo) — recreated in `ui_kits/landing/`.
+1. **Marketing landing page** (the source repo) — recreated in Vue in `templates/vue-package/` (the showcase site's default view).
 2. The **BI platform itself** appears only as in-page mock visuals (dashboard, AI chat, try-on, report). No real product app UI exists in the source; the mocks are recreated as components of the landing kit, not invented product screens.
 
 ## CONTENT FUNDAMENTALS
@@ -55,12 +55,10 @@ All three families load from Google Fonts via `tokens/typography.css` (as in the
 - `styles.css` — entry; imports `tokens/{colors,typography,effects}.css`
 - `DESIGN.md` — the visual identity in the open [DESIGN.md format](https://github.com/google-labs-code/design.md) (YAML tokens + prose sections) for Stitch / coding-agent interop; mirrors the CSS tokens, which remain the source of truth
 - `assets/` — favicon/brand mark, hero visuals (dark png / light webp / placeholder svg), scenario illustrations (dark + light), WeChat QR, lucide icon copies
-- `components/core/` — BrandMark, Icon, Button, SectionHeading, CountUp, Reveal (React mirror for this workspace's Design System tab)
+- `components/core/` — BrandMark, Icon, Button, SectionHeading, CountUp, Reveal (React mirror for HTML prototypes/mocks)
 - `components/ui/` — application-level components distilled from the landing mocks: Panel, Tag/StatusDot, Stat, Progress, Sparkline/SparkBars, Tabs, Field/Input/TextArea/Select/Listbox, Checkbox/Radio groups, FilterChips, Collapse, Popover, DropdownMenu, DateRangeEditor, EmptyState, ProductCard/ThumbnailStrip, Pagination, AlphabetIndex, Fab, DataTable, Dialog, Toast/ToastStack, Tooltip (React mirror for this workspace's cards; Vue SFC counterparts live in `templates/vue-package/src/components/ui/`)
 - `templates/vue-package/` — **production Vue 3 package**: Vue 3.5 + TS 5.8 (vue-tsc) + Vite 6 + Tailwind 4 + motion-v + lucide-vue-next; vendored source (sections, visuals, composables, tokens in `src/style.css`) + extracted `Button.vue`/`IconButton.vue` + Vue ports of every app-level ui component above (`demo-ui.html` exercises them all). See its README.md.
-- `ui_kits/landing/` — full landing-page recreation (`index.html` + section JSX), dark/light toggle, contact dialog
-- `guidelines/` — foundation specimen cards (Design System tab)
-- `templates/` — deck/doc starting templates for consuming projects
+- `templates/vue-package/` — also the **showcase site** (deployable to Vercel via root `vercel.json`): hash-routed views for the landing page (`#/`), the component gallery (`#/components`), and the foundations specimens (`#/guidelines`), all with the dark/light toggle
 - `SKILL.md` — agent skill entry point
 
 ### Intentional additions
