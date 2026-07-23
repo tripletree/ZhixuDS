@@ -16,6 +16,10 @@ export interface ListboxProps {
   onChange?: (value: string) => void;
   /** Shown in mist when nothing is selected @default '请选择' */
   placeholder?: string;
+  /** Dims the trigger (opacity 0.45, not-allowed cursor) and blocks opening @default false */
+  disabled?: boolean;
+  /** Rouge border + focus ring + aria-invalid; pair with Field's `error` @default false */
+  invalid?: boolean;
   style?: React.CSSProperties;
 }
 export declare function Listbox(props: ListboxProps): JSX.Element;

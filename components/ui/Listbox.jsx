@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '../core/Icon.jsx';
 /* Custom dropdown — .fm-control trigger + fully branded panel (native <select> popups can't be themed).
    Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump. */
-export function Listbox({ options = [], value, onChange, placeholder = '请选择', size, style, ...rest }) {
+export function Listbox({ options = [], value, onChange, placeholder = '请选择', disabled = false, invalid = false, size, style, ...rest }) {
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState(-1);
   const rootRef = React.useRef(null);
@@ -25,7 +25,7 @@ export function Listbox({ options = [], value, onChange, placeholder = '请选�
     }
   }, [open, active]);
 
-  const openList = () => { setOpen(true); setActive(selectedIndex >= 0 ? selectedIndex : 0); };
+  const openList = () => { if (disabled) return; setOpen(true); setActive(selectedIndex >= 0 ? selectedIndex : 0); };
   const commit = (i) => {
     const opt = options[i];
     if (!opt) return;
@@ -48,16 +48,18 @@ export function Listbox({ options = [], value, onChange, placeholder = '请选�
 
   return (
     <span ref={rootRef} style={{ position: 'relative', display: 'block', ...style }} onKeyDown={onKeyDown}>
-      <button type="button" className="fm-control"
+      <button type="button" className={invalid ? 'fm-control fm-control-error' : 'fm-control'}
+        disabled={disabled} aria-invalid={invalid || undefined}
         aria-haspopup="listbox" aria-expanded={open}
         aria-activedescendant={open && active >= 0 ? `${id}-opt-${active}` : undefined}
         onClick={() => (open ? setOpen(false) : openList())}
         style={{
-          display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: 'pointer',
+          display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: disabled ? 'not-allowed' : 'pointer',
           /* surface inlined too — native button chrome (black square border) must never leak through */
           appearance: 'none', WebkitAppearance: 'none', width: '100%', boxSizing: 'border-box',
-          borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
-          background: 'var(--surface-control)', padding: '10px 14px',
+          borderRadius: 'var(--radius-panel)',
+          border: `1px solid color-mix(in srgb, ${invalid ? 'var(--color-rouge) 50%' : 'var(--color-bone) 10%'}, transparent)`,
+          background: 'var(--surface-control)', padding: '10px 14px', opacity: disabled ? 0.45 : 1,
           fontFamily: 'var(--font-sans)', fontSize: 13, lineHeight: 1.5,
         }} {...rest}>
         <span style={{ flex: 1, color: selected ? 'var(--color-bone)' : 'var(--color-mist)' }}>

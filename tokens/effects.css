@@ -37,6 +37,10 @@ html.light .glow-blue::after,.theme-light .glow-blue::after{background:radial-gr
 .fm-control::placeholder{color:var(--color-mist)}
 .fm-control:focus{border-color:color-mix(in srgb,var(--color-azure) 40%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-azure) 12%,transparent)}
 .fm-control option{background:var(--surface-float);color:var(--color-bone)}
+.fm-control:disabled,.fm-control[data-disabled]{opacity:0.45;cursor:not-allowed}
+/* Invalid state — rouge replaces azure on border + focus ring; pair with Field's error message */
+.fm-control-error{border-color:color-mix(in srgb,var(--color-rouge) 50%,transparent)}
+.fm-control-error:focus{border-color:color-mix(in srgb,var(--color-rouge) 65%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-rouge) 12%,transparent)}
 /* Animations */
 @keyframes shimmer-sweep{0%{transform:translateY(-120%)}100%{transform:translateY(220%)}}
 .animate-shimmer{animation:shimmer-sweep 3.4s var(--ease-calm) infinite}

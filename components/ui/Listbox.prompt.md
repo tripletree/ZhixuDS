@@ -12,3 +12,5 @@ const [scene, setScene] = React.useState('trend');
 ```
 
 Prefer `Listbox` when the open panel must stay on-brand (dashboards, demos); plain `Select` keeps the native popup with its free accessibility and mobile pickers. Option labels are short noun phrases; `hint` fits the italic-English annotation habit but stays sans here (12px mist).
+
+States: `disabled` dims the trigger and blocks opening; `invalid` swaps the border/focus ring to rouge — pair it with `error` on the wrapping Field for the message.

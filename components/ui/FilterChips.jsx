@@ -17,13 +17,13 @@ export function FilterChips({ options = [], value, onChange, multiple = false, t
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
         {options.map(o => {
           const on = isOn(o.value);
-          const hover = hovered === o.value;
+          const hover = hovered === o.value && !o.disabled;
           return (
-            <button key={o.value} type="button" aria-pressed={on} onClick={() => pick(o.value)}
+            <button key={o.value} type="button" aria-pressed={on} disabled={o.disabled} onClick={() => pick(o.value)}
               onMouseEnter={() => setHovered(o.value)} onMouseLeave={() => setHovered(null)}
               style={{
-                borderRadius: 999, cursor: 'pointer', fontFamily: 'var(--font-sans)', fontWeight: 500,
-                letterSpacing: '0.02em', whiteSpace: 'nowrap', transition: 'all 0.3s var(--ease-calm)',
+                borderRadius: 999, cursor: o.disabled ? 'not-allowed' : 'pointer', fontFamily: 'var(--font-sans)', fontWeight: 500,
+                letterSpacing: '0.02em', whiteSpace: 'nowrap', transition: 'all 0.3s var(--ease-calm)', opacity: o.disabled ? 0.45 : 1,
                 border: `1px solid ${on ? 'color-mix(in srgb, var(--color-azure) 40%, transparent)' : hover ? 'color-mix(in srgb, var(--color-azure) 30%, transparent)' : 'color-mix(in srgb, var(--color-bone) 12%, transparent)'}`,
                 background: on ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
                 color: on ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',

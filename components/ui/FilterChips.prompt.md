@@ -9,4 +9,4 @@ Interactive chip group for category filters — the clickable upgrade of `Tag`. 
 <FilterChips multiple value={cats} onChange={setCats} … />
 ```
 
-Stack several titled groups (上装 / 下装 / 裙装) for a category panel — often inside a `Popover`. Chip labels are 2–4 character noun phrases.
+Stack several titled groups (上装 / 下装 / 裙装) for a category panel — often inside a `Popover`. Chip labels are 2–4 character noun phrases. Per-option `disabled: true` dims a chip to 0.45 opacity and blocks selection (e.g. categories outside the current plan).

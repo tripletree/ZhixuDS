@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"AlphabetIndex","sourcePath":"components/ui/AlphabetIndex.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"DateRangeEditor","sourcePath":"components/ui/DateRangeEditor.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"DropdownMenu","sourcePath":"components/ui/DropdownMenu.jsx"},{"name":"EmptyState","sourcePath":"components/ui/EmptyState.jsx"},{"name":"Fab","sourcePath":"components/ui/Fab.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Pagination","sourcePath":"components/ui/Pagination.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"ProductCard","sourcePath":"components/ui/ProductCard.jsx"},{"name":"ThumbnailStrip","sourcePath":"components/ui/ProductCard.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"686935625549","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/AlphabetIndex.jsx":"1f7f317ab324","components/ui/Checkbox.jsx":"391985ef4ce7","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/DateRangeEditor.jsx":"3efa315256d1","components/ui/Dialog.jsx":"6d10839c3b85","components/ui/DropdownMenu.jsx":"4a0641143078","components/ui/EmptyState.jsx":"70313c4817c8","components/ui/Fab.jsx":"f0eb033c5362","components/ui/Field.jsx":"5c7d8f0fc724","components/ui/FilterChips.jsx":"32a6fccb8771","components/ui/Listbox.jsx":"bd140fc8058a","components/ui/Pagination.jsx":"34d16d9fc29c","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"505dc169e598","components/ui/ProductCard.jsx":"b0b8cf71bc3b","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"697de7b43a96","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"FabricMindDesignSystem_4edb8c","components":[{"name":"BrandMark","sourcePath":"components/core/BrandMark.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"IconButton","sourcePath":"components/core/Button.jsx"},{"name":"Icon","sourcePath":"components/core/Icon.jsx"},{"name":"CountUp","sourcePath":"components/core/Reveal.jsx"},{"name":"Reveal","sourcePath":"components/core/Reveal.jsx"},{"name":"SectionHeading","sourcePath":"components/core/SectionHeading.jsx"},{"name":"AlphabetIndex","sourcePath":"components/ui/AlphabetIndex.jsx"},{"name":"Checkbox","sourcePath":"components/ui/Checkbox.jsx"},{"name":"CheckboxGroup","sourcePath":"components/ui/Checkbox.jsx"},{"name":"Collapse","sourcePath":"components/ui/Collapse.jsx"},{"name":"DataTable","sourcePath":"components/ui/DataTable.jsx"},{"name":"DateRangeEditor","sourcePath":"components/ui/DateRangeEditor.jsx"},{"name":"Dialog","sourcePath":"components/ui/Dialog.jsx"},{"name":"DropdownMenu","sourcePath":"components/ui/DropdownMenu.jsx"},{"name":"EmptyState","sourcePath":"components/ui/EmptyState.jsx"},{"name":"Fab","sourcePath":"components/ui/Fab.jsx"},{"name":"Field","sourcePath":"components/ui/Field.jsx"},{"name":"Input","sourcePath":"components/ui/Field.jsx"},{"name":"TextArea","sourcePath":"components/ui/Field.jsx"},{"name":"Select","sourcePath":"components/ui/Field.jsx"},{"name":"FilterChips","sourcePath":"components/ui/FilterChips.jsx"},{"name":"Listbox","sourcePath":"components/ui/Listbox.jsx"},{"name":"Pagination","sourcePath":"components/ui/Pagination.jsx"},{"name":"Panel","sourcePath":"components/ui/Panel.jsx"},{"name":"Popover","sourcePath":"components/ui/Popover.jsx"},{"name":"ProductCard","sourcePath":"components/ui/ProductCard.jsx"},{"name":"ThumbnailStrip","sourcePath":"components/ui/ProductCard.jsx"},{"name":"Progress","sourcePath":"components/ui/Progress.jsx"},{"name":"Radio","sourcePath":"components/ui/Radio.jsx"},{"name":"RadioGroup","sourcePath":"components/ui/Radio.jsx"},{"name":"Sparkline","sourcePath":"components/ui/Sparkline.jsx"},{"name":"SparkBars","sourcePath":"components/ui/Sparkline.jsx"},{"name":"Stat","sourcePath":"components/ui/Stat.jsx"},{"name":"Tabs","sourcePath":"components/ui/Tabs.jsx"},{"name":"Tag","sourcePath":"components/ui/Tag.jsx"},{"name":"StatusDot","sourcePath":"components/ui/Tag.jsx"},{"name":"Toast","sourcePath":"components/ui/Toast.jsx"},{"name":"ToastStack","sourcePath":"components/ui/Toast.jsx"},{"name":"Tooltip","sourcePath":"components/ui/Tooltip.jsx"}],"sourceHashes":{"components/core/BrandMark.jsx":"a62688f18450","components/core/Button.jsx":"b035e6ff72fc","components/core/Icon.jsx":"fda60db7ddce","components/core/Reveal.jsx":"bc83512ca93d","components/core/SectionHeading.jsx":"b85f211207e0","components/ui/AlphabetIndex.jsx":"1f7f317ab324","components/ui/Checkbox.jsx":"391985ef4ce7","components/ui/Collapse.jsx":"dc59a56e38d3","components/ui/DataTable.jsx":"2c59e9f402a1","components/ui/DateRangeEditor.jsx":"3efa315256d1","components/ui/Dialog.jsx":"6d10839c3b85","components/ui/DropdownMenu.jsx":"4a0641143078","components/ui/EmptyState.jsx":"70313c4817c8","components/ui/Fab.jsx":"f0eb033c5362","components/ui/Field.jsx":"4a2a443dc1d2","components/ui/FilterChips.jsx":"436c362326e2","components/ui/Listbox.jsx":"c3063c6a4280","components/ui/Pagination.jsx":"34d16d9fc29c","components/ui/Panel.jsx":"a5e835154358","components/ui/Popover.jsx":"505dc169e598","components/ui/ProductCard.jsx":"b0b8cf71bc3b","components/ui/Progress.jsx":"3699cfdd00c5","components/ui/Radio.jsx":"697de7b43a96","components/ui/Sparkline.jsx":"0b5688e28ca0","components/ui/Stat.jsx":"b3e9054786c6","components/ui/Tabs.jsx":"87aeaf941ab9","components/ui/Tag.jsx":"06a686a88a16","ui_kits/landing/mocks.jsx":"9edc0f23a57a","ui_kits/landing/sections.jsx":"c8c49ff62dee","components/ui/Toast.jsx":"c0e373d967bd","components/ui/Tooltip.jsx":"57d25e84ebf8"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -243,6 +243,37 @@ const PATHS = {
     r: "8"
   }), /*#__PURE__*/React.createElement("path", {
     d: "m21 21-4.3-4.3"
+  })),
+  'info': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 16v-4"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M12 8h.01"
+  })),
+  'circle-check': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m9 12 2 2 4-4"
+  })),
+  'circle-alert': /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+    cx: "12",
+    cy: "12",
+    r: "10"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    x2: "12",
+    y1: "8",
+    y2: "12"
+  }), /*#__PURE__*/React.createElement("line", {
+    x1: "12",
+    x2: "12.01",
+    y1: "16",
+    y2: "16"
   }))
 };
 function Icon({
@@ -989,10 +1020,12 @@ Object.assign(__ds_scope, { Tabs });
 // components/ui/Field.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/* Form controls — chat-input surface (rounded 0.75rem, hairline bone/10, ink-850/80); azure focus ring via .fm-control */
+/* Form controls — chat-input surface (rounded 0.75rem, hairline bone/10, ink-850/80); azure focus ring via .fm-control.
+   Error state: pass `invalid` to the control (rouge border/ring via .fm-control-error) + `error` to Field (rouge message). */
 function Field({
   label,
   hint,
+  error,
   required,
   children,
   style
@@ -1018,7 +1051,14 @@ function Field({
     style: {
       color: 'var(--color-azure)'
     }
-  }, "*") : null) : null, children, hint ? /*#__PURE__*/React.createElement("span", {
+  }, "*") : null) : null, children, error ? /*#__PURE__*/React.createElement("span", {
+    role: "alert",
+    style: {
+      fontSize: 11,
+      letterSpacing: '0.02em',
+      color: 'color-mix(in srgb, var(--color-rouge) 60%, var(--color-bone))'
+    }
+  }, error) : hint ? /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 11,
       letterSpacing: '0.02em',
@@ -1026,13 +1066,16 @@ function Field({
     }
   }, hint) : null);
 }
+const controlCls = invalid => invalid ? 'fm-control fm-control-error' : 'fm-control';
 function Input({
   icon,
+  invalid = false,
   style,
   ...rest
 }) {
   if (!icon) return /*#__PURE__*/React.createElement("input", _extends({
-    className: "fm-control",
+    className: controlCls(invalid),
+    "aria-invalid": invalid || undefined,
     style: style
   }, rest));
   return /*#__PURE__*/React.createElement("span", {
@@ -1054,7 +1097,8 @@ function Input({
     name: icon,
     size: 14
   })), /*#__PURE__*/React.createElement("input", _extends({
-    className: "fm-control",
+    className: controlCls(invalid),
+    "aria-invalid": invalid || undefined,
     style: {
       paddingLeft: 38,
       ...style
@@ -1063,11 +1107,13 @@ function Input({
 }
 function TextArea({
   rows = 4,
+  invalid = false,
   style,
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("textarea", _extends({
-    className: "fm-control",
+    className: controlCls(invalid),
+    "aria-invalid": invalid || undefined,
     rows: rows,
     style: {
       resize: 'vertical',
@@ -1077,6 +1123,7 @@ function TextArea({
 }
 function Select({
   children,
+  invalid = false,
   style,
   ...rest
 }) {
@@ -1086,7 +1133,8 @@ function Select({
       display: 'block'
     }
   }, /*#__PURE__*/React.createElement("select", _extends({
-    className: "fm-control",
+    className: controlCls(invalid),
+    "aria-invalid": invalid || undefined,
     style: {
       appearance: 'none',
       WebkitAppearance: 'none',
@@ -1122,6 +1170,8 @@ function Listbox({
   value,
   onChange,
   placeholder = '请选择',
+  disabled = false,
+  invalid = false,
   size,
   style,
   ...rest
@@ -1150,6 +1200,7 @@ function Listbox({
     }
   }, [open, active]);
   const openList = () => {
+    if (disabled) return;
     setOpen(true);
     setActive(selectedIndex >= 0 ? selectedIndex : 0);
   };
@@ -1197,7 +1248,9 @@ function Listbox({
     onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement("button", _extends({
     type: "button",
-    className: "fm-control",
+    className: invalid ? 'fm-control fm-control-error' : 'fm-control',
+    disabled: disabled,
+    "aria-invalid": invalid || undefined,
     "aria-haspopup": "listbox",
     "aria-expanded": open,
     "aria-activedescendant": open && active >= 0 ? `${id}-opt-${active}` : undefined,
@@ -1207,16 +1260,17 @@ function Listbox({
       alignItems: 'center',
       gap: 8,
       textAlign: 'left',
-      cursor: 'pointer',
+      cursor: disabled ? 'not-allowed' : 'pointer',
       /* surface inlined too — native button chrome (black square border) must never leak through */
       appearance: 'none',
       WebkitAppearance: 'none',
       width: '100%',
       boxSizing: 'border-box',
       borderRadius: 'var(--radius-panel)',
-      border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+      border: `1px solid color-mix(in srgb, ${invalid ? 'var(--color-rouge) 50%' : 'var(--color-bone) 10%'}, transparent)`,
       background: 'var(--surface-control)',
       padding: '10px 14px',
+      opacity: disabled ? 0.45 : 1,
       fontFamily: 'var(--font-sans)',
       fontSize: 13,
       lineHeight: 1.5
@@ -1558,22 +1612,24 @@ function FilterChips({
     }
   }, options.map(o => {
     const on = isOn(o.value);
-    const hover = hovered === o.value;
+    const hover = hovered === o.value && !o.disabled;
     return /*#__PURE__*/React.createElement("button", {
       key: o.value,
       type: "button",
       "aria-pressed": on,
+      disabled: o.disabled,
       onClick: () => pick(o.value),
       onMouseEnter: () => setHovered(o.value),
       onMouseLeave: () => setHovered(null),
       style: {
         borderRadius: 999,
-        cursor: 'pointer',
+        cursor: o.disabled ? 'not-allowed' : 'pointer',
         fontFamily: 'var(--font-sans)',
         fontWeight: 500,
         letterSpacing: '0.02em',
         whiteSpace: 'nowrap',
         transition: 'all 0.3s var(--ease-calm)',
+        opacity: o.disabled ? 0.45 : 1,
         border: `1px solid ${on ? 'color-mix(in srgb, var(--color-azure) 40%, transparent)' : hover ? 'color-mix(in srgb, var(--color-azure) 30%, transparent)' : 'color-mix(in srgb, var(--color-bone) 12%, transparent)'}`,
         background: on ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'color-mix(in srgb, var(--color-bone) 3%, transparent)',
         color: on ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
@@ -4631,6 +4687,267 @@ Object.assign(window, {
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/landing/sections.jsx", error: String((e && e.message) || e) }); }
 
+// components/ui/Toast.jsx
+try { (() => {
+/* Feedback toast — the frosted float surface (Listbox panel recipe) as a transient notice.
+   Tones follow the data palette: info/success azure, warning champagne, error rouge. */
+const TONES = {
+  info: {
+    color: 'var(--color-azure-bright)',
+    icon: 'info'
+  },
+  success: {
+    color: 'var(--color-azure-bright)',
+    icon: 'circle-check'
+  },
+  warning: {
+    color: 'var(--color-champagne)',
+    icon: 'circle-alert'
+  },
+  error: {
+    color: 'color-mix(in srgb, var(--color-rouge) 60%, var(--color-bone))',
+    icon: 'circle-alert'
+  }
+};
+function Toast({
+  tone = 'info',
+  title,
+  description,
+  icon,
+  onClose,
+  style
+}) {
+  const t = TONES[tone] || TONES.info;
+  return /*#__PURE__*/React.createElement("div", {
+    role: "status",
+    className: "fm-pop-in",
+    style: {
+      display: 'flex',
+      alignItems: 'flex-start',
+      gap: 10,
+      width: 320,
+      padding: '12px 14px',
+      borderRadius: 'var(--radius-panel)',
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'var(--surface-float)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: 'var(--shadow-float)',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      flex: 'none',
+      marginTop: 1,
+      color: t.color
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: icon || t.icon,
+    size: 15,
+    strokeWidth: 1.75
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 3
+    }
+  }, title ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 500,
+      lineHeight: 1.5,
+      color: 'var(--color-bone)'
+    }
+  }, title) : null, description ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      lineHeight: 1.6,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-dim)'
+    }
+  }, description) : null), onClose ? /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    "aria-label": "\u5173\u95ED",
+    onClick: onClose,
+    style: {
+      display: 'inline-flex',
+      flex: 'none',
+      padding: 2,
+      margin: '-2px -4px 0 0',
+      border: 'none',
+      borderRadius: 999,
+      background: 'transparent',
+      color: 'var(--color-bone-dim)',
+      cursor: 'pointer'
+    }
+  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    name: "x",
+    size: 13
+  })) : null);
+}
+/* Fixed-position stack for Toasts — newest at the bottom, 10px gap */
+const CORNERS = {
+  'bottom-right': {
+    right: 0,
+    bottom: 0,
+    alignItems: 'flex-end'
+  },
+  'bottom-left': {
+    left: 0,
+    bottom: 0,
+    alignItems: 'flex-start'
+  },
+  'top-right': {
+    right: 0,
+    top: 0,
+    alignItems: 'flex-end'
+  },
+  'top-left': {
+    left: 0,
+    top: 0,
+    alignItems: 'flex-start'
+  }
+};
+function ToastStack({
+  toasts = [],
+  onDismiss,
+  position = 'bottom-right',
+  offset = 24,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      zIndex: 110,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10,
+      padding: offset,
+      pointerEvents: 'none',
+      ...(CORNERS[position] || CORNERS['bottom-right']),
+      ...style
+    }
+  }, toasts.map(t => /*#__PURE__*/React.createElement("div", {
+    key: t.id,
+    style: {
+      pointerEvents: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement(Toast, {
+    tone: t.tone,
+    title: t.title,
+    description: t.description,
+    icon: t.icon,
+    onClose: onDismiss ? () => onDismiss(t.id) : undefined
+  }))));
+}
+/* Toast state hook — push() auto-dismisses after `duration` ms (0 = sticky) */
+function useToasts(defaultDuration = 4000) {
+  const [toasts, setToasts] = React.useState([]);
+  const nextId = React.useRef(1);
+  const dismiss = React.useCallback(id => setToasts(ts => ts.filter(t => t.id !== id)), []);
+  const push = React.useCallback(toast => {
+    const id = nextId.current++;
+    setToasts(ts => [...ts, {
+      ...toast,
+      id
+    }]);
+    const duration = toast.duration ?? defaultDuration;
+    if (duration > 0) setTimeout(() => dismiss(id), duration);
+    return id;
+  }, [defaultDuration, dismiss]);
+  return {
+    toasts,
+    push,
+    dismiss
+  };
+}
+Object.assign(__ds_scope, { Toast, ToastStack, useToasts });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Toast.jsx", error: String((e && e.message) || e) }); }
+
+// components/ui/Tooltip.jsx
+try { (() => {
+/* Micro floating hint — frosted float surface at caption scale, shown on hover/focus after a short delay */
+const PLACE = {
+  top: {
+    bottom: 'calc(100% + 8px)',
+    left: '50%',
+    transform: 'translateX(-50%)'
+  },
+  bottom: {
+    top: 'calc(100% + 8px)',
+    left: '50%',
+    transform: 'translateX(-50%)'
+  },
+  left: {
+    right: 'calc(100% + 8px)',
+    top: '50%',
+    transform: 'translateY(-50%)'
+  },
+  right: {
+    left: 'calc(100% + 8px)',
+    top: '50%',
+    transform: 'translateY(-50%)'
+  }
+};
+function Tooltip({
+  content,
+  placement = 'top',
+  delay = 150,
+  maxWidth = 240,
+  open,
+  children,
+  style
+}) {
+  const [innerOpen, setInnerOpen] = React.useState(false);
+  const timer = React.useRef(null);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : innerOpen;
+  const show = () => {
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setInnerOpen(true), delay);
+  };
+  const hide = () => {
+    clearTimeout(timer.current);
+    setInnerOpen(false);
+  };
+  React.useEffect(() => () => clearTimeout(timer.current), []);
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'relative',
+      display: 'inline-block',
+      ...style
+    },
+    onMouseEnter: show,
+    onMouseLeave: hide,
+    onFocus: show,
+    onBlur: hide
+  }, children, isOpen && content ? /*#__PURE__*/React.createElement("span", {
+    role: "tooltip",
+    className: "fm-pop-in",
+    style: {
+      position: 'absolute',
+      zIndex: 70,
+      width: 'max-content',
+      maxWidth,
+      padding: '6px 10px',
+      borderRadius: 8,
+      border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
+      background: 'var(--surface-float)',
+      backdropFilter: 'blur(12px)',
+      boxShadow: 'var(--shadow-float)',
+      fontSize: 12,
+      lineHeight: 1.6,
+      letterSpacing: '0.02em',
+      color: 'var(--color-bone-soft)',
+      pointerEvents: 'none',
+      ...(PLACE[placement] || PLACE.top)
+    }
+  }, content) : null);
+}
+Object.assign(__ds_scope, { Tooltip });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/ui/Tooltip.jsx", error: String((e && e.message) || e) }); }
+
 __ds_ns.BrandMark = __ds_scope.BrandMark;
 
 __ds_ns.Button = __ds_scope.Button;
@@ -4704,5 +5021,13 @@ __ds_ns.Tabs = __ds_scope.Tabs;
 __ds_ns.Tag = __ds_scope.Tag;
 
 __ds_ns.StatusDot = __ds_scope.StatusDot;
+
+__ds_ns.Toast = __ds_scope.Toast;
+
+__ds_ns.ToastStack = __ds_scope.ToastStack;
+
+__ds_ns.useToasts = __ds_scope.useToasts;
+
+__ds_ns.Tooltip = __ds_scope.Tooltip;
 
 })();
