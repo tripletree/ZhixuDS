@@ -41,6 +41,12 @@
 
   /* Motion easing */
   --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Radii — rounded-card / rounded-feature / rounded-panel utilities */
+  --radius-card: 1rem;
+  --radius-feature: 1.5rem;
+  --radius-panel: 0.75rem;
+  --radius-pill: 999px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -88,12 +94,25 @@ html.light {
     /* Primary CTA pill: hover surface + glow */
     --cta-hover: #ffffff;
     --cta-glow: rgba(236, 234, 225, 0.4);
+    /* Control/floating surfaces (ui primitives): translucent ink on dark, pure white on light */
+    --surface-control: color-mix(in srgb, var(--color-ink-850) 80%, transparent);
+    --surface-float: color-mix(in srgb, var(--color-ink-750) 97%, transparent);
+    --shadow-float: 0 20px 44px -22px rgba(0, 0, 0, 0.45);
+    --border-hairline: rgba(236, 234, 225, 0.08);
+    --border-panel: rgba(255, 255, 255, 0.14);
   }
 
   html.light {
     --hero-base: 255 255 255;
     --cta-hover: #272d38;
     --cta-glow: rgba(20, 23, 28, 0.3);
+    --surface-control: #ffffff;
+    --surface-float: #ffffff;
+    --shadow-float:
+      0 18px 44px -26px rgba(0, 0, 0, 0.18),
+      0 4px 14px -8px rgba(0, 0, 0, 0.08);
+    --border-hairline: rgba(0, 0, 0, 0.06);
+    --border-panel: rgba(0, 0, 0, 0.06);
   }
 
   body {
@@ -272,6 +291,65 @@ html.light {
     color: #454b56;
   }
 
+  /* Form controls (ui addition — surface borrowed from the AI-chat input bar) */
+  .fm-control {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-panel);
+    border: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+    background: var(--surface-control);
+    padding: 10px 14px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-bone);
+    outline: none;
+    transition:
+      border-color 0.3s var(--ease-calm),
+      box-shadow 0.3s var(--ease-calm);
+  }
+  .fm-control::placeholder {
+    color: var(--color-mist);
+  }
+  .fm-control:focus {
+    border-color: color-mix(in srgb, var(--color-azure) 40%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-azure) 12%, transparent);
+  }
+  .fm-control option {
+    background: var(--surface-float);
+    color: var(--color-bone);
+  }
+
+  /* Floating panel / dialog entrances */
+  @keyframes fm-dialog-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .fm-dialog-in {
+    animation: fm-dialog-in 0.3s var(--ease-calm);
+  }
+  @keyframes fm-pop-in {
+    from {
+      opacity: 0;
+      transform: scale(0.98) translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .fm-pop-in {
+    animation: fm-pop-in 0.18s var(--ease-calm);
+  }
+
   /* Reduced-motion shimmer guard handled per-component */
   @keyframes shimmer-sweep {
     0% {
@@ -301,7 +379,9 @@ html.light {
 
   @media (prefers-reduced-motion: reduce) {
     .animate-shimmer,
-    .animate-caret {
+    .animate-caret,
+    .fm-dialog-in,
+    .fm-pop-in {
       animation: none;
     }
     html {
