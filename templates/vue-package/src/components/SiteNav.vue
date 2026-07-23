@@ -23,21 +23,35 @@ onMounted(() => {
 })
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
-const links = computed(() =>
+type NavLink = {
+  label: string
+  href: string
+  active: boolean
+  // `route` links change the hash-router view; `anchor` links scroll to a section.
+  kind: 'anchor' | 'route'
+}
+
+const links = computed<NavLink[]>(() =>
   props.route === 'landing'
     ? [
-        { label: '解决方案', href: '#framework', active: false },
-        { label: '业务场景', href: '#scenarios', active: false },
-        { label: '产品能力', href: '#features', active: false },
-        { label: '组件库', href: '#/components', active: false },
-        { label: '设计规范', href: '#/guidelines', active: false },
+        { label: '解决方案', href: '#framework', active: false, kind: 'anchor' },
+        { label: '业务场景', href: '#scenarios', active: false, kind: 'anchor' },
+        { label: '产品能力', href: '#features', active: false, kind: 'anchor' },
+        { label: '组件库', href: '#/components', active: false, kind: 'route' },
+        { label: '设计规范', href: '#/guidelines', active: false, kind: 'route' },
       ]
     : [
-        { label: '落地页', href: '#top', active: false },
-        { label: '组件库', href: '#/components', active: props.route === 'components' },
-        { label: '设计规范', href: '#/guidelines', active: props.route === 'guidelines' },
+        { label: '落地页', href: '#top', active: false, kind: 'anchor' },
+        { label: '组件库', href: '#/components', active: props.route === 'components', kind: 'route' },
+        { label: '设计规范', href: '#/guidelines', active: props.route === 'guidelines', kind: 'route' },
       ],
 )
+
+// Navigate the hash router without emitting an anchor whose href would be
+// treated as a (invalid) CSS selector by smooth-scroll handlers.
+const navigate = (href: string) => {
+  window.location.hash = href.replace(/^#/, '')
+}
 </script>
 
 <template>
@@ -55,15 +69,25 @@ const links = computed(() =>
       </a>
 
       <div class="hidden items-center gap-9 md:flex">
-        <a
-          v-for="link in links"
-          :key="link.href"
-          :href="link.href"
-          class="text-[13px] tracking-wide transition-colors hover:text-bone"
-          :class="link.active ? 'text-azure' : 'text-bone-dim'"
-        >
-          {{ link.label }}
-        </a>
+        <template v-for="link in links" :key="link.href">
+          <a
+            v-if="link.kind === 'anchor'"
+            :href="link.href"
+            class="text-[13px] tracking-wide transition-colors hover:text-bone"
+            :class="link.active ? 'text-azure' : 'text-bone-dim'"
+          >
+            {{ link.label }}
+          </a>
+          <button
+            v-else
+            type="button"
+            class="text-[13px] tracking-wide transition-colors hover:text-bone"
+            :class="link.active ? 'text-azure' : 'text-bone-dim'"
+            @click="navigate(link.href)"
+          >
+            {{ link.label }}
+          </button>
+        </template>
       </div>
 
       <div class="flex items-center gap-3">
