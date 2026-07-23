@@ -10,19 +10,22 @@ import ContactDialog from './components/ContactDialog.vue'
 import ComponentsPage from './pages/ComponentsPage.vue'
 import GuidelinesPage from './pages/GuidelinesPage.vue'
 
-// Hash routing: #/components and #/guidelines; anything else (incl. section
-// anchors like #framework) renders the landing page.
-const hash = ref(typeof window !== 'undefined' ? window.location.hash : '')
-const onHashChange = () => {
-  hash.value = window.location.hash
-  if (hash.value.startsWith('#/')) window.scrollTo({ top: 0 })
+// Query-param routing via the History API: ?view=components / ?view=guidelines.
+// We avoid `#/...` hashes because the preview runtime runs
+// `document.querySelector(location.hash)` on hash changes, and `#/components`
+// is not a valid CSS selector (throws SyntaxError). Section anchors like
+// `#framework` remain valid hashes and still work for in-page scrolling.
+const search = ref(typeof window !== 'undefined' ? window.location.search : '')
+const onPopState = () => {
+  search.value = window.location.search
 }
-onMounted(() => window.addEventListener('hashchange', onHashChange))
-onUnmounted(() => window.removeEventListener('hashchange', onHashChange))
+onMounted(() => window.addEventListener('popstate', onPopState))
+onUnmounted(() => window.removeEventListener('popstate', onPopState))
 
 const route = computed<'landing' | 'components' | 'guidelines'>(() => {
-  if (hash.value.startsWith('#/components')) return 'components'
-  if (hash.value.startsWith('#/guidelines')) return 'guidelines'
+  const view = new URLSearchParams(search.value).get('view')
+  if (view === 'components') return 'components'
+  if (view === 'guidelines') return 'guidelines'
   return 'landing'
 })
 </script>

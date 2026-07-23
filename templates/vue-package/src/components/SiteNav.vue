@@ -25,32 +25,38 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 type NavLink = {
   label: string
-  href: string
   active: boolean
-  // `route` links change the hash-router view; `anchor` links scroll to a section.
-  kind: 'anchor' | 'route'
-}
+} & (
+  // `anchor` links scroll to an in-page section via a valid hash.
+  | { kind: 'anchor'; href: string }
+  // `route` links change the query-param view via the History API.
+  | { kind: 'route'; view: '' | 'components' | 'guidelines' }
+)
 
 const links = computed<NavLink[]>(() =>
   props.route === 'landing'
     ? [
-        { label: '解决方案', href: '#framework', active: false, kind: 'anchor' },
-        { label: '业务场景', href: '#scenarios', active: false, kind: 'anchor' },
-        { label: '产品能力', href: '#features', active: false, kind: 'anchor' },
-        { label: '组件库', href: '#/components', active: false, kind: 'route' },
-        { label: '设计规范', href: '#/guidelines', active: false, kind: 'route' },
+        { label: '解决方案', kind: 'anchor', href: '#framework', active: false },
+        { label: '业务场景', kind: 'anchor', href: '#scenarios', active: false },
+        { label: '产品能力', kind: 'anchor', href: '#features', active: false },
+        { label: '组件库', kind: 'route', view: 'components', active: false },
+        { label: '设计规范', kind: 'route', view: 'guidelines', active: false },
       ]
     : [
-        { label: '落地页', href: '#top', active: false, kind: 'anchor' },
-        { label: '组件库', href: '#/components', active: props.route === 'components', kind: 'route' },
-        { label: '设计规范', href: '#/guidelines', active: props.route === 'guidelines', kind: 'route' },
+        { label: '落地页', kind: 'route', view: '', active: false },
+        { label: '组件库', kind: 'route', view: 'components', active: props.route === 'components' },
+        { label: '设计规范', kind: 'route', view: 'guidelines', active: props.route === 'guidelines' },
       ],
 )
 
-// Navigate the hash router without emitting an anchor whose href would be
-// treated as a (invalid) CSS selector by smooth-scroll handlers.
-const navigate = (href: string) => {
-  window.location.hash = href.replace(/^#/, '')
+// Navigate via the History API and notify listeners (App.vue) with a popstate
+// event. We deliberately avoid `#/...` hashes, which the preview runtime would
+// pass to `document.querySelector` and throw an invalid-selector SyntaxError.
+const navigate = (view: '' | 'components' | 'guidelines') => {
+  const url = view ? `?view=${view}` : window.location.pathname
+  window.history.pushState({}, '', url)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+  window.scrollTo({ top: 0 })
 }
 </script>
 
@@ -83,7 +89,7 @@ const navigate = (href: string) => {
             type="button"
             class="text-[13px] tracking-wide transition-colors hover:text-bone"
             :class="link.active ? 'text-azure' : 'text-bone-dim'"
-            @click="navigate(link.href)"
+            @click="navigate(link.view)"
           >
             {{ link.label }}
           </button>
