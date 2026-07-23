@@ -27,7 +27,7 @@
   --surface-card:var(--color-ink-800);
   /* Control/floating surfaces (ui additions): translucent ink on dark, pure white on light */
   --surface-control:color-mix(in srgb,var(--color-ink-850) 80%,transparent);
-  --surface-float:color-mix(in srgb,var(--color-ink-850) 96%,transparent);
+  --surface-float:color-mix(in srgb,var(--color-ink-750) 97%,transparent);
   --shadow-float:0 20px 44px -22px rgba(0,0,0,0.45);
   --text-strong:#ffffff;
   --text-body:var(--color-bone);
