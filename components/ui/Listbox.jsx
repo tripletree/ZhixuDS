@@ -52,7 +52,14 @@ export function Listbox({ options = [], value, onChange, placeholder = '请选�
         aria-haspopup="listbox" aria-expanded={open}
         aria-activedescendant={open && active >= 0 ? `${id}-opt-${active}` : undefined}
         onClick={() => (open ? setOpen(false) : openList())}
-        style={{ display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: 'pointer' }} {...rest}>
+        style={{
+          display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: 'pointer',
+          /* surface inlined too — native button chrome (black square border) must never leak through */
+          appearance: 'none', WebkitAppearance: 'none', width: '100%', boxSizing: 'border-box',
+          borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+          background: 'color-mix(in srgb, var(--color-ink-850) 80%, transparent)', padding: '10px 14px',
+          fontFamily: 'var(--font-sans)', fontSize: 13, lineHeight: 1.5,
+        }} {...rest}>
         <span style={{ flex: 1, color: selected ? 'var(--color-bone)' : 'var(--color-mist)' }}>
           {selected ? selected.label : placeholder}
         </span>

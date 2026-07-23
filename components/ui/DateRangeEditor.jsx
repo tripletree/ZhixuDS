@@ -15,7 +15,13 @@ export function DateRangeEditor({ presets = [], value, onChange, rangeText, titl
     <Popover open={open} onOpenChange={setOpen} width={width} style={style}
       anchor={
         <button type="button" className="fm-control" aria-haspopup="dialog" aria-expanded={open}
-          style={{ display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: 'pointer' }}>
+          style={{
+            display: 'flex', alignItems: 'center', gap: 8, textAlign: 'left', cursor: 'pointer',
+            appearance: 'none', WebkitAppearance: 'none', width: '100%', boxSizing: 'border-box',
+            borderRadius: 'var(--radius-panel)', border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+            background: 'color-mix(in srgb, var(--color-ink-850) 80%, transparent)', padding: '10px 14px',
+            fontFamily: 'var(--font-sans)', fontSize: 13, lineHeight: 1.5,
+          }}>
           <span style={{ flex: 1, color: current ? 'var(--color-bone)' : 'var(--color-mist)' }}>{current ? current.label : placeholder}</span>
           <span style={{ display: 'inline-flex', color: 'var(--color-mist)' }}><Icon name="calendar" size={14} /></span>
         </button>
