@@ -40,7 +40,7 @@ import Button from './components/ui/Button.vue'
 </template>
 ```
 
-Note: the interactive Design System tab in this workspace renders the React mirror (`components/`, `ui_kits/` at the project root); this folder is the Vue source of truth for production work. Keep the two in sync when tokens change (root `tokens/*.css` ↔ `src/style.css`).
+Note: this folder is both the production package and the **showcase site** — `npm run dev` serves the landing page at `#/`, the component gallery at `#/components`, and the foundations specimens at `#/guidelines` (pages in `src/pages/`), with the dark/light toggle in the nav. Every ui SFC has a `.prompt.md` usage guide beside it (Vue examples + copywriting norms). Keep tokens in sync when they change (root `tokens/*.css` ↔ `src/style.css` ↔ root `DESIGN.md`).
 
 ## Install as a component library
 

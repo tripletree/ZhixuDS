@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { ArrowUpRight, Moon, Sun } from 'lucide-vue-next'
 import BrandMark from './ui/BrandMark.vue'
 import { useContactDialog } from '../composables/useContactDialog'
 import { useTheme } from '../composables/useTheme'
+
+const props = withDefaults(
+  defineProps<{ route?: 'landing' | 'components' | 'guidelines' }>(),
+  { route: 'landing' },
+)
 
 const { open: openContact } = useContactDialog()
 const { theme, toggle: toggleTheme } = useTheme()
@@ -18,11 +23,21 @@ onMounted(() => {
 })
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
-const links = [
-  { label: '解决方案', href: '#framework' },
-  { label: '业务场景', href: '#scenarios' },
-  { label: '产品能力', href: '#features' },
-]
+const links = computed(() =>
+  props.route === 'landing'
+    ? [
+        { label: '解决方案', href: '#framework', active: false },
+        { label: '业务场景', href: '#scenarios', active: false },
+        { label: '产品能力', href: '#features', active: false },
+        { label: '组件库', href: '#/components', active: false },
+        { label: '设计规范', href: '#/guidelines', active: false },
+      ]
+    : [
+        { label: '落地页', href: '#top', active: false },
+        { label: '组件库', href: '#/components', active: props.route === 'components' },
+        { label: '设计规范', href: '#/guidelines', active: props.route === 'guidelines' },
+      ],
+)
 </script>
 
 <template>
@@ -44,7 +59,8 @@ const links = [
           v-for="link in links"
           :key="link.href"
           :href="link.href"
-          class="text-[13px] tracking-wide text-bone-dim transition-colors hover:text-bone"
+          class="text-[13px] tracking-wide transition-colors hover:text-bone"
+          :class="link.active ? 'text-azure' : 'text-bone-dim'"
         >
           {{ link.label }}
         </a>
