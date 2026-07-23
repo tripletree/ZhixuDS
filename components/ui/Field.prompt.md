@@ -8,13 +8,15 @@ Form controls on the `.fm-control` surface — the AI-chat input bar styling: 0.
   <Input icon="search" placeholder="搜索材料、趋势或品类" />
 </Field>
 <Field label="需求场景" hint="选择最贴近的业务场景">
-  <Select defaultValue="trend">
-    <option value="trend">趋势研究</option>
-    <option value="material">材料创新</option>
-    <option value="proposal">客户提案</option>
-  </Select>
+  <Listbox value={scene} onChange={setScene} options={[
+    { value: 'trend', label: '趋势研究' },
+    { value: 'material', label: '材料创新' },
+    { value: 'proposal', label: '客户提案' },
+  ]} />
 </Field>
 <Field label="补充说明"><TextArea placeholder="其他想让我们了解的信息" /></Field>
 ```
 
 Placeholders are polite verb phrases (请输入…, 搜索…). Labels stay short; hints go in the `hint` prop, not the placeholder.
+
+For dropdowns default to `Listbox` — the native `Select`'s open popup is OS-drawn and can't match the brand. Reach for `Select` only when the system picker is the point (e.g. mobile web forms).

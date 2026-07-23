@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from '../core/Icon.jsx';
 /* Modal — blurred ink overlay + frosted glass card, extracted from ContactDialog */
 const SIZES = { sm: 384, md: 480, lg: 720 };
-export function Dialog({ open, onClose, title, subtitle, size = 'sm', width, align = 'center', footer, children }) {
+export function Dialog({ open, onClose, title, subtitle, size = 'sm', width, align = 'center', footer, scrollBody = false, children }) {
   React.useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     const onKey = (e) => { if (e.key === 'Escape' && onClose) onClose(); };
@@ -21,7 +21,8 @@ export function Dialog({ open, onClose, title, subtitle, size = 'sm', width, ali
         ) : null}
         {title ? <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--color-bone)' }}>{title}</h2> : null}
         {subtitle ? <p style={{ margin: '8px 0 0', fontSize: 13, lineHeight: 1.625, color: 'var(--color-bone-dim)' }}>{subtitle}</p> : null}
-        <div style={{ flex: '1 1 auto', overflowY: 'auto', margin: '0 -8px', padding: '0 8px' }}>{children}</div>
+        {/* overflow clips floating panels (Listbox/Popover) — only opt into scrolling for long content */}
+        <div style={scrollBody ? { flex: '1 1 auto', overflowY: 'auto', margin: '0 -8px', padding: '0 8px' } : { flex: '1 1 auto' }}>{children}</div>
         {footer ? <div style={{ marginTop: 24, display: 'flex', justifyContent: 'flex-end', gap: 10, flex: 'none' }}>{footer}</div> : null}
       </div>
     </div>

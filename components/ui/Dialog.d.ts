@@ -15,8 +15,11 @@ export interface DialogProps {
   width?: number;
   /** @default 'center' */
   align?: 'center' | 'left';
-  /** Right-aligned action row (e.g. ghost 取消 + primary 确定); body scrolls above it */
+  /** Right-aligned action row (e.g. ghost 取消 + primary 确定) */
   footer?: React.ReactNode;
+  /** Make the body a scroll area for long content (picker grids). Clips floating
+   * panels like Listbox — leave off for forms. @default false */
+  scrollBody?: boolean;
   children?: React.ReactNode;
 }
 export declare function Dialog(props: DialogProps): JSX.Element | null;
