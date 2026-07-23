@@ -53,6 +53,7 @@ All three families load from Google Fonts via `tokens/typography.css` (as in the
 ## Index
 
 - `styles.css` — entry; imports `tokens/{colors,typography,effects}.css`
+- `DESIGN.md` — the visual identity in the open [DESIGN.md format](https://github.com/google-labs-code/design.md) (YAML tokens + prose sections) for Stitch / coding-agent interop; mirrors the CSS tokens, which remain the source of truth
 - `assets/` — favicon/brand mark, hero visuals (dark png / light webp / placeholder svg), scenario illustrations (dark + light), WeChat QR, lucide icon copies
 - `components/core/` — BrandMark, Icon, Button, SectionHeading, CountUp, Reveal (React mirror for this workspace's Design System tab)
 - `components/ui/` — application-level components distilled from the landing mocks: Panel, Tag/StatusDot, Stat, Progress, Sparkline/SparkBars, Tabs, Field/Input/TextArea/Select/Listbox, Checkbox/Radio groups, FilterChips, Collapse, Popover, DropdownMenu, DateRangeEditor, EmptyState, ProductCard/ThumbnailStrip, Pagination, AlphabetIndex, Fab, DataTable, Dialog, Toast/ToastStack, Tooltip (React mirror for this workspace's cards; Vue SFC counterparts live in `templates/vue-package/src/components/ui/`)
