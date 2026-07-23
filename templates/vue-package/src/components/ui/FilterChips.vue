@@ -8,6 +8,8 @@ import { computed, ref } from 'vue'
 export interface ChipOption {
   value: string
   label: string
+  /** Dims the chip to 0.45 opacity and blocks selection */
+  disabled?: boolean
 }
 
 const props = withDefaults(
@@ -38,12 +40,14 @@ function pick(v: string) {
     model.value = v
   }
 }
-function chipStyle(v: string) {
+function chipStyle(o: ChipOption) {
+  const v = o.value
   const on = isOn(v)
-  const hover = hovered.value === v
+  const hover = hovered.value === v && !o.disabled
   return {
     borderRadius: '999px',
-    cursor: 'pointer',
+    cursor: o.disabled ? 'not-allowed' : 'pointer',
+    opacity: o.disabled ? 0.45 : 1,
     fontFamily: 'var(--font-sans)',
     fontWeight: 500,
     letterSpacing: '0.02em',
@@ -76,7 +80,8 @@ function chipStyle(v: string) {
         :key="o.value"
         type="button"
         :aria-pressed="isOn(o.value)"
-        :style="chipStyle(o.value)"
+        :disabled="o.disabled"
+        :style="chipStyle(o)"
         @click="pick(o.value)"
         @mouseenter="hovered = o.value"
         @mouseleave="hovered = null"

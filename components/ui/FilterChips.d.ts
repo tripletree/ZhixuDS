@@ -3,7 +3,7 @@
  * (12% fill, 40% border, azure-bright text), matching the nav-pill hover language.
  */
 export interface FilterChipsProps {
-  options: Array<{ value: string; label: React.ReactNode }>;
+  options: Array<{ value: string; label: React.ReactNode; disabled?: boolean }>;
   /** Selected value (single) or values array (multiple) */
   value?: string | string[];
   onChange?: (value: any) => void;

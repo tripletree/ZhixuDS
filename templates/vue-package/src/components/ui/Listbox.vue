@@ -16,8 +16,12 @@ const props = withDefaults(
   defineProps<{
     options?: ListboxOption[]
     placeholder?: string
+    /** Dims the trigger (opacity 0.45, not-allowed cursor) and blocks opening */
+    disabled?: boolean
+    /** Rouge border + focus ring + aria-invalid; pair with Field's `error` */
+    invalid?: boolean
   }>(),
-  { options: () => [], placeholder: '请选择' },
+  { options: () => [], placeholder: '请选择', disabled: false, invalid: false },
 )
 
 const model = defineModel<string>()
@@ -47,6 +51,7 @@ watch([open, active], () => {
 })
 
 function openList() {
+  if (props.disabled) return
   open.value = true
   active.value = selectedIndex.value >= 0 ? selectedIndex.value : 0
 }
@@ -92,11 +97,13 @@ function onKeyDown(e: KeyboardEvent) {
   <span ref="rootEl" style="position: relative; display: block" @keydown="onKeyDown">
     <button
       type="button"
-      class="fm-control"
+      :class="invalid ? 'fm-control fm-control-error' : 'fm-control'"
+      :disabled="disabled"
+      :aria-invalid="invalid || undefined"
       aria-haspopup="listbox"
       :aria-expanded="open"
       :aria-activedescendant="open && active >= 0 ? `${id}-opt-${active}` : undefined"
-      style="display: flex; align-items: center; gap: 8px; text-align: left; cursor: pointer"
+      :style="{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'left', cursor: disabled ? 'not-allowed' : 'pointer' }"
       @click="open ? (open = false) : openList()"
     >
       <span :style="{ flex: 1, color: selected ? 'var(--color-bone)' : 'var(--color-mist)' }">

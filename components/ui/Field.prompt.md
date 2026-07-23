@@ -19,4 +19,14 @@ Form controls on the `.fm-control` surface — the AI-chat input bar styling: 0.
 
 Placeholders are polite verb phrases (请输入…, 搜索…). Labels stay short; hints go in the `hint` prop, not the placeholder.
 
+States: disabled flows through natively (`<Input disabled />` — 0.45 opacity, not-allowed cursor). For validation errors set `invalid` on the control (rouge border + rouge focus ring, `aria-invalid`) and `error` on the Field (rouge 11px message that replaces the hint):
+
+```jsx
+<Field label="企业邮箱" required error="请输入有效的企业邮箱地址">
+  <Input invalid value={email} onChange={e => setEmail(e.target.value)} placeholder="name@company.com" />
+</Field>
+```
+
+Error copy states what's wrong and how to fix it, declaratively (请输入有效的…) — no apologies, no exclamation marks.
+
 For dropdowns default to `Listbox` — the native `Select`'s open popup is OS-drawn and can't match the brand. Reach for `Select` only when the system picker is the point (e.g. mobile web forms).

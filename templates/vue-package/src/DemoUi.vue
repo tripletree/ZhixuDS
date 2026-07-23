@@ -80,6 +80,15 @@ const dialogOpen = ref(true)
         <Field label="交付格式">
           <Select v-model="fmt"><option value="ppt">PPT 提案</option><option value="report">数据报告</option></Select>
         </Field>
+        <Field label="企业邮箱" required error="请输入有效的企业邮箱地址">
+          <Input invalid model-value="li.wei@" placeholder="name@company.com" />
+        </Field>
+        <div style="display: flex; gap: 12px">
+          <Field label="订阅频率" hint="当前方案不支持修改" style="flex: 1">
+            <Listbox disabled model-value="weekly" :options="[{ value: 'weekly', label: '每周' }]" />
+          </Field>
+          <Field label="只读关键词" style="flex: 1"><Input disabled model-value="Lyocell" /></Field>
+        </div>
         <Field label="补充说明" hint="选填 · 帮助我们提前了解你的需求"><TextArea v-model="note" :rows="2" placeholder="其他想让我们了解的信息" /></Field>
       </Panel>
     </div>
@@ -95,7 +104,7 @@ const dialogOpen = ref(true)
         <Checkbox v-model="agree" indeterminate>部分选中</Checkbox>
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; gap: 16px">
-        <FilterChips v-model="chips" multiple title="上装" :options="[{ value: 'tshirt', label: 'T恤' }, { value: 'shirt', label: '衬衫' }, { value: 'hoodie', label: '卫衣' }]" />
+        <FilterChips v-model="chips" multiple title="上装" :options="[{ value: 'tshirt', label: 'T恤' }, { value: 'shirt', label: '衬衫' }, { value: 'hoodie', label: '卫衣' }, { value: 'jacket', label: '夹克', disabled: true }]" />
         <div style="display: flex; gap: 12px; align-items: center">
           <DateRangeEditor v-model="dateRange" style="width: 220px" :presets="[{ value: 'week', label: '前一周' }, { value: 'month', label: '前一月' }]" range-text="2026-06-01 ≤ date < 2026-07-01" />
           <Popover :width="200">

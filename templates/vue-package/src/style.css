@@ -321,6 +321,19 @@ html.light {
     background: var(--surface-float);
     color: var(--color-bone);
   }
+  .fm-control:disabled,
+  .fm-control[data-disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  /* Invalid state — rouge replaces azure on border + focus ring; pair with Field's error message */
+  .fm-control-error {
+    border-color: color-mix(in srgb, var(--color-rouge) 50%, transparent);
+  }
+  .fm-control-error:focus {
+    border-color: color-mix(in srgb, var(--color-rouge) 65%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-rouge) 12%, transparent);
+  }
 
   /* Floating panel / dialog entrances */
   @keyframes fm-dialog-in {
