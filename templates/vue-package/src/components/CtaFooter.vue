@@ -12,7 +12,7 @@ const { open: openContact } = useContactDialog()
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div
       class="pointer-events-none absolute left-1/2 top-0 size-[40rem] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-50 blur-3xl"
-      style="background: radial-gradient(circle, rgba(87, 184, 212, 0.16), transparent 65%)"
+      style="background: radial-gradient(circle, color-mix(in srgb, var(--color-azure) 16%, transparent), transparent 65%)"
     />
     <div
       class="pointer-events-none absolute bottom-0 left-1/4 size-[26rem] rounded-full opacity-40 blur-3xl"
