@@ -65,7 +65,7 @@ const connectorMotion = (i: number) => ({
     <!-- Soft top-right azure halo echoing the hero glow -->
     <div
       class="pointer-events-none absolute right-0 top-0 h-[520px] w-[60%] blur-3xl"
-      style="background: radial-gradient(ellipse at 75% 0%, color-mix(in srgb, var(--color-azure) 16%, transparent) 0%, color-mix(in srgb, var(--color-azure) 5%, transparent) 38%, transparent 70%);"
+      style="background: radial-gradient(ellipse at 75% 0%, rgba(56, 189, 248, 0.16) 0%, rgba(56, 189, 248, 0.05) 38%, transparent 70%);"
     />
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">

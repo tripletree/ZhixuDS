@@ -20,24 +20,24 @@ import StatusDot from '../components/ui/StatusDot.vue'
 
 const inkScale = [
   { name: 'ink-950', dark: '#07080a', light: '#ffffff' },
-  { name: 'ink-900', dark: '#0a0c10', light: '#fafbfc' },
-  { name: 'ink-850', dark: '#0e1117', light: '#f5f6f8' },
-  { name: 'ink-800', dark: '#13171f', light: '#eef0f4' },
-  { name: 'ink-750', dark: '#181d27', light: '#e6e9ee' },
-  { name: 'ink-700', dark: '#1f2531', light: '#d9dde4' },
+  { name: 'ink-900', dark: '#0a0c10', light: '#f7f7f8' },
+  { name: 'ink-850', dark: '#0e1117', light: '#f0f0f2' },
+  { name: 'ink-800', dark: '#13171f', light: '#e8e9ec' },
+  { name: 'ink-750', dark: '#181d27', light: '#dfe1e5' },
+  { name: 'ink-700', dark: '#1f2531', light: '#d2d5da' },
 ]
 const textScale = [
-  { name: 'bone', dark: '#eceae1', light: '#16181d' },
-  { name: 'bone-soft', dark: '#c8c7c0', light: '#4a505c' },
-  { name: 'bone-dim', dark: '#9a9a95', light: '#767d8a' },
-  { name: 'mist', dark: '#8b8f99', light: '#9aa1ad' },
+  { name: 'bone', dark: '#eceae1', light: '#14171c' },
+  { name: 'bone-soft', dark: '#c8c7c0', light: '#3c424d' },
+  { name: 'bone-dim', dark: '#9a9a95', light: '#5d6470' },
+  { name: 'mist', dark: '#8b8f99', light: '#6f7480' },
 ]
 const accents = [
-  { name: 'azure', dark: '#57b8d4', light: '#2563eb', note: '唯一工作强调色' },
-  { name: 'azure-bright', dark: '#6fd0ec', light: '#1d4ed8', note: '色块上的文字/高亮' },
-  { name: 'azure-deep', dark: '#2c7e98', light: '#8ab0fb', note: '渐变起点' },
-  { name: 'champagne', dark: '#c9ad7c', light: '#b07818', note: '数据副系列 · 慎用' },
-  { name: 'rouge', dark: '#9a4250', light: '#b03a4c', note: '错误/危险 · 慎用' },
+  { name: 'azure', dark: '#57b8d4', light: '#2c7e98', note: '唯一工作强调色' },
+  { name: 'azure-bright', dark: '#6fd0ec', light: '#2795b5', note: '深色底上的文字/高亮' },
+  { name: 'azure-deep', dark: '#2c7e98', light: '#57b8d4', note: '渐变起点' },
+  { name: 'champagne', dark: '#c9ad7c', light: '#a5854e', note: '数据副系列 · 慎用' },
+  { name: 'rouge', dark: '#9a4250', light: '#9a4250', note: '错误/危险 · 慎用' },
 ]
 const typeScale = [
   { label: 'Hero · 4.25rem/700', cls: 'text-[2.6rem] font-bold leading-[1.12] tracking-tight', text: '让趋势有序，让开发有据' },
@@ -78,9 +78,7 @@ const icons = [Database, Box, Sparkles, FileImage, LayoutDashboard, Activity, Tr
     <!-- Colors -->
     <section class="mt-14">
       <h2 class="mb-2 text-[15px] font-semibold text-bone">Colors · 色彩</h2>
-      <p class="mb-5 text-[13px] text-bone-dim">
-        深色：曜石黑表面 + 冷米白文字 + 电光青蓝强调。浅色：冷调白灰表面 + 近黑正文 + 宝蓝强调（对齐产品后台界面）。切换主题查看两套取值。
-      </p>
+      <p class="mb-5 text-[13px] text-bone-dim">曜石黑表面 + 冷米白文字 + 电光青蓝单强调。切换主题查看反转（ink→白、bone→墨、azure 加深）。</p>
       <div class="mb-6 grid grid-cols-3 gap-3 sm:grid-cols-6">
         <div v-for="c in inkScale" :key="c.name" class="overflow-hidden rounded-xl border border-bone/10">
           <div class="h-16" :style="{ background: `var(--color-${c.name})` }"></div>
