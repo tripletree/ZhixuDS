@@ -111,7 +111,7 @@ components:
 
 知序 FabricMind ("Fashion Intelligence") is a B2B DATA + BI + AI decision platform for textile product development. The visual identity fuses 高级时尚 (fashion) with 智能科技 (intelligence): obsidian-ink dark surfaces, cool bone text, hairline borders, one electric-azure working accent, and data as the aesthetic (机会指数 78/100, +18%, TOP 5). Tagline: 让趋势有序，让开发有据. Voice is confident and declarative, Simplified Chinese first with *italic Cormorant Garamond* English accents. The reader is addressed as 你; the brand speaks as 知序.
 
-Dark is the default theme. Adding class `light` to `<html>` (or `.theme-light` on a container) inverts: ink scale → white/neutral surfaces, bone → dark ink text, azure deepens to `#2c7e98` for contrast on white, champagne darkens to `#a5854e`.
+Dark is the default theme. Adding class `light` to `<html>` (or `.theme-light` on a container) switches to the product-console palette, calibrated against the Normalization Studio admin UI: ink scale → cool near-whites (`#ffffff` page/detail, `#f5f6f8` sidebar rails, `#eef0f4` insets), bone → near-black text (`#16181d`) over cool grays, and the accent shifts from electric azure to a royal blue `#2563eb` (nav icons, row markers, focus rings), with `#1d4ed8` for text on azure tints. Champagne warms to an amber gold `#b07818` (review/warning markers) and rouge brightens to `#b03a4c`.
 
 ## Colors
 
@@ -120,7 +120,7 @@ Three neutral families and one working accent:
 - **曜石黑 ink (950→700)** — page and surface scale, near-black with a cool navy cast. Page sits on `ink-950` under a subtle navy radial glow; cards on `ink-800`/`ink-850`.
 - **冷米白 bone** — text scale: `bone` for body, `bone-soft` for secondary, `bone-dim` for tertiary/labels. Pure white `#ffffff` only for strong emphasis.
 - **金属雾灰 mist** — placeholders, faint annotations, disabled hints.
-- **电光青蓝 azure** — the *single* working accent: links, focus rings, selection states, primary data series, live indicators. `azure-bright` for text on dark tints, `azure-deep` as gradient start.
+- **电光青蓝 azure** — the *single* working accent: links, focus rings, selection states, primary data series, live indicators. `azure-bright` for text on tinted chips, `azure-deep` as gradient start. Hue is theme-specific: electric cyan-blue `#57b8d4` on dark, royal blue `#2563eb` on light (matching the product console) — one accent per theme, never two at once.
 - **香槟金 champagne / 胭脂红 rouge** — sparingly: secondary data series and markers only. Rouge doubles as the error/danger tone (mixed 55–70% toward bone for legible text).
 
 Semantic mapping: info/success → azure; warning → champagne; error/danger → rouge. Never introduce system green, yellow, or any second accent hue.
@@ -143,7 +143,7 @@ Depth comes from layered translucency, not heavy shadows:
 - Corner glow `.glow-blue` — radial azure bleed from a card's top-right corner.
 - Background overlays: 64px/28px hairline grids, low-opacity SVG film grain, blurred azure/champagne halos.
 
-Light theme swaps to near-white cards, hairline black borders, and large diffuse shadows.
+Light theme swaps to flat white cards on cool hairline borders (`rgba(16,24,40,0.07)`) with tight, low-spread shadows — console chrome, not floating glassware.
 
 ## Shapes
 
