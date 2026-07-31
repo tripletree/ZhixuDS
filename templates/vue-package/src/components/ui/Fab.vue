@@ -32,7 +32,7 @@ const style = computed(() => ({
   background: `color-mix(in srgb, var(--color-azure) ${hover.value ? 24 : 15}%, transparent)`,
   color: 'var(--color-azure-bright)',
   backdropFilter: 'blur(8px)',
-  boxShadow: hover.value ? '0 0 34px -4px var(--azure-glow)' : '0 0 24px -6px var(--azure-glow)',
+  boxShadow: hover.value ? '0 0 34px -4px rgba(87, 184, 212, 0.7)' : '0 0 24px -6px rgba(87, 184, 212, 0.6)',
   transform: hover.value ? 'translateY(-2px)' : 'none',
   transition: 'all 0.3s var(--ease-calm)',
   ...(props.fixed

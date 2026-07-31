@@ -48,7 +48,7 @@ import { Sparkles } from 'lucide-vue-next'
 
     <!-- generate button -->
     <button
-      class="absolute bottom-5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-azure/40 bg-azure/15 px-3.5 py-1.5 text-[11px] font-medium tracking-wide text-azure-bright shadow-[0_0_24px_-6px_var(--azure-glow)]"
+      class="absolute bottom-5 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-azure/40 bg-azure/15 px-3.5 py-1.5 text-[11px] font-medium tracking-wide text-azure-bright shadow-[0_0_24px_-6px_rgba(87,184,212,0.6)]"
       type="button"
     >
       <Sparkles class="size-3" />

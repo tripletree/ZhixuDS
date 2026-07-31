@@ -53,35 +53,32 @@
 /*  Light theme — toggled via `light` class on <html>                  */
 /*  Semantic tokens invert: ink-* become light surfaces, bone becomes  */
 /*  dark text, so token-based utilities flip automatically.            */
-/*  Calibrated against the Normalization Studio product UI: cool       */
-/*  near-white chrome, pure-white detail surfaces, royal-blue accent.  */
 /* ------------------------------------------------------------------ */
 html.light {
-  /* Base 01 · ink → 白与冷灰 (950 page/detail, 850 sidebar rail, 800 inset) */
+  /* Base 01 · ink → white / neutral light surfaces */
   --color-ink-950: #ffffff;
-  --color-ink-900: #fafbfc;
-  --color-ink-850: #f5f6f8;
-  --color-ink-800: #eef0f4;
-  --color-ink-750: #e6e9ee;
-  --color-ink-700: #d9dde4;
+  --color-ink-900: #f7f7f8;
+  --color-ink-850: #f0f0f2;
+  --color-ink-800: #e8e9ec;
+  --color-ink-750: #dfe1e5;
+  --color-ink-700: #d2d5da;
 
-  /* Base 02 · bone → 近黑正文与冷灰层级 */
-  --color-bone: #16181d;
-  --color-bone-soft: #4a505c;
-  --color-bone-dim: #767d8a;
+  /* Base 02 · bone → dark ink text */
+  --color-bone: #14171c;
+  --color-bone-soft: #3c424d;
+  --color-bone-dim: #5d6470;
 
-  /* Base 03 · mist — English names, placeholders */
-  --color-mist: #9aa1ad;
-  --color-mist-dark: #bcc2cb;
+  /* Base 03 · mist stays neutral, slightly darkened for contrast */
+  --color-mist: #6f7480;
+  --color-mist-dark: #a3a9b4;
 
-  /* Accent 01 · 宝蓝 — nav icons, row markers, focus rings */
-  --color-azure: #2563eb;
-  --color-azure-bright: #1d4ed8;
-  --color-azure-deep: #8ab0fb;
+  /* Accent 01 · azure deepened so it reads on white */
+  --color-azure: #2c7e98;
+  --color-azure-bright: #2795b5;
+  --color-azure-deep: #57b8d4;
 
-  /* Accent 02 · 琥珀金 (审核/警示标记) + 胭脂红提亮 */
-  --color-champagne: #b07818;
-  --color-rouge: #b03a4c;
+  /* Accent 02 · champagne darkened toward bronze */
+  --color-champagne: #a5854e;
 }
 
 @layer base {
@@ -97,8 +94,6 @@ html.light {
     /* Primary CTA pill: hover surface + glow */
     --cta-hover: #ffffff;
     --cta-glow: rgba(236, 234, 225, 0.4);
-    /* Azure glow used by the Fab and product-mock accents (theme-resolved) */
-    --azure-glow: rgba(87, 184, 212, 0.6);
     /* Control/floating surfaces (ui primitives): translucent ink on dark, pure white on light */
     --surface-control: color-mix(in srgb, var(--color-ink-850) 80%, transparent);
     --surface-float: color-mix(in srgb, var(--color-ink-750) 97%, transparent);
@@ -110,15 +105,14 @@ html.light {
   html.light {
     --hero-base: 255 255 255;
     --cta-hover: #272d38;
-    --cta-glow: rgba(16, 24, 40, 0.28);
-    --azure-glow: rgba(37, 99, 235, 0.26);
+    --cta-glow: rgba(20, 23, 28, 0.3);
     --surface-control: #ffffff;
     --surface-float: #ffffff;
     --shadow-float:
-      0 12px 32px -12px rgba(16, 24, 40, 0.12),
-      0 2px 6px -2px rgba(16, 24, 40, 0.06);
-    --border-hairline: rgba(16, 24, 40, 0.07);
-    --border-panel: rgba(16, 24, 40, 0.09);
+      0 18px 44px -26px rgba(0, 0, 0, 0.18),
+      0 4px 14px -8px rgba(0, 0, 0, 0.08);
+    --border-hairline: rgba(0, 0, 0, 0.06);
+    --border-panel: rgba(0, 0, 0, 0.06);
   }
 
   body {
@@ -187,14 +181,14 @@ html.light {
 
   html.light .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(16, 24, 40, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(16, 24, 40, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(60, 66, 77, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.06) 1px, transparent 1px);
   }
 
   html.light .bg-grid-fine {
     background-image:
-      linear-gradient(to right, rgba(16, 24, 40, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(16, 24, 40, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(60, 66, 77, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 66, 77, 0.05) 1px, transparent 1px);
   }
 
   /* Low-contrast film grain / noise */
@@ -216,12 +210,12 @@ html.light {
   /* Light theme: pale frosted glass — heavy blur, hairline edge, diffuse
      shadow (matches the ChatGPT.com dropdown look) */
   html.light .glass {
-    background: rgba(255, 255, 255, 0.86);
-    backdrop-filter: blur(24px) saturate(1.6);
-    border: 1px solid rgba(16, 24, 40, 0.07);
+    background: rgba(246, 246, 247, 0.72);
+    backdrop-filter: blur(28px) saturate(1.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow:
-      0 16px 40px -20px rgba(16, 24, 40, 0.16),
-      0 2px 8px -4px rgba(16, 24, 40, 0.06);
+      0 24px 60px -24px rgba(0, 0, 0, 0.16),
+      0 4px 14px -8px rgba(0, 0, 0, 0.06);
   }
 
   /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.)
@@ -238,11 +232,9 @@ html.light {
 
   /* Light theme: near-white cards with a hairline border and diffuse shadow */
   html.light .panel {
-    background: #ffffff;
-    border: 1px solid rgba(16, 24, 40, 0.07);
-    box-shadow:
-      0 1px 2px rgba(16, 24, 40, 0.04),
-      0 12px 28px -18px rgba(16, 24, 40, 0.1);
+    background: linear-gradient(180deg, #ffffff, #fbfbfc);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.16);
   }
 
   /* Blue radial glow in the top-right corner — matches .feature-card::after */
@@ -263,7 +255,7 @@ html.light {
   }
 
   html.light .glow-blue::after {
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.1), transparent 68%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12), transparent 68%);
   }
 
   /* Smaller glow for compact cards */

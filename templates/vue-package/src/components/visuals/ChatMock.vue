@@ -57,7 +57,7 @@ const bars = [38, 52, 44, 66, 58, 78, 70]
         <span class="text-[12px] text-bone-dim">向知序提问</span>
         <span class="inline-block h-3.5 w-px animate-caret bg-azure" />
         <span class="flex-1" />
-        <span class="flex size-6 items-center justify-center rounded-lg bg-azure/20 text-azure-bright shadow-[0_0_14px_-3px_var(--azure-glow)]">
+        <span class="flex size-6 items-center justify-center rounded-lg bg-azure/20 text-azure-bright shadow-[0_0_14px_-3px_rgba(87,184,212,0.7)]">
           <ArrowUp class="size-3.5" />
         </span>
       </div>
