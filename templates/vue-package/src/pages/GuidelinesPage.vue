@@ -138,7 +138,10 @@ const icons = [Database, Box, Sparkles, FileImage, LayoutDashboard, Activity, Tr
     <section class="mt-14">
       <h2 class="mb-2 text-[15px] font-semibold text-bone">Surfaces · 表面</h2>
       <p class="mb-5 text-[13px] text-bone-dim">层次来自叠加的半透明，而不是重阴影。按钮永远是胶囊形。</p>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="surface-stage relative overflow-hidden rounded-3xl p-4 sm:p-5">
+        <div class="surface-stage__wash" aria-hidden="true"></div>
+        <div class="bg-grid surface-stage__grid" aria-hidden="true"></div>
+        <div class="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Panel :padding="20">
           <div class="text-[11px] font-medium uppercase tracking-[0.22em] text-bone-dim">.panel</div>
           <p class="mt-2 text-[13px] leading-relaxed text-bone-soft">内容卡：对角高光渐变 + 1px 面板描边，无模糊。圆角 1rem。</p>
@@ -168,6 +171,7 @@ const icons = [Database, Box, Sparkles, FileImage, LayoutDashboard, Activity, Tr
             <div class="flex h-8 items-center justify-center rounded-full border border-bone/15 px-4 text-[10px] text-bone-dim">pill</div>
           </div>
         </Panel>
+        </div>
       </div>
     </section>
 
