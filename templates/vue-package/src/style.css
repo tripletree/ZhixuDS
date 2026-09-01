@@ -219,17 +219,16 @@ html.light {
   html.light .glass {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.66) 0%,
-      rgba(236, 242, 250, 0.5) 100%
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(246, 248, 251, 0.26) 100%
     );
-    backdrop-filter: blur(22px) saturate(1.8);
-    -webkit-backdrop-filter: blur(22px) saturate(1.8);
-    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
-      inset 0 0 0 1px rgba(16, 24, 40, 0.04),
-      0 1px 2px rgba(16, 24, 40, 0.04),
-      0 24px 52px -26px rgba(31, 58, 110, 0.28);
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.75),
+      inset 0 0 0 1px rgba(16, 24, 40, 0.025),
+      0 8px 22px -16px rgba(31, 58, 110, 0.14);
   }
 
   /* Light-highlight content panel — no backdrop-filter (feature matrix, pain cards, etc.)
