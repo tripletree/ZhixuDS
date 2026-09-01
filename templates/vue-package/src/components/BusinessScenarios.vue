@@ -46,6 +46,8 @@ const cardMotion = (i: number) => ({
 
 <template>
   <section id="scenarios" class="relative border-t border-bone/[0.06] py-14 lg:py-[72px]">
+    <!-- Brand color wash behind the scenario cards so their frosted glass has content to blur -->
+    <div class="section-wash section-wash--scenarios" />
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-20" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
