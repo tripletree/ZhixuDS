@@ -29,13 +29,13 @@ const links = computed(() =>
         { label: '解决方案', href: '#framework', active: false },
         { label: '业务场景', href: '#scenarios', active: false },
         { label: '产品能力', href: '#features', active: false },
-        { label: '组件库', href: '#/components', active: false },
-        { label: '设计规范', href: '#/guidelines', active: false },
+        { label: '组件库', href: '#components', active: false },
+        { label: '设计规范', href: '#guidelines', active: false },
       ]
     : [
         { label: '落地页', href: '#top', active: false },
-        { label: '组件库', href: '#/components', active: props.route === 'components' },
-        { label: '设计规范', href: '#/guidelines', active: props.route === 'guidelines' },
+        { label: '组件库', href: '#components', active: props.route === 'components' },
+        { label: '设计规范', href: '#guidelines', active: props.route === 'guidelines' },
       ],
 )
 </script>

@@ -10,21 +10,22 @@ import ContactDialog from './components/ContactDialog.vue'
 import ComponentsPage from './pages/ComponentsPage.vue'
 import GuidelinesPage from './pages/GuidelinesPage.vue'
 
-// Hash routing: #/components and #/guidelines; anything else (incl. section
-// anchors like #framework) renders the landing page.
+// Hash routing: #components and #guidelines; anything else (incl. section
+// anchors like #framework) renders the landing page. Route hashes are kept
+// selector-safe (no "/") so global anchor/hashchange handlers that call
+// document.querySelector(location.hash) don't throw a SyntaxError.
 const hash = ref(typeof window !== 'undefined' ? window.location.hash : '')
+const route = computed<'landing' | 'components' | 'guidelines'>(() => {
+  if (hash.value === '#components') return 'components'
+  if (hash.value === '#guidelines') return 'guidelines'
+  return 'landing'
+})
 const onHashChange = () => {
   hash.value = window.location.hash
-  if (hash.value.startsWith('#/')) window.scrollTo({ top: 0 })
+  if (route.value !== 'landing') window.scrollTo({ top: 0 })
 }
 onMounted(() => window.addEventListener('hashchange', onHashChange))
 onUnmounted(() => window.removeEventListener('hashchange', onHashChange))
-
-const route = computed<'landing' | 'components' | 'guidelines'>(() => {
-  if (hash.value.startsWith('#/components')) return 'components'
-  if (hash.value.startsWith('#/guidelines')) return 'guidelines'
-  return 'landing'
-})
 </script>
 
 <template>
