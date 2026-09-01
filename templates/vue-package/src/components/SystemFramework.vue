@@ -67,8 +67,6 @@ const connectorMotion = (i: number) => ({
       class="pointer-events-none absolute right-0 top-0 h-[520px] w-[60%] blur-3xl"
       style="background: radial-gradient(ellipse at 75% 0%, color-mix(in srgb, var(--color-azure) 16%, transparent) 0%, color-mix(in srgb, var(--color-azure) 5%, transparent) 38%, transparent 70%);"
     />
-    <!-- Brand color wash behind the pipeline cards so their frosted glass has content to blur -->
-    <div class="section-wash section-wash--solution" />
     <div class="pointer-events-none absolute inset-0 bg-grid opacity-30" />
     <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
       <SectionHeading
