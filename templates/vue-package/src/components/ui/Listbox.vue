@@ -124,8 +124,8 @@ function onKeyDown(e: KeyboardEvent) {
       v-if="open"
       ref="listEl"
       role="listbox"
-      class="fm-pop-in"
-      style="position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50; margin: 0; padding: 6px; list-style: none; max-height: 240px; overflow-y: auto; border-radius: var(--radius-panel); border: 1px solid color-mix(in srgb, var(--color-bone) 12%, transparent); background: var(--surface-float); backdrop-filter: blur(12px); box-shadow: var(--shadow-float)"
+      class="fm-float fm-pop-in"
+      style="position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50; margin: 0; padding: 6px; list-style: none; max-height: 240px; overflow-y: auto"
     >
       <li
         v-for="(opt, i) in options"
@@ -137,8 +137,8 @@ function onKeyDown(e: KeyboardEvent) {
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
-          padding: '8px 10px',
-          borderRadius: '8px',
+          padding: '9px 12px',
+          borderRadius: '10px',
           fontSize: '13px',
           lineHeight: 1.5,
           cursor: 'pointer',

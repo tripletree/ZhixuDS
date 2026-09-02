@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Floating panel — frosted ink surface (same recipe as the Listbox panel), fm-pop-in entrance,
+ * Floating panel — the shared `.fm-float` surface (opaque pane, faint hairline, soft shadow), fm-pop-in entrance,
  * outside-click + Escape close. Base layer for menus, filter panels, date editors.
  * Trigger goes in the `anchor` slot; clicking it toggles. `v-model:open` for controlled use.
  */
@@ -30,11 +30,6 @@ const panelStyle = computed(() => ({
   zIndex: 60,
   width: `${props.width}px`,
   padding: `${props.padding}px`,
-  borderRadius: 'var(--radius-panel)',
-  border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-  background: 'var(--surface-float)',
-  backdropFilter: 'blur(12px)',
-  boxShadow: 'var(--shadow-float)',
   ...(PLACE[props.placement] ?? PLACE['bottom-start']),
 }))
 
@@ -66,7 +61,7 @@ onBeforeUnmount(() => {
 <template>
   <span ref="rootEl" style="position: relative; display: inline-block">
     <span style="display: inline-block" @click="open = !open"><slot name="anchor" /></span>
-    <div v-if="open" class="fm-pop-in" role="dialog" :style="panelStyle">
+    <div v-if="open" class="fm-float fm-pop-in" role="dialog" :style="panelStyle">
       <slot />
     </div>
   </span>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * Feedback toast — the frosted float surface (Listbox panel recipe) as a transient notice.
+ * Feedback toast — the shared `.fm-float` surface as a transient notice.
  * Tones follow the data palette: info/success azure, warning champagne, error rouge.
  */
 import { computed, type Component } from 'vue'
@@ -34,8 +34,8 @@ const t = computed(() => TONES[props.tone] ?? TONES.info)
 <template>
   <div
     role="status"
-    class="fm-pop-in"
-    style="display: flex; align-items: flex-start; gap: 10px; width: 320px; padding: 12px 14px; border-radius: var(--radius-panel); border: 1px solid color-mix(in srgb, var(--color-bone) 12%, transparent); background: var(--surface-float); backdrop-filter: blur(12px); box-shadow: var(--shadow-float)"
+    class="fm-float fm-pop-in"
+    style="display: flex; align-items: flex-start; gap: 10px; width: 320px; padding: 12px 14px"
   >
     <span :style="{ display: 'inline-flex', flex: 'none', marginTop: '1px', color: t.color }">
       <component :is="icon ?? t.icon" :size="15" :stroke-width="1.75" />

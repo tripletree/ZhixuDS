@@ -1,4 +1,4 @@
-Fully branded dropdown: `.fm-control` trigger (chevron rotates on open), frosted ink-850 panel with hairline border, options highlight azure 10% on hover/keyboard focus, selected option gets an azure check. Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump; outside click closes. `v-model` holds the selected value.
+Fully branded dropdown: `.fm-control` trigger (chevron rotates on open), `.fm-float` panel (opaque, near-invisible hairline, soft shadow), options highlight azure 10% on hover/keyboard focus, selected option gets an azure check. Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump; outside click closes. `v-model` holds the selected value.
 
 ```vue
 <script setup lang="ts">

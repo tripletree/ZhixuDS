@@ -1,4 +1,4 @@
-Caption-scale hint (12px bone-soft) on the frosted float surface — 8px radius, hairline border, blur, float shadow, `fm-pop-in`. Appears 150ms after hover or on keyboard focus; hides immediately on leave/blur. No arrow — consistent with the Popover language. Trigger goes in the default slot.
+Caption-scale hint (12px bone-soft) on the shared `.fm-float` surface — 8px radius override, near-invisible hairline, soft shadow, no blur, `fm-pop-in`. Appears 150ms after hover or on keyboard focus; hides immediately on leave/blur. No arrow — consistent with the Popover language. Trigger goes in the default slot.
 
 ```vue
 <script setup lang="ts">

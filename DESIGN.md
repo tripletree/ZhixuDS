@@ -138,8 +138,8 @@ Base-4 spacing (Tailwind scale). Cards pad 24px (20px compact), controls 10px ×
 Depth comes from layered translucency, not heavy shadows:
 
 - `.panel` — content card: diagonal white sheen gradient stack + 1px `rgba(255,255,255,0.14)` border, no blur.
-- `.glass` — floating tile: frosted 12px backdrop-blur, hairline bone/8 border.
-- Floating layer (menus, listbox panels, toasts, tooltips) — `--surface-float` (ink-750 at 97%) + 12px blur + `--shadow-float` (soft 20px/44px drop).
+- `.glass` — decorative frosted tile (hero chips, dashboard mock): 12px backdrop-blur, hairline bone/8 border. Not for floating UI.
+- `.fm-float` — floating UI (popover, listbox, dropdown menu, toast, tooltip, dialog card): opaque `--surface-float` (ink-750 / pure white), near-invisible `--border-float` hairline (bone 8% / ink 5%), one soft diffuse `--shadow-float`, `--radius-float` 1rem, **no backdrop-filter**. The pane is lifted by depth, not outlined. Modal scrim is flat `--overlay-scrim`, no blur.
 - Corner glow `.glow-blue` — radial azure bleed from a card's top-right corner.
 - Background overlays: 64px/28px hairline grids, low-opacity SVG film grain, blurred azure/champagne halos.
 

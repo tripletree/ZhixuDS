@@ -33,7 +33,7 @@ const onKeydown = (e: KeyboardEvent) => {
       @keydown="onKeydown"
     >
       <!-- Backdrop -->
-      <div class="absolute inset-0 bg-ink-950/80 backdrop-blur-sm" @click="close" />
+      <div class="absolute inset-0 bg-(--overlay-scrim)" @click="close" />
 
       <!-- Panel -->
       <Motion
@@ -41,7 +41,7 @@ const onKeydown = (e: KeyboardEvent) => {
         :animate="{ opacity: 1, scale: 1, y: 0 }"
         :exit="{ opacity: 0, scale: 0.95, y: 16 }"
         :transition="{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }"
-        class="glass relative z-10 w-full max-w-sm rounded-2xl border border-bone/10 p-8 text-center"
+        class="fm-float relative z-10 w-full max-w-sm rounded-[1.25rem] p-8 text-center"
       >
         <button
           type="button"

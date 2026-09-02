@@ -1,4 +1,4 @@
-Transient feedback notice on the frosted float surface (same recipe as the Listbox panel): 0.75rem radius, hairline bone/12 border, 12px blur, float shadow, `fm-pop-in` entrance. Tone icon leads; title 13px bone, description 12px bone-dim.
+Transient feedback notice on the shared `.fm-float` surface: 1rem radius, near-invisible hairline, one soft shadow, no blur, `fm-pop-in` entrance. Tone icon leads; title 13px bone, description 12px bone-dim.
 
 Tones stay inside the brand palette — no green/yellow/red system colors: `info` and `success` are azure, `warning` champagne, `error` rouge (mixed toward bone for legibility).
 

@@ -45,10 +45,6 @@ const panelStyle = computed(() => ({
   maxWidth: `${props.maxWidth}px`,
   padding: '6px 10px',
   borderRadius: '8px',
-  border: '1px solid color-mix(in srgb, var(--color-bone) 12%, transparent)',
-  background: 'var(--surface-float)',
-  backdropFilter: 'blur(12px)',
-  boxShadow: 'var(--shadow-float)',
   fontSize: '12px',
   lineHeight: 1.6,
   letterSpacing: '0.02em',
@@ -67,7 +63,7 @@ const panelStyle = computed(() => ({
     @focusout="hide"
   >
     <slot />
-    <span v-if="isOpen && content" role="tooltip" class="fm-pop-in" :style="panelStyle">
+    <span v-if="isOpen && content" role="tooltip" class="fm-float fm-pop-in" :style="panelStyle">
       {{ content }}
     </span>
   </span>
