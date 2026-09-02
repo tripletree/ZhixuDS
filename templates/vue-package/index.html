@@ -10,6 +10,26 @@
     />
     <title>知序 FabricMind · 面向纺织产品开发的智能决策系统</title>
     <script>
+      // Normalize legacy "#/route" hashes (e.g. "#/guidelines") to selector-safe
+      // "#route" BEFORE any other script runs. A hash containing "/" is an invalid
+      // CSS selector, so a global on-load handler that calls
+      // document.querySelector(location.hash) throws a SyntaxError. Doing this here,
+      // ahead of the module bundle and any injected runtime, prevents the throw even
+      // when the page is opened directly at an old "#/..." URL.
+      try {
+        if (/^#\/+/.test(window.location.hash)) {
+          var fmNormalized = '#' + window.location.hash.replace(/^#\/+/, '')
+          window.history.replaceState(
+            window.history.state,
+            '',
+            window.location.pathname +
+              window.location.search +
+              (fmNormalized === '#' ? '' : fmNormalized),
+          )
+        }
+      } catch (e) {}
+    </script>
+    <script>
       // Apply the saved theme before first paint to avoid a flash of the wrong theme.
       try {
         if (localStorage.getItem('fm-theme') === 'light') {

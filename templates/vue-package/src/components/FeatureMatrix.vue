@@ -83,7 +83,7 @@ const cards = [
           class="group"
         >
           <div
-            class="panel glow-blue flex h-full flex-col gap-5 overflow-hidden rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20"
+            class="panel glass flex h-full flex-col gap-5 overflow-hidden rounded-3xl p-7 transition-colors duration-300 hover:border-azure/20"
           >
             <div>
               <span class="eyebrow text-azure">{{ card.eyebrow }}</span>
