@@ -1,4 +1,4 @@
-Pill segmented control (never rectangles/underlines — pills only). Idle tabs are bone-dim, brighten toward bone on hover; the active tab sits on a bone 8% pill with a hairline border. `v-model` holds the active key; per-item lucide icon via `icon` (a component, not a name).
+Pill segmented control (never rectangles/underlines — pills only). Idle tabs are bone-dim and brighten toward bone-soft on hover; the active tab uses the shared azure **selected** state — border azure 40%, fill azure 12%, `azure-bright` label — identical to a selected FilterChip, so "selected" reads the same across every pill control. `v-model` holds the active key; per-item lucide icon via `icon` (a component, not a name).
 
 ```vue
 <script setup lang="ts">

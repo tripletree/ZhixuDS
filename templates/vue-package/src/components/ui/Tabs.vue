@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/** Pill segmented control — pills only per readme; active pill lifts to bone 8%, idle tabs dim like nav links. */
+/** Pill segmented control — pills only per readme; the active pill uses the shared azure selected state (same as FilterChips), idle tabs dim like nav links. */
 import { computed, ref, type Component } from 'vue'
 
 export interface TabItem {
@@ -37,9 +37,12 @@ function itemStyle(item: TabItem) {
     fontWeight: 500,
     letterSpacing: '0.02em',
     whiteSpace: 'nowrap',
-    border: `1px solid ${active ? 'color-mix(in srgb, var(--color-bone) 15%, transparent)' : 'transparent'}`,
-    background: active ? 'color-mix(in srgb, var(--color-bone) 8%, transparent)' : 'transparent',
-    color: active ? 'var(--color-bone)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
+    // Active pill uses the same azure selected state as FilterChips —
+    // border azure 40%, fill azure 12%, azure-bright label — so "selected"
+    // reads identically across every pill control.
+    border: `1px solid ${active ? 'color-mix(in srgb, var(--color-azure) 40%, transparent)' : 'transparent'}`,
+    background: active ? 'color-mix(in srgb, var(--color-azure) 12%, transparent)' : 'transparent',
+    color: active ? 'var(--color-azure-bright)' : hover ? 'var(--color-bone-soft)' : 'var(--color-bone-dim)',
     transition: 'all 0.3s var(--ease-calm)',
     ...sz.value,
   }
