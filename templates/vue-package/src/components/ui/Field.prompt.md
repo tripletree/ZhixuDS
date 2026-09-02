@@ -32,4 +32,4 @@ States: `disabled` dims to 0.45 opacity with a not-allowed cursor. For validatio
 
 Error copy states what's wrong and how to fix it, declaratively (请输入有效的…) — no apologies, no exclamation marks.
 
-For dropdowns default to `Listbox` — the native `Select`'s open popup is OS-drawn and can't match the brand. Reach for `Select` only when the system picker is the point (e.g. mobile web forms).
+`Select` and `Listbox` open the same `.fm-float` panel — `Select` is Listbox with an inline `<option>` authoring API (`value`, text, optional `data-hint`), so the two never look different side by side. Use `Listbox` when options come from data, `Select` when you want to write them in the template.

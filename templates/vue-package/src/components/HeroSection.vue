@@ -12,9 +12,11 @@ const baseUrl = import.meta.env.BASE_URL
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const { theme } = useTheme()
-const heroSrc = computed(
-  () => `${baseUrl}${theme.value === 'light' ? 'hero-light.webp' : 'hero-visual.png'}`,
-)
+const isLight = computed(() => theme.value === 'light')
+// Both theme visuals stay mounted and decoded; toggling only flips opacity,
+// so the switch is instant instead of waiting on a fresh image download.
+const HERO_DARK = `${baseUrl}hero-visual.png`
+const HERO_LIGHT = `${baseUrl}hero-light.webp`
 
 // Layered entrance: each element floats up with an increasing delay.
 const rise = (delay: number) => ({
@@ -42,12 +44,25 @@ const drift = (dur: number, dist = 12) =>
         :initial="reduced ? false : { opacity: 0, scale: 1.06 }"
         :animate="{ opacity: 1, scale: 1 }"
         :transition="{ duration: 1.6, ease: EASE }"
-        class="h-full w-full"
+        class="relative h-full w-full"
       >
         <img
-          :src="heroSrc"
+          :src="HERO_DARK"
           alt="知序 FabricMind 数据智能主视觉"
-          class="h-full w-full object-cover object-right"
+          class="absolute inset-0 h-full w-full object-cover object-right transition-opacity duration-200"
+          :class="isLight ? 'opacity-0' : 'opacity-100'"
+          :aria-hidden="isLight || undefined"
+          decoding="async"
+          :fetchpriority="isLight ? 'low' : 'high'"
+        />
+        <img
+          :src="HERO_LIGHT"
+          alt="知序 FabricMind 数据智能主视觉"
+          class="absolute inset-0 h-full w-full object-cover object-right transition-opacity duration-200"
+          :class="isLight ? 'opacity-100' : 'opacity-0'"
+          :aria-hidden="!isLight || undefined"
+          decoding="async"
+          :fetchpriority="isLight ? 'high' : 'low'"
         />
       </Motion>
       <!-- Fade the image into the shared solid navy field on its left edge -->
