@@ -153,7 +153,7 @@ Radii: 0.75rem inner panels/controls, 1rem content cards, 1.5rem feature cards, 
 
 Production Vue 3 components live in `templates/vue-package/src/components/ui/` (npm: `@zhixu/fabricmind-ui`); a React mirror for prototypes sits in `components/ui/`. Key patterns:
 
-- **button-primary** — bone-filled pill, ink text; hover turns white with a bone glow shadow. Ghost/nav/icon variants are hairline pills sharing one hover/focus state in both themes: border azure 40%, fill azure 10%, text and icon azure-bright together, 3px azure 12% focus ring. CTAs are short verb phrases: 预约演示, 了解产品.
+- **button-primary** — bone-filled pill, ink text; hover turns white with a bone glow shadow. Ghost/nav/icon variants are hairline pills, always transparent at rest (no grey wash, so they read white in the light theme), sharing one hover/focus state in both themes: border azure 40%, fill azure 10%, text and icon azure-bright together, 3px azure 12% focus ring. CTAs are short verb phrases: 预约演示, 了解产品.
 - **input** (`.fm-control`) — translucent ink-850 surface, hairline border, azure focus ring; `invalid` swaps border/ring to rouge, `:disabled` dims to 0.45 opacity.
 - **panel / glass** — see Elevation.
 - **tag / filter chips** — pill chips; selected state tints azure 12% fill + azure-bright text.
