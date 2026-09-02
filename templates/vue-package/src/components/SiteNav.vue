@@ -69,7 +69,7 @@ const links = computed(() =>
       <div class="flex items-center gap-3">
         <button
           type="button"
-          class="inline-flex size-9 items-center justify-center rounded-full border border-bone/15 bg-bone/[0.03] text-bone-soft transition-all hover:border-azure/40 hover:bg-azure/10 hover:text-bone"
+          class="inline-flex size-9 items-center justify-center rounded-full border border-bone/15 bg-bone/[0.03] text-bone-soft transition-all hover:border-azure/40 hover:bg-azure/10 hover:text-azure-bright focus-visible:border-azure/40 focus-visible:bg-azure/10 focus-visible:text-azure-bright focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-azure/12"
           :aria-label="theme === 'dark' ? '切换到浅色主题' : '切换到深色主题'"
           @click="toggleTheme"
         >
@@ -79,7 +79,7 @@ const links = computed(() =>
 
         <button
           type="button"
-          class="group inline-flex items-center gap-1.5 rounded-full border border-bone/15 bg-bone/[0.03] px-4 py-2 text-[13px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10"
+          class="group inline-flex items-center gap-1.5 rounded-full border border-bone/15 bg-bone/[0.03] px-4 py-2 text-[13px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10 hover:text-azure-bright focus-visible:border-azure/40 focus-visible:bg-azure/10 focus-visible:text-azure-bright focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-azure/12"
           @click="openContact"
         >
           预约演示

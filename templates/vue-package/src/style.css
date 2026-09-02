@@ -305,6 +305,17 @@ html.light {
   html.light .text-bone-dim {
     color: #454b56;
   }
+  /* Hairline buttons: the light-theme text overrides above outrank plain
+     hover:/focus-visible: utilities, so restate the azure state at the same
+     specificity — border, text and icon tint together in both themes. */
+  html.light .focus-visible\:text-azure-bright:focus-visible {
+    color: var(--color-azure-bright);
+  }
+  @media (hover: hover) {
+    html.light .hover\:text-azure-bright:hover {
+      color: var(--color-azure-bright);
+    }
+  }
 
   /* Form controls (ui addition — surface borrowed from the AI-chat input bar) */
   .fm-control {

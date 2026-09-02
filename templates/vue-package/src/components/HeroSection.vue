@@ -147,7 +147,7 @@ const drift = (dur: number, dist = 12) =>
             </button>
             <a
               href="#framework"
-              class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-bone/35 hover:bg-bone/[0.04]"
+              class="inline-flex items-center gap-2 rounded-full border border-bone/15 px-6 py-3.5 text-[14px] font-medium tracking-wide text-bone transition-all hover:border-azure/40 hover:bg-azure/10 hover:text-azure-bright focus-visible:border-azure/40 focus-visible:bg-azure/10 focus-visible:text-azure-bright focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-azure/12"
             >
               了解产品
             </a>
