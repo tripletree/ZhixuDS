@@ -22,6 +22,8 @@ import Collapse from '../components/ui/Collapse.vue'
 import Popover from '../components/ui/Popover.vue'
 import DropdownMenu from '../components/ui/DropdownMenu.vue'
 import DateRangeEditor from '../components/ui/DateRangeEditor.vue'
+import DatePicker from '../components/ui/DatePicker.vue'
+import Switch from '../components/ui/Switch.vue'
 import EmptyState from '../components/ui/EmptyState.vue'
 import ProductCard from '../components/ui/ProductCard.vue'
 import ThumbnailStrip from '../components/ui/ThumbnailStrip.vue'
@@ -47,6 +49,10 @@ const brands = ref(['a'])
 const range = ref('month')
 const chips = ref(['tshirt'])
 const dateRange = ref('month')
+const dateFrom = ref<string | undefined>('2026-07-01')
+const dateTo = ref<string | undefined>()
+const realtime = ref(true)
+const alerts = ref(false)
 const thumb = ref(0)
 const page = ref(3)
 const letter = ref('A')
@@ -61,7 +67,7 @@ function demoToast() {
 <template>
   <div class="mx-auto max-w-7xl px-6 pb-28 pt-28 lg:px-10">
     <p class="eyebrow text-azure">Components · 组件库</p>
-    <h1 class="mt-3 text-[2rem] font-bold leading-tight tracking-tight text-bone">28 个应用级组件</h1>
+    <h1 class="mt-3 text-[2rem] font-bold leading-tight tracking-tight text-bone">30 个应用级组件</h1>
     <p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-bone-soft">
       从落地页产品模型中提炼的 BI 应用原语，全部随 <span class="font-display italic">@zhixu/fabricmind-ui</span>
       发布。右上角可切换深浅主题。
@@ -136,6 +142,15 @@ function demoToast() {
             <Listbox disabled model-value="weekly" :options="[{ value: 'weekly', label: '每周' }]" />
           </Field>
           <Field label="只读关键词" style="flex: 1"><Input disabled model-value="Lyocell" /></Field>
+        </div>
+        <div class="flex gap-3">
+          <Field label="起始日期" required style="flex: 1"><DatePicker v-model="dateFrom" :max="dateTo" /></Field>
+          <Field label="截止日期" hint="不早于起始日期" style="flex: 1"><DatePicker v-model="dateTo" :min="dateFrom" placeholder="选择截止日期" /></Field>
+        </div>
+        <div class="flex flex-col gap-3 pt-1">
+          <Switch v-model="realtime" label-first class="w-full" description="每 15 分钟拉取一次品牌官网数据">实时同步</Switch>
+          <Switch v-model="alerts" label-first class="w-full" description="机会指数超过阈值时推送到企业微信">趋势预警</Switch>
+          <Switch :model-value="true" disabled size="sm">已锁定选项</Switch>
         </div>
         <Field label="补充说明" hint="选填 · 帮助我们提前了解你的需求"><TextArea v-model="note" :rows="2" placeholder="其他想让我们了解的信息" /></Field>
       </Panel>

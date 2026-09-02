@@ -11,8 +11,10 @@ const props = withDefaults(
     placement?: 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
     width?: number
     padding?: number
+    /** Render the anchor as a block so a `.fm-control` trigger fills its Field */
+    block?: boolean
   }>(),
-  { placement: 'bottom-start', width: 320, padding: 16 },
+  { placement: 'bottom-start', width: 320, padding: 16, block: false },
 )
 
 const open = defineModel<boolean>('open', { default: false })
@@ -59,8 +61,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <span ref="rootEl" style="position: relative; display: inline-block">
-    <span style="display: inline-block" @click="open = !open"><slot name="anchor" /></span>
+  <span ref="rootEl" :style="{ position: 'relative', display: block ? 'block' : 'inline-block' }">
+    <span :style="{ display: block ? 'block' : 'inline-block' }" @click="open = !open"><slot name="anchor" /></span>
     <div v-if="open" class="fm-float fm-pop-in" role="dialog" :style="panelStyle">
       <slot />
     </div>
