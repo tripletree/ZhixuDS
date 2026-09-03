@@ -27,12 +27,25 @@ const PLACE = {
   'top-end': { bottom: 'calc(100% + 8px)', right: '0' },
 } as const
 
+// Resolved on open: if a `*-start` panel would overflow the viewport's right edge,
+// flip it to `*-end` so filter panels near the toolbar's right side stay on screen.
+const resolvedPlacement = ref(props.placement)
+function resolvePlacement() {
+  resolvedPlacement.value = props.placement
+  const el = rootEl.value
+  if (!el || !props.placement.endsWith('-start')) return
+  const { left } = el.getBoundingClientRect()
+  if (left + props.width > window.innerWidth - 16) {
+    resolvedPlacement.value = props.placement.replace('-start', '-end') as typeof props.placement
+  }
+}
+
 const panelStyle = computed(() => ({
   position: 'absolute' as const,
   zIndex: 60,
   width: `${props.width}px`,
   padding: `${props.padding}px`,
-  ...(PLACE[props.placement] ?? PLACE['bottom-start']),
+  ...(PLACE[resolvedPlacement.value] ?? PLACE['bottom-start']),
 }))
 
 function onDocDown(e: MouseEvent) {
@@ -45,6 +58,7 @@ watch(
   open,
   (v) => {
     if (v) {
+      resolvePlacement()
       document.addEventListener('mousedown', onDocDown)
       document.addEventListener('keydown', onDocKey)
     } else {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { Download, Search, Star, Trash2 } from 'lucide-vue-next'
+import { computed, ref } from 'vue'
+import { Download, Search, SlidersHorizontal, Star, Trash2 } from 'lucide-vue-next'
 import Panel from '../components/ui/Panel.vue'
 import Tag from '../components/ui/Tag.vue'
 import StatusDot from '../components/ui/StatusDot.vue'
@@ -49,6 +49,13 @@ const brands = ref(['a'])
 const range = ref('month')
 const chips = ref(['tshirt'])
 const dateRange = ref('month')
+const online = ref<string | undefined>()
+const status = ref('listed')
+const moreFilters = ref({ pattern: 'suzani', fabric: 'cotton', weave: 'warp', scene: 'camping', crowd: 'kids', gender: 'female' })
+const activeFilterCount = computed(() => Object.values(moreFilters.value).filter(Boolean).length)
+function resetMoreFilters() {
+  moreFilters.value = { pattern: '', fabric: '', weave: '', scene: '', crowd: '', gender: '' }
+}
 const dateFrom = ref<string | undefined>('2026-07-01')
 const dateTo = ref<string | undefined>()
 const realtime = ref(true)
@@ -172,12 +179,35 @@ function demoToast() {
         <div class="flex flex-col gap-5" style="flex: 1; min-width: 320px">
           <Tabs v-model="tab" :items="[{ key: 'trend', label: '趋势' }, { key: 'material', label: '材料' }, { key: 'proposal', label: '提案' }]" />
           <FilterChips v-model="chips" multiple title="上装" :options="[{ value: 'tshirt', label: 'T恤' }, { value: 'shirt', label: '衬衫' }, { value: 'hoodie', label: '卫衣' }, { value: 'jacket', label: '夹克', disabled: true }]" />
+          <!-- Toolbar filters: label-less selects whose value is self-describing, plus a
+               "more filters" popover of inline-labelled selects sharing one label column -->
           <div class="flex flex-wrap items-center gap-3">
-            <DateRangeEditor v-model="dateRange" style="width: 220px" :presets="[{ value: 'week', label: '前一周' }, { value: 'month', label: '前一月' }]" range-text="2026-06-01 ≤ date < 2026-07-01" />
-            <Popover :width="220">
-              <template #anchor><Button variant="ghost" size="sm">更多筛选</Button></template>
-              <span class="text-xs text-bone-soft">Popover 面板 — 菜单与筛选的基层</span>
+            <Listbox v-model="online" style="width: 160px" placeholder="全部在线时长" :options="[{ value: '7d', label: '7 天内' }, { value: '30d', label: '30 天内' }, { value: '90d', label: '90 天内' }]" />
+            <Listbox v-model="status" style="width: 140px" :options="[{ value: 'listed', label: '未下架' }, { value: 'delisted', label: '已下架' }, { value: 'all', label: '全部' }]" />
+            <Popover :width="320" :padding="16">
+              <template #anchor>
+                <Button variant="ghost" size="sm">
+                  更多筛选
+                  <span
+                    v-if="activeFilterCount"
+                    class="ml-1.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-azure px-1 text-[10px] font-semibold tabular-nums text-ink-950"
+                  >{{ activeFilterCount }}</span>
+                </Button>
+              </template>
+              <div class="flex flex-col gap-3">
+                <Field layout="inline" label="图案元素"><Listbox v-model="moreFilters.pattern" placeholder="全部" :options="[{ value: 'suzani', label: '苏扎尼刺绣' }, { value: 'floral', label: '碎花' }, { value: 'geo', label: '几何' }]" /></Field>
+                <Field layout="inline" label="成分"><Listbox v-model="moreFilters.fabric" placeholder="全部" :options="[{ value: 'cotton', label: '棉' }, { value: 'linen', label: '亚麻' }, { value: 'wool', label: '羊毛' }]" /></Field>
+                <Field layout="inline" label="织造类型"><Listbox v-model="moreFilters.weave" placeholder="全部" :options="[{ value: 'warp', label: '经编' }, { value: 'weft', label: '纬编' }, { value: 'woven', label: '梭织' }]" /></Field>
+                <Field layout="inline" label="适用场景"><Listbox v-model="moreFilters.scene" placeholder="全部" :options="[{ value: 'camping', label: '露营' }, { value: 'commute', label: '通勤' }, { value: 'sport', label: '运动' }]" /></Field>
+                <Field layout="inline" label="人群"><Listbox v-model="moreFilters.crowd" placeholder="全部" :options="[{ value: 'kids', label: '儿童（4-12岁）' }, { value: 'teen', label: '青少年' }, { value: 'adult', label: '成人' }]" /></Field>
+                <Field layout="inline" label="性别"><Listbox v-model="moreFilters.gender" placeholder="全部" :options="[{ value: 'female', label: '女' }, { value: 'male', label: '男' }, { value: 'unisex', label: '中性' }]" /></Field>
+                <div class="mt-1 flex items-center justify-between border-t border-(--border-hairline) pt-3">
+                  <Button variant="ghost" size="sm" @click="resetMoreFilters">重置</Button>
+                  <Button variant="nav" size="sm"><SlidersHorizontal class="size-3.5" :stroke-width="1.75" />自定义</Button>
+                </div>
+              </div>
             </Popover>
+            <DateRangeEditor v-model="dateRange" style="width: 220px" :presets="[{ value: 'week', label: '前一周' }, { value: 'month', label: '前一月' }]" range-text="2026-06-01 ≤ date < 2026-07-01" />
             <DropdownMenu :items="[{ key: 'export', label: '导出', icon: Download }, { key: 'fav', label: '收藏', icon: Star }, { type: 'divider' }, { key: 'del', label: '删除', icon: Trash2, danger: true }]">
               <template #anchor><Button variant="nav" size="sm">操作</Button></template>
             </DropdownMenu>
