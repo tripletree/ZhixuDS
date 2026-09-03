@@ -37,6 +37,9 @@
         }
       } catch (e) {}
     </script>
+    <!-- Both hero visuals are fetched up front so the theme toggle never waits on a download -->
+    <link rel="preload" as="image" href="/hero-visual.png" />
+    <link rel="preload" as="image" href="/hero-light.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

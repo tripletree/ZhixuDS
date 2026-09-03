@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/** Modal — blurred ink overlay + frosted glass card, extracted from ContactDialog. Emits `close`. */
+/** Modal — flat ink scrim + the shared `.fm-float` card (opaque, hairline, soft shadow). Emits `close`. */
 import { computed, onBeforeUnmount, watch } from 'vue'
 import { X } from 'lucide-vue-next'
 
@@ -53,11 +53,11 @@ onBeforeUnmount(() => {
     style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 0 24px"
   >
     <div
-      style="position: absolute; inset: 0; background: color-mix(in srgb, var(--color-ink-950) 80%, transparent); backdrop-filter: blur(4px)"
+      style="position: absolute; inset: 0; background: var(--overlay-scrim)"
       @click="requestClose"
     ></div>
     <div
-      class="glass fm-dialog-in"
+      class="fm-float fm-dialog-in"
       :style="{
         position: 'relative',
         zIndex: 10,
@@ -66,8 +66,7 @@ onBeforeUnmount(() => {
         maxHeight: '85vh',
         display: 'flex',
         flexDirection: 'column',
-        borderRadius: '1rem',
-        border: '1px solid color-mix(in srgb, var(--color-bone) 10%, transparent)',
+        borderRadius: '1.25rem',
         padding: '32px',
         textAlign: align,
       }"

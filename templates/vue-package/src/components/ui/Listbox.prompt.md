@@ -1,4 +1,4 @@
-Fully branded dropdown: `.fm-control` trigger (chevron rotates on open), frosted ink-850 panel with hairline border, options highlight azure 10% on hover/keyboard focus, selected option gets an azure check. Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump; outside click closes. `v-model` holds the selected value.
+Fully branded dropdown: `.fm-control` trigger (chevron rotates on open), `.fm-float` panel (opaque, near-invisible hairline, soft shadow), options highlight azure 10% on hover/keyboard focus, selected option gets an azure check. Keyboard: ↑↓ move, Enter/Space select, Esc closes, Home/End jump; outside click closes. `v-model` holds the selected value.
 
 ```vue
 <script setup lang="ts">
@@ -16,6 +16,6 @@ const scene = ref('trend')
 </template>
 ```
 
-Prefer `Listbox` when the open panel must stay on-brand (dashboards, demos); plain `Select` keeps the native popup with its free accessibility and mobile pickers. Option labels are short noun phrases; `hint` fits the italic-English annotation habit but stays sans here (12px mist).
+`Select` is a thin wrapper over Listbox that accepts inline `<option>` children, so both render the identical `.fm-float` panel — pick by authoring convenience, not appearance. Option labels are short noun phrases; `hint` fits the italic-English annotation habit but stays sans here (12px mist).
 
 States: `disabled` dims the trigger and blocks opening; `invalid` swaps the border/focus ring to rouge — pair it with `error` on the wrapping Field for the message.

@@ -1,4 +1,4 @@
-Modal on the brand's overlay recipe: ink-950/80 + 4px blur backdrop, frosted `.glass` card (1rem radius, 32px padding) entering with the 0.3s scale/rise `fm-dialog-in` animation. Escape and overlay click emit `close`. The `footer` slot renders a right-aligned action row below the body. For long content (picker grids) pass `scroll-body` to make the body scroll — it clips floating panels like Listbox, so leave it off for forms.
+Modal on the brand's overlay recipe: flat `--overlay-scrim` backdrop (no blur), opaque `.fm-float` card (1.25rem radius, 32px padding, near-invisible hairline, soft shadow) entering with the 0.3s scale/rise `fm-dialog-in` animation. Escape and overlay click emit `close`. The `footer` slot renders a right-aligned action row below the body. For long content (picker grids) pass `scroll-body` to make the body scroll — it clips floating panels like Listbox, so leave it off for forms.
 
 ```vue
 <Dialog :open="open" title="联系我们" subtitle="扫描下方二维码，添加微信预约产品演示" @close="open = false">

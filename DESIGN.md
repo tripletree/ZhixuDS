@@ -138,8 +138,8 @@ Base-4 spacing (Tailwind scale). Cards pad 24px (20px compact), controls 10px ×
 Depth comes from layered translucency, not heavy shadows:
 
 - `.panel` — content card: diagonal white sheen gradient stack + 1px `rgba(255,255,255,0.14)` border, no blur.
-- `.glass` — floating tile: frosted 12px backdrop-blur, hairline bone/8 border.
-- Floating layer (menus, listbox panels, toasts, tooltips) — `--surface-float` (ink-750 at 97%) + 12px blur + `--shadow-float` (soft 20px/44px drop).
+- `.glass` — decorative frosted tile (hero chips, dashboard mock): 12px backdrop-blur, hairline bone/8 border. Not for floating UI.
+- `.fm-float` — floating UI (popover, listbox, dropdown menu, toast, tooltip, dialog card): opaque `--surface-float` (ink-750 / pure white), near-invisible `--border-float` hairline (bone 8% / ink 5%), one soft diffuse `--shadow-float`, `--radius-float` 1rem, **no backdrop-filter**. The pane is lifted by depth, not outlined. Modal scrim is flat `--overlay-scrim`, no blur.
 - Corner glow `.glow-blue` — radial azure bleed from a card's top-right corner.
 - Background overlays: 64px/28px hairline grids, low-opacity SVG film grain, blurred azure/champagne halos.
 
@@ -153,7 +153,7 @@ Radii: 0.75rem inner panels/controls, 1rem content cards, 1.5rem feature cards, 
 
 Production Vue 3 components live in `templates/vue-package/src/components/ui/` (npm: `@zhixu/fabricmind-ui`); a React mirror for prototypes sits in `components/ui/`. Key patterns:
 
-- **button-primary** — bone-filled pill, ink text; hover turns white with a bone glow shadow. Ghost/nav variants are hairline pills. CTAs are short verb phrases: 预约演示, 了解产品.
+- **button-primary** — bone-filled pill, ink text; hover turns white with a bone glow shadow. Ghost/nav/icon variants are hairline pills, always transparent at rest (no grey wash, so they read white in the light theme), sharing one hover/focus state in both themes: border azure 40%, fill azure 10%, text and icon azure-bright together, 3px azure 12% focus ring. CTAs are short verb phrases: 预约演示, 了解产品.
 - **input** (`.fm-control`) — translucent ink-850 surface, hairline border, azure focus ring; `invalid` swaps border/ring to rouge, `:disabled` dims to 0.45 opacity.
 - **panel / glass** — see Elevation.
 - **tag / filter chips** — pill chips; selected state tints azure 12% fill + azure-bright text.

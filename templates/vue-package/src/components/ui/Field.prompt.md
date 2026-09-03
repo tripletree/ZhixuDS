@@ -22,6 +22,29 @@ const name = ref(''); const kw = ref(''); const scene = ref('trend'); const note
 
 Placeholders are polite verb phrases (请输入…, 搜索…). Labels stay short; hints go in the `hint` prop, not the placeholder.
 
+**Three label placements, chosen by context:**
+
+- **No label** — toolbar filters whose value is self-describing (`全部在线时长`, `未下架`). Use the bare control with a descriptive `placeholder`; a label would repeat what the value already says.
+- **`layout="stacked"`** (default) — label above the control. Long forms, dialogs, anything read top-to-bottom.
+- **`layout="inline"`** — label left of the control, right-aligned in a fixed `labelWidth` column (default 72px). Stack several inline Fields inside a Popover for a dense "更多筛选" panel: the labels share one clean edge and every control starts on the same x. Give all rows the same `labelWidth` (set it to fit the longest label) — mixed widths break the alignment.
+
+```vue
+<Popover :width="320" :padding="16">
+  <template #anchor><Button variant="ghost" size="sm">更多筛选</Button></template>
+  <div class="flex flex-col gap-3">
+    <Field layout="inline" label="图案元素"><Listbox v-model="f.pattern" placeholder="全部" :options="patterns" /></Field>
+    <Field layout="inline" label="成分"><Listbox v-model="f.fabric" placeholder="全部" :options="fabrics" /></Field>
+    <Field layout="inline" label="织造类型"><Listbox v-model="f.weave" placeholder="全部" :options="weaves" /></Field>
+    <div class="mt-1 flex items-center justify-between border-t border-(--border-hairline) pt-3">
+      <Button variant="ghost" size="sm" @click="reset">重置</Button>
+      <Button variant="nav" size="sm">应用</Button>
+    </div>
+  </div>
+</Popover>
+```
+
+Inline labels are 13px (one step up from stacked's 12px eyebrow) because they sit on the control's baseline and read as part of the row, not as a caption. `hint`/`error` in inline mode render under the control column, not under the label.
+
 States: `disabled` dims to 0.45 opacity with a not-allowed cursor. For validation errors set `invalid` on the control (rouge border + rouge focus ring, `aria-invalid`) and `error` on the Field (rouge 11px message that replaces the hint):
 
 ```vue
@@ -32,4 +55,4 @@ States: `disabled` dims to 0.45 opacity with a not-allowed cursor. For validatio
 
 Error copy states what's wrong and how to fix it, declaratively (请输入有效的…) — no apologies, no exclamation marks.
 
-For dropdowns default to `Listbox` — the native `Select`'s open popup is OS-drawn and can't match the brand. Reach for `Select` only when the system picker is the point (e.g. mobile web forms).
+`Select` and `Listbox` open the same `.fm-float` panel — `Select` is Listbox with an inline `<option>` authoring API (`value`, text, optional `data-hint`), so the two never look different side by side. Use `Listbox` when options come from data, `Select` when you want to write them in the template.

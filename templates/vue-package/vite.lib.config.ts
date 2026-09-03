@@ -19,7 +19,7 @@ export default defineConfig({
     emptyOutDir: true,
     cssCodeSplit: false,
     rollupOptions: {
-      external: ['vue', 'motion-v'],
+      external: ['vue', 'motion-v', /^echarts(\/.*)?$/],
       output: {
         assetFileNames: (assetInfo) =>
           assetInfo.name?.endsWith('.css') ? 'style.css' : 'assets/[name][extname]',

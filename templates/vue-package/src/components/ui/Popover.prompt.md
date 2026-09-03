@@ -1,4 +1,4 @@
-Anchored floating panel on the frosted ink surface (same recipe as the Listbox dropdown): 0.75rem radius, hairline border, 12px blur, `fm-pop-in` entrance. The trigger goes in the `anchor` slot; clicking it toggles, outside click and Escape close. `v-model:open` for controlled use.
+Anchored floating panel on the shared `.fm-float` surface (opaque pane, near-invisible hairline, one soft shadow, 1rem radius, no blur), `fm-pop-in` entrance. The trigger goes in the `anchor` slot; clicking it toggles, outside click and Escape close. `v-model:open` for controlled use.
 
 ```vue
 <Popover :width="300">
