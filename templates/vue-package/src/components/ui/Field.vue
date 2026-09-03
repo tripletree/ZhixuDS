@@ -2,6 +2,11 @@
 /**
  * Form field wrapper — label row (azure asterisk when required), control slot, mist hint line.
  * `error` shows a rouge validation message in place of the hint; pair with `invalid` on the control.
+ *
+ * NOTE: the wrapper is a <label>, so the browser re-dispatches any click inside it to the
+ * slot's labelable control. That forwarding is the click's *default action*, so panel content
+ * that dismisses itself must call preventDefault (stopPropagation is not enough) — see the
+ * option rows in Listbox and the calendar body in DatePicker.
  */
 defineProps<{
   label?: string

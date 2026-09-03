@@ -126,6 +126,7 @@ function onKeyDown(e: KeyboardEvent) {
       role="listbox"
       class="fm-float fm-pop-in"
       style="position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 50; margin: 0; padding: 6px; list-style: none; max-height: 240px; overflow-y: auto"
+      @click.stop
     >
       <li
         v-for="(opt, i) in options"
@@ -147,7 +148,7 @@ function onKeyDown(e: KeyboardEvent) {
         }"
         @mouseenter="active = i"
         @mousedown.prevent
-        @click="commit(i)"
+        @click.prevent.stop="commit(i)"
       >
         <span style="flex: 1">{{ opt.label }}</span>
         <span v-if="opt.hint" style="font-size: 11px; color: var(--color-mist)">{{ opt.hint }}</span>

@@ -63,7 +63,11 @@ onBeforeUnmount(() => {
 <template>
   <span ref="rootEl" :style="{ position: 'relative', display: block ? 'block' : 'inline-block' }">
     <span :style="{ display: block ? 'block' : 'inline-block' }" @click="open = !open"><slot name="anchor" /></span>
-    <div v-if="open" class="fm-float fm-pop-in" role="dialog" :style="panelStyle">
+    <!-- `.stop` isolates the floating layer from ancestor click listeners. Note it does NOT
+         stop a wrapping `Field` (<label>) from re-dispatching the click to the trigger:
+         label activation is the click's default action, so panel content that closes the
+         popover must also `preventDefault` (see DatePicker). -->
+    <div v-if="open" class="fm-float fm-pop-in" role="dialog" :style="panelStyle" @click.stop>
       <slot />
     </div>
   </span>

@@ -241,7 +241,10 @@ const footBtn = {
       </button>
     </template>
 
-    <div style="display: flex; flex-direction: column; gap: 8px; text-align: left">
+    <!-- `.prevent`: every control in here is a `type="button"` with no default action, so this
+         only cancels label activation — a wrapping Field (<label>) would otherwise re-dispatch
+         the click to the trigger and reopen the calendar right after a date closes it. -->
+    <div style="display: flex; flex-direction: column; gap: 8px; text-align: left" @click.prevent>
       <!-- month / year nav -->
       <div style="display: flex; align-items: center; gap: 2px">
         <button type="button" class="fm-date-nav" :style="navBtn" aria-label="上一年" @click="shiftYear(-1)">
