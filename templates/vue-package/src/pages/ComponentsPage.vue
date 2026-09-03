@@ -24,6 +24,9 @@ import DropdownMenu from '../components/ui/DropdownMenu.vue'
 import DateRangeEditor from '../components/ui/DateRangeEditor.vue'
 import DatePicker from '../components/ui/DatePicker.vue'
 import Switch from '../components/ui/Switch.vue'
+import ChartCard from '../components/charts/ChartCard.vue'
+import BarChart from '../components/charts/BarChart.vue'
+import PieChart from '../components/charts/PieChart.vue'
 import EmptyState from '../components/ui/EmptyState.vue'
 import ProductCard from '../components/ui/ProductCard.vue'
 import ThumbnailStrip from '../components/ui/ThumbnailStrip.vue'
@@ -65,6 +68,16 @@ const page = ref(3)
 const letter = ref('A')
 const dialogOpen = ref(false)
 
+const fiberCategories = ['亚麻 1.59%', '腈纶 2.1%', '涤纶 1.2%', '棉 36.30%', '莫代尔 17%', '粘胶 8.48%', '氨纶 6.4%', '锦纶 7.64%']
+const fiberSeries = [{ name: 'SUM(product_count)', data: [172, 224, 132, 3840, 1830, 1920, 910, 260] }]
+const weaveData = [{ name: '纬编', value: 52 }, { name: '机织', value: 41 }, { name: '经编', value: 7 }]
+const categoryData = [
+  { name: '衬衫', value: 18 }, { name: '内衣', value: 15 }, { name: '开衫', value: 13 }, { name: '裤装', value: 12 },
+  { name: 'T恤', value: 8 }, { name: '内裤', value: 6 }, { name: '外套', value: 5 }, { name: '背心', value: 4 },
+  { name: '裙装', value: 3 }, { name: '配饰', value: 2 },
+]
+const chartActions = [{ key: 'export', label: '导出 CSV' }, { key: 'fullscreen', label: '全屏查看' }]
+
 const { push } = useToast()
 function demoToast() {
   push({ tone: 'success', title: '已导出 PPT 提案', description: '文件已保存到项目空间' })
@@ -74,7 +87,7 @@ function demoToast() {
 <template>
   <div class="mx-auto max-w-7xl px-6 pb-28 pt-28 lg:px-10">
     <p class="eyebrow text-azure">Components · 组件库</p>
-    <h1 class="mt-3 text-[2rem] font-bold leading-tight tracking-tight text-bone">30 个应用级组件</h1>
+    <h1 class="mt-3 text-[2rem] font-bold leading-tight tracking-tight text-bone">35 个应用级组件</h1>
     <p class="mt-3 max-w-2xl text-[15px] leading-relaxed text-bone-soft">
       从落地页产品模型中提炼的 BI 应用原语，全部随 <span class="font-display italic">@zhixu/fabricmind-ui</span>
       发布。右上角可切换深浅主题。
@@ -125,6 +138,23 @@ function demoToast() {
             />
           </div>
         </Panel>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="mt-14">
+      <h2 class="mb-5 text-[15px] font-semibold text-bone">Charts · 图表</h2>
+      <div class="grid gap-6 lg:grid-cols-5">
+        <ChartCard class="lg:col-span-3" title="功能性_纤维成分分布情况" :filter-count="2" :actions="chartActions">
+          <BarChart :categories="fiberCategories" :series="fiberSeries" :height="240" />
+        </ChartCard>
+        <ChartCard class="lg:col-span-2" title="织造类型分布" :filter-count="2" :actions="chartActions">
+          <PieChart :data="weaveData" :height="240" />
+        </ChartCard>
+        <ChartCard class="lg:col-span-3" title="一级品类分布" :filter-count="2" :actions="chartActions">
+          <PieChart :data="categoryData" :height="260" :inner-radius="0.55" :legend-per-page="6" />
+        </ChartCard>
+        <ChartCard class="lg:col-span-2" title="场景分布" empty />
       </div>
     </section>
 

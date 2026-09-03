@@ -114,6 +114,18 @@ html.light {
     --border-panel: rgba(255, 255, 255, 0.14);
     /* Modal scrim — flat, no blur, so the dialog card carries the depth */
     --overlay-scrim: rgba(3, 7, 15, 0.72);
+    /* Categorical chart palette. Azure leads (single-series charts use only it);
+       the rest are muted so multi-series pies stay calm against the ink surfaces. */
+    --chart-1: var(--color-azure);
+    --chart-2: #6d7fc2;
+    --chart-3: #6fb896;
+    --chart-4: var(--color-champagne);
+    --chart-5: #b2586a;
+    --chart-6: #c98a6b;
+    --chart-7: #7aa5c9;
+    --chart-8: #8b8f99;
+    --chart-grid: rgba(236, 234, 225, 0.07);
+    --chart-axis: rgba(236, 234, 225, 0.16);
   }
 
   html.light {
@@ -132,6 +144,16 @@ html.light {
     --border-hairline: rgba(16, 24, 40, 0.07);
     --border-panel: rgba(16, 24, 40, 0.09);
     --overlay-scrim: rgba(16, 24, 40, 0.4);
+    --chart-1: var(--color-azure);
+    --chart-2: #4a5a8f;
+    --chart-3: #4fae7c;
+    --chart-4: var(--color-champagne);
+    --chart-5: var(--color-rouge);
+    --chart-6: #c2703f;
+    --chart-7: #5b86b5;
+    --chart-8: #9aa1ad;
+    --chart-grid: rgba(16, 24, 40, 0.06);
+    --chart-axis: rgba(16, 24, 40, 0.14);
   }
 
   body {
